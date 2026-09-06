@@ -1,16 +1,16 @@
 {
-  "name": "Гурман",
   "short_name": "Гурман",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#E33510",
-  "theme_color": "#E33510",
+  "name": "Гурман - Доставка еды",
   "icons": [
     {
-      "src": "/icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
     }
-  ]
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4757",
+  "display": "standalone",
+  "orientation": "portrait"
 }
