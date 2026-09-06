@@ -1,11 +1,17 @@
 {
   "short_name": "Гурман",
   "name": "Гурман - Доставка еды",
+  "description": "Быстрая и удобная доставка вкусной еды на дом",
   "icons": [
     {
       "src": "/icon.png",
       "type": "image/png",
-      "sizes": "532x513"
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
