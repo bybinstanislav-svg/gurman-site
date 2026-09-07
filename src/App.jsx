@@ -338,16 +338,16 @@ const MENU_DATA = [
   },
   {
     id: 34,
-    name: 'Сырная',
-    description: 'Сливочный соус, увеличенная порция моцареллы, сыр пармезан, прованские травы',
+    name: 'Цезарь',
+    description: 'Чесночное масло, курочка, моцарелла, помидоры, соус ранч, салат листовой',
     price: 269,
     variants: [
-      { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 269 },
-      { label: '30 см', price: 469 }
+      { label: 'Кусочек', price: 70 },
+      { label: '20 см', price: 215 },
+      { label: '30 см', price: 535 }
     ],
     badge: null,
-    image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&q=80&w=600',
+    image: 'cezar.png',
     category: 'pizza'
   },
   {
@@ -412,7 +412,7 @@ const MENU_DATA = [
     price: 339,
     variants: [
       { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 339 },
+      { label: '20 см', price: 335 },
       { label: '30 см', price: 595 }
     ],
     badge: null,
