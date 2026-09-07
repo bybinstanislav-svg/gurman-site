@@ -1087,7 +1087,7 @@ export default function App() {
           Супермаркет в Александровском
         </span>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-2xl">
-          Готовим с любовью, доставляем с заботой
+          Готовим с душой каждый день
         </h1>
         <p className="text-lg text-gray-200 mb-8 max-w-xl">
           Пицца, блюда на мангале, фаст фуд и домашняя кулинария — всё свежее и горячее.
