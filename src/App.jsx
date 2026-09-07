@@ -421,16 +421,16 @@ const MENU_DATA = [
   },
   {
     id: 40,
-    name: 'Баварская',
-    description: 'Охотничьи колбаски, маринованные огурчики, красный лук, горчичный соус, моцарелла',
+    name: 'Охотничья',
+    description: 'Томатный соус, салями, охотничьи колбаски, бекон, острый перчик, маринованные огурчики, грибы, моцарелла',
     price: 319,
     variants: [
       { label: 'Кусочек', price: 85 },
-      { label: '20 см', price: 319 },
-      { label: '30 см', price: 509 }
+      { label: '20 см', price: 330 },
+      { label: '30 см', price: 755 }
     ],
-    badge: 'Сытная',
-    image: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&q=80&w=600',
+    badge: 'Острая',
+    image: 'ohotnichia.png',
     category: 'pizza'
   },
   {
