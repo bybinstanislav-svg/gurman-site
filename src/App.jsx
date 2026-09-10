@@ -1027,6 +1027,7 @@ const MENU_DATA = [
     category: 'mangal'
   }
 ];
+
 // Витрина видео (рилсы) для всех вкладок
 const REELS_DATA = [
   {
@@ -1048,6 +1049,7 @@ const REELS_DATA = [
     tag: 'Фаст Фуд'
   }
 ];
+
 // Лента вертикальных видео (рилсы)
 const ReelsSection = () => {
   return (
@@ -1079,6 +1081,7 @@ const ReelsSection = () => {
     </div>
   );
 };
+
 const CATEGORIES = [
   { id: 'mangal', label: 'Мангал' },
   { id: 'pizza', label: 'Пицца' },
@@ -1159,8 +1162,6 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
     </div>
   );
 };
-{/* Лента рилсов сразу под меню категорий */}
-<ReelsSection />
 
 // Карточка товара (универсальная для всех разделов с поддержкой variants, image, badge)
 const ProductCard = ({ product, onAddToCart }) => {
@@ -1226,13 +1227,13 @@ const ProductCard = ({ product, onAddToCart }) => {
 };
 
 // Сетка товаров
-const ProductGrid = ({ title, products, onAddToCart, activeCategory }) => {
+const ProductGrid = ({ title, products, onAddToCart }) => {
   if (products.length === 0) return null;
 
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-6">{title}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map(product => (
           <ProductCard 
             key={product.id} 
@@ -1480,10 +1481,14 @@ export default function App() {
           </div>
         </div>
       </div>
+
       <CategoryMenu 
         activeCategory={activeCategory} 
         setActiveCategory={setActiveCategory} 
       />
+
+      {/* Лента вертикальных видео на всех вкладках */}
+      <ReelsSection />
 
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         {displayedProducts.length > 0 ? (
@@ -1491,7 +1496,6 @@ export default function App() {
             title={categoryTitle} 
             products={displayedProducts} 
             onAddToCart={handleAddToCart}
-            activeCategory={activeCategory}
           />
         ) : (
           <div className="text-center py-20">
