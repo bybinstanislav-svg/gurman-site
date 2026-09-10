@@ -1048,6 +1048,37 @@ const REELS_DATA = [
     tag: 'Фаст Фуд'
   }
 ];
+// Лента вертикальных видео (рилсы)
+const ReelsSection = () => {
+  return (
+    <div className="mb-6 overflow-x-auto scrollbar-hide py-2">
+      <div className="flex space-x-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {REELS_DATA.map((reel) => (
+          <div key={reel.id} className="flex-shrink-0 w-[180px] sm:w-[200px] rounded-2xl overflow-hidden shadow-lg bg-black relative aspect-[9/16] group">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+            >
+              <source src={reel.videoUrl} type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-between p-3">
+              <span className="bg-[#E33510] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider w-max">
+                {reel.tag}
+              </span>
+              <h4 className="text-white text-xs sm:text-sm font-bold leading-tight">
+                {reel.title}
+              </h4>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 const CATEGORIES = [
   { id: 'mangal', label: 'Мангал' },
   { id: 'pizza', label: 'Пицца' },
@@ -1128,6 +1159,8 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
     </div>
   );
 };
+{/* Лента рилсов сразу под меню категорий */}
+<ReelsSection />
 
 // Карточка товара (универсальная для всех разделов с поддержкой variants, image, badge)
 const ProductCard = ({ product, onAddToCart }) => {
@@ -1199,40 +1232,7 @@ const ProductGrid = ({ title, products, onAddToCart, activeCategory }) => {
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-6">{title}</h2>
-      
-      // Лента вертикальных видео (рилсы)
-const ReelsSection = () => {
-  return (
-    <div className="mb-10 overflow-x-auto scrollbar-hide py-2">
-      <div className="flex space-x-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {REELS_DATA.map((reel) => (
-          <div key={reel.id} className="flex-shrink-0 w-[200px] sm:w-[220px] rounded-2xl overflow-hidden shadow-lg bg-black relative aspect-[9/16] group">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-            >
-              <source src={reel.videoUrl} type="video/mp4" />
-              Ваш браузер не поддерживает видео.
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-between p-4">
-              <span className="bg-[#E33510] text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider w-max">
-                {reel.tag}
-              </span>
-              <h4 className="text-white text-sm font-bold leading-tight">
-                {reel.title}
-              </h4>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map(product => (
           <ProductCard 
             key={product.id} 
