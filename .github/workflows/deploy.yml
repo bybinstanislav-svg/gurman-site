@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies & Build
         run: |
           npm install
-          npm run build
+          npx vite build
 
       - name: Upload to Yandex Object Storage
         uses: jakejarvis/s3-sync-action@master
