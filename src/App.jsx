@@ -1033,19 +1033,19 @@ const REELS_DATA = [
   {
     id: 1,
     title: 'Сочный шашлык на углях',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-barbecue-with-meat-and-sausages-on-the-grill-41682-large.mp4',
+    videoUrl: 'mangal-ogon.mp4',
     tag: 'Мангал'
   },
   {
     id: 2,
-    title: 'Готовим свежую пиццу',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-preparing-a-pizza-with-ingredients-43187-large.mp4',
-    tag: 'Пицца'
+    title: 'Готовим свежую шаурму',
+    videoUrl: 'zakrutka-shaurma.mp4',
+    tag: 'Фаст Фуд'
   },
   {
     id: 3,
-    title: 'Наши фирменные бургеры',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-juicy-hamburger-with-a-lot-of-ingredients-42964-large.mp4',
+    title: 'Как проходит сборка шаурмы',
+    videoUrl: 'stol-shaurma.mp4',
     tag: 'Фаст Фуд'
   }
 ];
