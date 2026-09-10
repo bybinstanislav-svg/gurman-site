@@ -1173,12 +1173,38 @@ const ProductCard = ({ product, onAddToCart }) => {
 };
 
 // Сетка товаров
-const ProductGrid = ({ title, products, onAddToCart }) => {
+const ProductGrid = ({ title, products, onAddToCart, activeCategory }) => {
   if (products.length === 0) return null;
 
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-6">{title}</h2>
+      
+      {/* Видео-баннер для вкладки Мангал */}
+      {activeCategory === 'mangal' && (
+        <div className="mb-8 rounded-2xl overflow-hidden shadow-lg bg-black relative aspect-video max-h-[400px] w-full">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-90"
+          >
+            {/* Сюда можно поставить ссылку на ваше видео или путь к файлу в папке public (например, /mangal.mp4) */}
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-barbecue-with-meat-and-sausages-on-the-grill-41682-large.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+            <div>
+              <span className="bg-[#E33510] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Живой огонь
+              </span>
+              <h3 className="text-white text-xl sm:text-2xl font-bold mt-2">Мясо и овощи на углях</h3>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map(product => (
           <ProductCard 
@@ -1438,6 +1464,7 @@ export default function App() {
             title={categoryTitle} 
             products={displayedProducts} 
             onAddToCart={handleAddToCart}
+            activeCategory={activeCategory}
           />
         ) : (
           <div className="text-center py-20">
