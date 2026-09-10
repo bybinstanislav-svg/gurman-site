@@ -1062,12 +1062,13 @@ const ReelsSection = () => {
               loop 
               muted 
               playsInline 
+              preload="auto"
               className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
             >
               <source src={reel.videoUrl} type="video/mp4" />
               Ваш браузер не поддерживает видео.
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-between p-3">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-between p-3 pointer-events-none">
               <span className="bg-[#E33510] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider w-max">
                 {reel.tag}
               </span>
