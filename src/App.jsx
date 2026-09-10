@@ -1180,26 +1180,27 @@ const ProductGrid = ({ title, products, onAddToCart, activeCategory }) => {
     <section className="mb-12">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-6">{title}</h2>
       
-      {/* Видео-баннер для вкладки Мангал */}
+      {/* Вертикальный видео-баннер (формат Reels) для вкладки Мангал */}
       {activeCategory === 'mangal' && (
-        <div className="mb-8 rounded-2xl overflow-hidden shadow-lg bg-black relative aspect-video max-h-[400px] w-full">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover opacity-90"
-          >
-            {/* Сюда можно поставить ссылку на ваше видео или путь к файлу в папке public (например, /mangal.mp4) */}
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-barbecue-with-meat-and-sausages-on-the-grill-41682-large.mp4" type="video/mp4" />
-            Ваш браузер не поддерживает видео.
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
-            <div>
-              <span className="bg-[#E33510] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                Живой огонь
-              </span>
-              <h3 className="text-white text-xl sm:text-2xl font-bold mt-2">Мясо и овощи на углях</h3>
+        <div className="mb-8 flex justify-center">
+          <div className="rounded-2xl overflow-hidden shadow-xl bg-black relative w-full max-w-[280px] aspect-[9/16] max-h-[480px]">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-barbecue-with-meat-and-sausages-on-the-grill-41682-large.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
+              <div>
+                <span className="bg-[#E33510] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Живой огонь
+                </span>
+                <h3 className="text-white text-lg font-bold mt-2">Мясо и овощи на углях</h3>
+              </div>
             </div>
           </div>
         </div>
