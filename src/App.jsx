@@ -1147,14 +1147,14 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex space-x-6 overflow-x-auto py-4 scrollbar-hide">
           {CATEGORIES.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`whitespace-nowrap font-medium text-sm transition-colors duration-200 px-3 py-1 rounded-full ${
-                activeCategory === category.id
-                  ? 'bg-orange-50 text-[#FF6900]'
-                  : 'text-gray-600 hover:text-[#FF6900] hover:bg-gray-50'
-              }`}
+            <button 
+            key={category.id}
+            onClick={() => setActiveCategory(category.id)}
+            className={`whitespace-nowrap font-bold text-base sm:text-lg transition-colors duration-200 px-5 py-2.5 rounded-full ${
+              activeCategory === category.id
+              ? 'bg-orange-50 text-[#FF6900] shadow-sm'
+              : 'text-gray-600 hover:text-[#FF6900] hover:bg-gray-50'
+            }`}
             >
               {category.label}
             </button>
@@ -1456,7 +1456,7 @@ export default function App() {
       <div className="relative bg-gray-900 text-white overflow-hidden py-16 lg:py-24">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=1600" 
+            src="gurman-zastavka.jpg" 
             alt="Фон" 
             className="w-full h-full object-cover opacity-40"
           />
