@@ -1195,9 +1195,9 @@ const ReelsSection = () => {
 };
 
 const CATEGORIES = [
-  { id: 'mangal', label: 'Мангал' },
   { id: 'pizza', label: 'Пицца' },
-  { id: 'fastfood', label: 'Фаст Фуд' },
+  { id: 'fastfood', label: 'Фаст Фуд' }
+  { id: 'mangal', label: 'Мангал' },
   { id: 'bakery', label: 'Выпечка'},
   { id: 'hot', label: 'Горячие блюда' },
   { id: 'salads', label: 'Салаты' },
