@@ -1,4 +1,3 @@
-@ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus, Trash2 } from 'lucide-react';
 
