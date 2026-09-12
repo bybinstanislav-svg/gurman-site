@@ -909,6 +909,116 @@ const MENU_DATA = [
     category: 'garnish' 
   },
 
+// --- ВЫПЕЧКА ---
+  {
+    id: 401,
+    name: 'Котлета в тесте',
+    description: 'Сочное рубленое мясо с луком в хрустящем слоеном тесте, запеченное в печи',
+    price: 90,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+  {
+    id: 402,
+    name: 'Осетинский пирог с мясом',
+    description: 'Нежное куриное филе, шампиньоны и сыр в ароматной сдобной выпечке',
+    price: 150,
+    badge: 'Новинка',
+    image: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+  {
+    id: 403,
+    name: 'Хачапури',
+    description: 'Два вида сыра в слоеном тесте',
+    price: 220,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+  {
+    id: 404,
+    name: 'Осетинский пирог с сыром и зеленью',
+    description: 'Сочное рубленое мясо с луком в хрустящем слоеном тесте, запеченное в печи',
+    price: 90,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+  {
+    id: 405,
+    name: 'Осетинский пирог с сыром и картофелем',
+    description: 'Нежное куриное филе, шампиньоны и сыр в ароматной сдобной выпечке',
+    price: 150,
+    badge: 'Новинка',
+    image: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+  {
+    id: 406,
+    name: 'Кекс',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 25,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 407,
+    name: 'Пирожки с картошкой',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 29,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 408,
+    name: 'Пирожки с печенью',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 29,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 409,
+    name: 'Пирожки с капустой',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 29,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 410,
+    name: 'Пирожки с луком и яйцом',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 29,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 411,
+    name: 'Сосиска в тесте',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 45,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+   {
+    id: 412,
+    name: 'Беляши',
+    description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
+    price: 55,
+    badge: 'Популярное',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
+    category: 'bakery'
+  },
+
   // --- МАНГАЛ ---
   {
     id: 8,
@@ -1088,6 +1198,7 @@ const CATEGORIES = [
   { id: 'mangal', label: 'Мангал' },
   { id: 'pizza', label: 'Пицца' },
   { id: 'fastfood', label: 'Фаст Фуд' },
+  { id: 'bakery', label: 'Выпечка'},
   { id: 'hot', label: 'Горячие блюда' },
   { id: 'salads', label: 'Салаты' },
   { id: 'garnish', label: 'Гарниры' }
