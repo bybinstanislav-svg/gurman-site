@@ -1,4 +1,4 @@
-// @ts-nocheck
+@ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus, Trash2 } from 'lucide-react';
 
@@ -425,7 +425,7 @@ const MENU_DATA = [
     name: 'Салат "Жозефина"', 
     description: 'Фирменный салат от шефа', 
     price: 58, 
-    barge: null, 
+    badge: null, 
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=600', 
     category: 'salads' 
   },
@@ -546,10 +546,12 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    d: 116, 
+    id: 116, 
     name: 'Салат "Перекус"', 
-    description: 'Отличный вариант для быстрого перекуса', price: 57, 
-    badge: null, image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600', 
+    description: 'Отличный вариант для быстрого перекуса', 
+    price: 57, 
+    badge: null, 
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600', 
     category: 'salads' 
   },
   { 
@@ -1069,7 +1071,7 @@ const ReelsSection = () => {
               Ваш браузер не поддерживает видео.
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-between p-3 pointer-events-none">
-              <span className="bg-[#E33510] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider w-max">
+              <span className="bg-[#FF6900] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider w-max">
                 {reel.tag}
               </span>
               <h4 className="text-white text-xs sm:text-sm font-bold leading-tight">
@@ -1103,7 +1105,7 @@ const Header = ({ cartItems, onOpenCart }) => {
         <div className="flex justify-between items-center">
           {/* Логотип */}
           <div className="flex items-center space-x-2 cursor-pointer">
-            <div className="bg-[#E33510] text-white p-2 rounded-lg font-bold text-xl tracking-wider">
+            <div className="bg-[#FF6900] text-white p-2 rounded-lg font-bold text-xl tracking-wider">
               ГУРМАН
             </div>
           </div>
@@ -1111,7 +1113,7 @@ const Header = ({ cartItems, onOpenCart }) => {
           {/* Контакты (скрыты на мобильных) */}
           <div className="hidden md:flex flex-col items-center text-sm">
             <div className="flex items-center text-gray-800 font-bold text-lg">
-              <Phone className="w-4 h-4 mr-2 text-[#E33510]" />
+              <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
               910-210
             </div>
           </div>
@@ -1119,13 +1121,13 @@ const Header = ({ cartItems, onOpenCart }) => {
           {/* Кнопка Корзины */}
           <button 
             onClick={onOpenCart}
-            className="bg-[#E33510] hover:bg-red-700 transition text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-md ml-4"
+            className="bg-[#FF6900] hover:bg-[#E05B00] transition text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-md ml-4"
           >
             <ShoppingCart className="w-5 h-5" />
             {totalItems > 0 ? (
               <>
                 <span className="font-semibold hidden sm:inline">{totalPrice} ₽</span>
-                <span className="bg-white text-[#E33510] text-xs font-bold px-2 py-0.5 rounded-full">
+                <span className="bg-white text-[#FF6900] text-xs font-bold px-2 py-0.5 rounded-full">
                   {totalItems}
                 </span>
               </>
@@ -1151,8 +1153,8 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
               onClick={() => setActiveCategory(category.id)}
               className={`whitespace-nowrap font-medium text-sm transition-colors duration-200 px-3 py-1 rounded-full ${
                 activeCategory === category.id
-                  ? 'bg-gray-100 text-[#E33510]'
-                  : 'text-gray-600 hover:text-[#E33510] hover:bg-gray-50'
+                  ? 'bg-orange-50 text-[#FF6900]'
+                  : 'text-gray-600 hover:text-[#FF6900] hover:bg-gray-50'
               }`}
             >
               {category.label}
@@ -1178,7 +1180,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
         />
         {product.badge && (
-          <div className="absolute top-2 left-2 bg-[#E33510] text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
+          <div className="absolute top-2 left-2 bg-[#FF6900] text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
             {product.badge}
           </div>
         )}
@@ -1217,7 +1219,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           </div>
           <button 
             onClick={() => onAddToCart(product, product.variants ? selectedVariant : null)}
-            className="bg-[#FFF0ED] text-[#E33510] hover:bg-[#E33510] hover:text-white transition-colors duration-300 font-semibold px-5 py-2 rounded-xl"
+            className="bg-[#FFF4ED] text-[#FF6900] hover:bg-[#FF6900] hover:text-white transition-colors duration-300 font-semibold px-5 py-2 rounded-xl"
           >
             Выбрать
           </button>
@@ -1255,7 +1257,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-[#E33510] text-white p-1.5 rounded font-bold text-lg">
+              <div className="bg-[#FF6900] text-white p-1.5 rounded font-bold text-lg">
                 ГУРМАН
               </div>
             </div>
@@ -1268,15 +1270,15 @@ const Footer = () => {
             <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Контакты</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
-                <Phone className="w-4 h-4 mr-2 text-[#E33510]" />
+                <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
                 910-210
               </li>
               <li className="flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-[#E33510]" />
+                <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
                 Ежедневно с 8:00 до 22:00
               </li>
               <li className="flex items-start">
-                <MapPin className="w-4 h-4 mr-2 text-[#E33510] mt-1 shrink-0" />
+                <MapPin className="w-4 h-4 mr-2 text-[#FF6900] mt-1 shrink-0" />
                 с. Александровское ул. Войтика 16Б
               </li>
             </ul>
@@ -1350,14 +1352,14 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems }) => {
                   {((item.category === 'mangal' || item.category === 'salads' || item.category === 'hot' || item.category === 'garnish') && !item.variants) && (
                     <p className="text-xs text-gray-500 mt-0.5">за 100 г</p>
                   )}
-                  <p className="font-bold text-[#E33510] mt-1">{item.price} ₽</p>
+                  <p className="font-bold text-[#FF6900] mt-1">{item.price} ₽</p>
                 </div>
                 
                 {/* Контролы количества и кнопка удаления */}
                 <div className="flex flex-col items-end gap-2">
                   <button 
                     onClick={() => removeItem(item.cartItemId)}
-                    className="text-gray-400 hover:text-[#E33510] transition-colors"
+                    className="text-gray-400 hover:text-[#FF6900] transition-colors"
                     title="Удалить из корзины"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -1365,14 +1367,14 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems }) => {
                   <div className="flex items-center bg-white border border-gray-200 rounded-lg shadow-sm">
                     <button 
                       onClick={() => updateQuantity(item.cartItemId, -1)}
-                      className="p-1.5 text-gray-500 hover:text-[#E33510] transition"
+                      className="p-1.5 text-gray-500 hover:text-[#FF6900] transition"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
                     <span className="w-7 text-center font-semibold text-sm text-gray-800">{item.quantity}</span>
                     <button 
                       onClick={() => updateQuantity(item.cartItemId, 1)}
-                      className="p-1.5 text-gray-500 hover:text-[#E33510] transition"
+                      className="p-1.5 text-gray-500 hover:text-[#FF6900] transition"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
@@ -1392,7 +1394,7 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems }) => {
             </div>
             <a 
               href="tel:910210"
-              className="w-full bg-[#E33510] hover:bg-red-700 transition-colors text-white py-3.5 rounded-xl font-bold text-lg flex justify-center items-center gap-2 shadow-lg shadow-red-500/30"
+              className="w-full bg-[#FF6900] hover:bg-[#E05B00] transition-colors text-white py-3.5 rounded-xl font-bold text-lg flex justify-center items-center gap-2 shadow-lg shadow-orange-500/30"
             >
               <Phone className="w-5 h-5" />
               Позвонить и заказать
@@ -1462,7 +1464,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
-          <span className="bg-[#E33510] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+          <span className="bg-[#FF6900] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
             Супермаркет в Александровском
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-2xl">
@@ -1474,7 +1476,7 @@ export default function App() {
           <div className="flex flex-wrap gap-4">
             <a 
               href="tel:910210" 
-              className="bg-[#E33510] hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-red-600/30"
+              className="bg-[#FF6900] hover:bg-[#E05B00] text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-orange-600/30"
             >
               <Phone className="w-5 h-5" />
               910-210
