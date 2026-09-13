@@ -28,14 +28,14 @@ const MENU_DATA = [
       { label: '20 см', price: 289 },
       { label: '30 см', price: 635 }
     ],
-    badge: 'Популярное',
+    badge: 'Острая',
     image: 'pepperoni-pizza.png',
     category: 'pizza'
   },
   {
     id: 3,
     name: '4 сыра',
-    description: 'Пармезан, маасдам, чедер, много моцареллы, дор блю чесночное масло',
+    description: 'Пармезан, чедер, много моцареллы, дор блю, чесночное масло',
     price: 249,
     variants: [
       { label: 'Кусочек', price: 90 },
@@ -43,7 +43,7 @@ const MENU_DATA = [
       { label: '30 см', price: 725 }
     ],
     badge: null,
-    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80&w=600',
+    image: '4sira-pizza.jpg',
     category: 'pizza'
   },
   {
@@ -56,7 +56,7 @@ const MENU_DATA = [
       { label: '20 см', price: 389 },
       { label: '30 см', price: 595 }
     ],
-    badge: 'Новинка',
+    badge: 'null',
     image: 'washengton.png',
     category: 'pizza'
   },
@@ -70,7 +70,7 @@ const MENU_DATA = [
       { label: '20 см', price: 299 },
       { label: '30 см', price: 499 }
     ],
-    badge: null,
+    badge: 'Новинка',
     image: 'gawai.png',
     category: 'pizza'
   },
@@ -126,7 +126,7 @@ const MENU_DATA = [
       { label: '20 см', price: 329 },
       { label: '30 см', price: 595 }
     ],
-    badge: 'Новинка',
+    badge: 'Хит',
     image: 'zulen.png',
     category: 'pizza'
   },
