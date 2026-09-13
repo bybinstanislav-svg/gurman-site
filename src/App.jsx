@@ -270,16 +270,18 @@ const MENU_DATA = [
     description: 'Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
     price: 99,
     badge: 'Топ',
-    image: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&q=80&w=600',
+    unit: '100 г.'
+    image: 'kartofel-fri.png',
     category: 'fastfood'
   },
   {
     id: 56,
-    name: 'Картофель по-деревенски',
+    name: 'Картофель Айдахо',
     description: 'Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
     price: 129,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed35a47a?auto=format&fit=crop&q=80&w=600',
+    unit: '100 г.'
+    image: 'kartofel-derevna.png',
     category: 'fastfood'
   },
   {
@@ -347,7 +349,7 @@ const MENU_DATA = [
   },
   {
     id: 64,
-    name: 'Острые крылышки (5 шт)',
+    name: 'Острые крылышки Баффало (5 шт)',
     description: 'Куриные крылышки в пикантной острой панировке. Осторожно, очень остро!',
     price: 199,
     badge: 'Острое',
