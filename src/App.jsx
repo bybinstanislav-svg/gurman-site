@@ -1224,9 +1224,10 @@ const Header = ({ cartItems, onOpenCart }) => {
           <div className="hidden md:flex flex-col items-center text-sm">
             <div className="flex items-center text-gray-800 font-bold text-lg">
               <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-              <span>8 962 401-02-10</span>
-                <br/>
-                <span>910-210</span>
+              <div className="flex flex-col items-center ...">
+               <span>8 962 401-02-10</span>
+               <span>910-210</span>
+             </div>
             </div>
           </div>
 
@@ -1383,9 +1384,10 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-                <span>8 962 401-02-10</span>
-                <br/>
-                <span>910-210</span> 
+                <div className="flex flex-col items-center ...">
+                 <span>8 962 401-02-10</span>
+                 <span>910-210</span>
+                </div>
                 </li>
               <li className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
