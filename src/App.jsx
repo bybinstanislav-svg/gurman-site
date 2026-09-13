@@ -1224,6 +1224,7 @@ const Header = ({ cartItems, onOpenCart }) => {
           <div className="hidden md:flex flex-col items-center text-sm">
             <div className="flex items-center text-gray-800 font-bold text-lg">
               <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
+              8 962 401-02-10
               910-210
             </div>
           </div>
@@ -1381,8 +1382,9 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-                910-210
-              </li>
+                8 962 401-02-10
+                910-210 
+                </li>
               <li className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
                 Ежедневно с 8:00 до 22:00
@@ -1398,8 +1400,8 @@ const Footer = () => {
             <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Правовая информация</h3>
             <ul className="space-y-2 text-xs text-gray-400">
               <li>ИП Конотопцев В. А.</li>
-              <li>ОГРНИП: 319774600000000</li>
-              <li>ИНН: 770000000000</li>
+              <li>ОГРНИП: 308264907800040</li>
+              <li>ИНН: 260105397727</li>
             </ul>
           </div>
         </div>
@@ -1589,7 +1591,7 @@ export default function App() {
               className="bg-[#FF6900] hover:bg-[#E05B00] text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-orange-600/30"
             >
               <Phone className="w-5 h-5" />
-              8-962-401-02-10
+              8 962 401-02-10
             </a>
           </div>
         </div>
