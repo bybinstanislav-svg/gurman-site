@@ -267,7 +267,7 @@ const MENU_DATA = [
   {
     id: 55,
     name: 'Картофель фри',
-    description: 'Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
+    description: 'ЦЕНА ЗА 100 грамм! Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
     price: 99,
     badge: 'Топ',
     unit: '100 г.',
@@ -277,7 +277,7 @@ const MENU_DATA = [
   {
     id: 56,
     name: 'Картофель Айдахо',
-    description: 'Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
+    description: 'ЦЕНА ЗА 100 грамм! Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
     price: 129,
     badge: null,
     unit: '100 г.',
@@ -331,7 +331,7 @@ const MENU_DATA = [
   },
   {
     id: 62,
-    name: 'Клаб-сэндвич с ветчиной',
+    name: 'Сэндвич с ветчиной',
     description: 'Поджаренный тостовый хлеб, ветчина, сыр, листья салата, помидоры, майонез.',
     price: 165,
     badge: null,
@@ -401,15 +401,7 @@ const MENU_DATA = [
     image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
   },
-  {
-    id: 70,
-    name: 'Картофель фри (большой)',
-    description: 'Большая порция хрустящего золотистого картофеля фри. Идеально для компании.',
-    price: 149,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1630431341973-02e1b662ce2b?auto=format&fit=crop&q=80&w=600',
-    category: 'fastfood'
-  },
+ 
 /*
   // --- САЛАТЫ ---
   { 
