@@ -1224,8 +1224,9 @@ const Header = ({ cartItems, onOpenCart }) => {
           <div className="hidden md:flex flex-col items-center text-sm">
             <div className="flex items-center text-gray-800 font-bold text-lg">
               <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-              8 962 401-02-10
-              910-210
+              <span>8 962 401-02-10</span>
+                <br/>
+                <span>910-210</span>
             </div>
           </div>
 
