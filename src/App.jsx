@@ -243,7 +243,7 @@ const MENU_DATA = [
     description: 'СуПеР МяСнОй ролл в пшеничной лепёшке с сырам чеддер и нежной моцареллой, томатами, пепперони и куриным фаршем под знакомым соусом гриль с дымком!',
     price: 249,
     badge: 'Хит',
-    image: 'mysnoy2.jpg',
+    image: 'mysnoy3.png',
     category: 'fastfood'
   },
   {
@@ -252,7 +252,7 @@ const MENU_DATA = [
     description: 'Лепешка пшеничная, моцарелла, филе куриное, жареный лучок, помидоры, сырный соус',
     price: 119,
     badge: null,
-    image: 'syrniy-roll.jpg',
+    image: 'syrniy-roll2.png',
     category: 'fastfood'
   },
   {
@@ -288,7 +288,7 @@ const MENU_DATA = [
     description: 'Сыр, охотничьи колбаски, маринованные огурчики и перчик халапеньо с барбекю соусом в зажаристой пшеничной лепешке.',
     price: 139,
     badge: null,
-    image: 'dracon.jpg',
+    image: 'dracon2.png',
     category: 'fastfood'
   },
   {
