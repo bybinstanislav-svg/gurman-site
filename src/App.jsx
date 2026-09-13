@@ -43,7 +43,7 @@ const MENU_DATA = [
       { label: '30 см', price: 725 }
     ],
     badge: null,
-    image: '4sira-pizza.jpg',
+    image: '4sira-pizza-.jpg',
     category: 'pizza'
   },
   {
