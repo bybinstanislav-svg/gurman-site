@@ -56,7 +56,7 @@ const MENU_DATA = [
       { label: '20 см', price: 389 },
       { label: '30 см', price: 595 }
     ],
-    badge: 'null',
+    badge: null,
     image: 'washengton.png',
     category: 'pizza'
   },
