@@ -408,7 +408,7 @@ const MENU_DATA = [
     image: 'https://images.unsplash.com/photo-1630431341973-02e1b662ce2b?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
   },
-
+/*
   // --- САЛАТЫ ---
   { 
     id: 101,
@@ -907,8 +907,8 @@ const MENU_DATA = [
     badge: null, 
     image: 'kartofel-derevna.png', 
     category: 'garnish' 
-  },
-
+  },*/
+/*
 // --- ВЫПЕЧКА ---
   {
     id: 401,
@@ -1016,7 +1016,7 @@ const MENU_DATA = [
     price: 55,
     badge: 'Популярное',
     image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
-    category: 'bakery'
+    category: 'bakery'*/
   },
 
   // --- МАНГАЛ ---
@@ -1198,10 +1198,11 @@ const CATEGORIES = [
   { id: 'pizza', label: 'Пицца' },
   { id: 'fastfood', label: 'Фаст Фуд' },
   { id: 'mangal', label: 'Мангал' },
+  /*
   { id: 'bakery', label: 'Выпечка'},
   { id: 'hot', label: 'Горячие блюда' },
   { id: 'salads', label: 'Салаты' },
-  { id: 'garnish', label: 'Гарниры' }
+  { id: 'garnish', label: 'Гарниры' }*/
 ];
 
 // Компонент Хедера (шапка сайта)
