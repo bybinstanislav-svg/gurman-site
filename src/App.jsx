@@ -1585,11 +1585,11 @@ export default function App() {
           </p>
           <div className="flex flex-wrap gap-4">
             <a 
-              href="tel:910210" 
+              href="tel:89624010210" 
               className="bg-[#FF6900] hover:bg-[#E05B00] text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-orange-600/30"
             >
               <Phone className="w-5 h-5" />
-              910-210
+              8-962-401-02-10
             </a>
           </div>
         </div>
