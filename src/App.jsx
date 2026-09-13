@@ -270,7 +270,7 @@ const MENU_DATA = [
     description: 'Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
     price: 99,
     badge: 'Топ',
-    unit: '100 г.'
+    unit: '100 г.',
     image: 'kartofel-fri.png',
     category: 'fastfood'
   },
@@ -280,7 +280,7 @@ const MENU_DATA = [
     description: 'Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
     price: 129,
     badge: null,
-    unit: '100 г.'
+    unit: '100 г.',
     image: 'kartofel-derevna.png',
     category: 'fastfood'
   },
