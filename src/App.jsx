@@ -1382,8 +1382,9 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-                8 962 401-02-10
-                910-210 
+                <span>8 962 401-02-10</span>
+                <br/>
+                <span>910-210</span> 
                 </li>
               <li className="flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
