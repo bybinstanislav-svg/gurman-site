@@ -1016,8 +1016,8 @@ const MENU_DATA = [
     price: 55,
     badge: 'Популярное',
     image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600',
-    category: 'bakery'*/
-  },
+    category: 'bakery'
+  },*/
 
   // --- МАНГАЛ ---
   {
