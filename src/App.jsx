@@ -29,7 +29,7 @@ const MENU_DATA = [
       { label: '30 см', price: 635 }
     ],
     badge: 'Популярное',
-    image: 'pepperoni.png',
+    image: 'pepperoni-pizza.png',
     category: 'pizza'
   },
   {
@@ -76,8 +76,8 @@ const MENU_DATA = [
   },
   {
     id: 32,
-    name: 'Мясная',
-    description: 'Цыпленок, ветчина, пикантная пепперони, острые колбаски чоризо, моцарелла, фирменный томатный соус',
+    name: 'Бургур-пицца',
+    description: 'Ветчина, томаты, маринованные огурчики, моцарелла, красный лук, соус бургер, фирменный томатный соус',
     price: 399,
     variants: [
       { label: 'Кусочек', price: 99 },
@@ -85,7 +85,7 @@ const MENU_DATA = [
       { label: '30 см', price: 599 }
     ],
     badge: 'Хит',
-    image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&q=80&w=600',
+    image: 'burger-pizza.png',
     category: 'pizza'
   },
   {
@@ -847,11 +847,11 @@ const MENU_DATA = [
   },
   {
     id: 304, 
-    name: 'Картофель "Айдахо"', 
-    description: 'Дольки картофеля в кожуре со специями', 
+    name: 'Картофель фри', 
+    description: 'Золотистая картошка обжариная во фритюре', 
     price: 33, 
     badge: null, 
-    image: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&q=80&w=600', 
+    image: 'kartofel-fri.png', 
     category: 'garnish' 
   },
   { 
@@ -901,11 +901,11 @@ const MENU_DATA = [
   },
   { 
     id: 310, 
-    name: 'Картофель запеченный', 
+    name: 'Картофель Айдахо', 
     description: 'Запеченный до золотистой корочки картофель', 
     price: 17, 
     badge: null, 
-    image: 'https://images.unsplash.com/photo-1626200926732-475253272990?auto=format&fit=crop&q=80&w=600', 
+    image: 'kartofel-derevna.png', 
     category: 'garnish' 
   },
 
