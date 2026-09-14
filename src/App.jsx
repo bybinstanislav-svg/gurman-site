@@ -87,7 +87,7 @@ const MENU_DATA = [
     badge: 'Хит',
     image: 'burger-pizza.png',
     category: 'pizza'
-  },
+  }, /*
   {
     id: 33,
     name: 'Дьявол',
@@ -101,7 +101,7 @@ const MENU_DATA = [
     badge: 'Острая',
     image: 'diablo.png',
     category: 'pizza'
-  },
+  }, */
   {
     id: 34,
     name: 'Цезарь',
@@ -143,7 +143,7 @@ const MENU_DATA = [
     badge: null,
     image: 'bbq.png',
     category: 'pizza'
-  },
+  }, /*
   {
     id: 37,
     name: 'Вегетарианская',
@@ -157,7 +157,7 @@ const MENU_DATA = [
     badge: 'Легкая',
     image: 'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&q=80&w=600',
     category: 'pizza'
-  },
+  },*/ /*
   {
     id: 38,
     name: 'Морская',
@@ -170,7 +170,7 @@ const MENU_DATA = [
     badge: 'Премиум',
     image: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?auto=format&fit=crop&q=80&w=600',
     category: 'pizza'
-  },
+  }, */
   {
     id: 39,
     name: 'Чиз Карбонара',
@@ -227,7 +227,7 @@ const MENU_DATA = [
     badge: null,
     image: 'fresh-roll.png',
     category: 'fastfood'
-  },
+  }, /*
   {
     id: 51,
     name: 'Чизбургер',
@@ -236,7 +236,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, */
   {
     id: 52,
     name: 'Ролл мясной',
@@ -254,7 +254,7 @@ const MENU_DATA = [
     badge: null,
     image: 'syrniy-roll2.png',
     category: 'fastfood'
-  },
+  }, /*
   {
     id: 54,
     name: 'Сырные палочки',
@@ -263,7 +263,7 @@ const MENU_DATA = [
     badge: 'К пиву',
     image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, */
   {
     id: 55,
     name: 'Картофель фри',
@@ -355,7 +355,7 @@ const MENU_DATA = [
     badge: 'Острое',
     image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, /*
   {
     id: 65,
     name: 'Куриные стрипсы (4 шт)',
@@ -400,7 +400,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, */
  
 /*
   // --- САЛАТЫ ---
