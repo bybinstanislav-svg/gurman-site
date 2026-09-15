@@ -87,21 +87,21 @@ const MENU_DATA = [
     badge: 'Хит',
     image: 'burger-pizza.png',
     category: 'pizza'
-  }, /*
+  }, 
   {
     id: 33,
-    name: 'Дьявол',
-    description: 'Томатный соус, салями, охотничьи колбаски, острый перчик, лук, моцарелла',
+    name: 'Диабло',
+    description: 'Томатный соус, ветчина, пепперони, охотничьи колбаски, острый перчик, лук, моцарелла',
     price: 349,
     variants: [
-      { label: 'Кусочек', price: 89 },
-      { label: '20 см', price: 349 },
-      { label: '30 см', price: 539 }
+      { label: 'Кусочек', price: 77 },
+      { label: '20 см', price: 275 },
+      { label: '30 см', price: 595 }
     ],
     badge: 'Острая',
     image: 'diablo.png',
     category: 'pizza'
-  }, */
+  }, 
   {
     id: 34,
     name: 'Цезарь',
@@ -268,7 +268,7 @@ const MENU_DATA = [
     id: 55,
     name: 'Картофель фри',
     description: 'ЦЕНА ЗА 100 грамм! Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
-    price: 99,
+    price: 65,
     badge: 'Топ',
     unit: '100 г.',
     image: 'kartofel-fri.png',
@@ -297,16 +297,16 @@ const MENU_DATA = [
     id: 58,
     name: 'Шаурма с курицей',
     description: 'Обжаренное куриное филе, свежие овощи, фирменный чесночный соус, завернутые в тонкий лаваш.',
-    price: 199,
+    price: 175,
     badge: 'Сытно',
-    image: 'https://images.unsplash.com/photo-1647414966952-4eb2e5d16dd0?auto=format&fit=crop&q=80&w=600',
+    image: 'shaurma.jpg',
     category: 'fastfood'
   },
   {
     id: 59,
     name: 'Гиро с курицой',
     description: 'Сочная курица, картофель фри, капуста, томаты, огурцы, пикантный соус.',
-    price: 219,
+    price: 175,
     badge: null,
     image: 'https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
@@ -315,16 +315,16 @@ const MENU_DATA = [
     id: 60,
     name: 'Хот-дог классический',
     description: 'Мясная сосиска в мягкой булочке с кетчупом, горчицей и хрустящим луком.',
-    price: 130,
+    price: 84,
     badge: null,
     image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
   },
   {
     id: 61,
-    name: 'Френч-дог',
+    name: 'Френч-дог с курино-говяжей сосиской',
     description: 'Обжаренная сосиска в закрытой французской булочке с соусом.',
-    price: 140,
+    price: 125,
     badge: null,
     image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
@@ -1016,18 +1016,18 @@ const MENU_DATA = [
   // --- МАНГАЛ ---
   {
     id: 8,
-    name: 'Шашлык из свиной шеи',
-    description: 'Сочные кусочки отборной свиной шеи, маринованные по фирменному рецепту и обжаренные на углях. Подается с луком.',
-    price: 190,
+    name: 'Шашлык из свинины антрекот',
+    description: 'Кусочки антрекота, маринованные по фирменному рецепту и обжаренные на углях. Подается с луком.',
+    price: 155,
     badge: 'Хит продаж',
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
   },
   {
     id: 9,
-    name: 'Шашлык из курицы',
+    name: 'Шашлык из куриного филе',
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
-    price: 160,
+    price: 155,
     badge: null,
     image: 'https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
@@ -1036,7 +1036,7 @@ const MENU_DATA = [
     id: 10,
     name: 'Люля-кебаб из говядины',
     description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
-    price: 210,
+    price: 145,
     badge: null,
     image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
@@ -1052,18 +1052,18 @@ const MENU_DATA = [
   },
   {
     id: 42,
-    name: 'Свиные ребрышки барбекю',
+    name: 'Форель речная',
     description: 'Сочные свиные ребрышки, запеченные на огне в густом и сладковатом соусе барбекю.',
-    price: 220,
+    price: 170,
     badge: 'Хит',
     image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
   },
   {
     id: 43,
-    name: 'Люля-кебаб из баранины',
-    description: 'Рубленая баранина с курдючным жиром, репчатым луком и традиционными восточными пряностями.',
-    price: 240,
+    name: 'Овощи на мангале "Хоровац"',
+    description: 'Овощи на мангале. Приготовленые в виде салата',
+    price: 110,
     badge: null,
     image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
@@ -1094,7 +1094,7 @@ const MENU_DATA = [
     badge: 'Вег',
     image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 47,
     name: 'Овощи гриль',
@@ -1103,7 +1103,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 48,
     name: 'Стейк из семги',
