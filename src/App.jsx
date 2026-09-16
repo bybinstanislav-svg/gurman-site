@@ -11,7 +11,7 @@ const MENU_DATA = [
     price: 359,
     variants: [
       { label: 'Кусочек', price: 77 },
-      { label: '20 см', price: 359 },
+      { label: '20 см', price: 325 },
       { label: '30 см', price: 595 }
     ],
     badge: 'Хит продаж',
@@ -25,7 +25,7 @@ const MENU_DATA = [
     price: 289,
     variants: [
       { label: 'Кусочек', price: 82 },
-      { label: '20 см', price: 289 },
+      { label: '20 см', price: 275 },
       { label: '30 см', price: 635 }
     ],
     badge: 'Острая',
@@ -39,7 +39,7 @@ const MENU_DATA = [
     price: 249,
     variants: [
       { label: 'Кусочек', price: 90 },
-      { label: '20 см', price: 249 },
+      { label: '20 см', price: 315 },
       { label: '30 см', price: 725 }
     ],
     badge: null,
@@ -53,7 +53,7 @@ const MENU_DATA = [
     price: 389,
     variants: [
       { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 389 },
+      { label: '20 см', price: 275 },
       { label: '30 см', price: 595 }
     ],
     badge: null,
@@ -67,7 +67,7 @@ const MENU_DATA = [
     price: 299,
     variants: [
       { label: 'Кусочек', price: 79 },
-      { label: '20 см', price: 299 },
+      { label: '20 см', price: 315 },
       { label: '30 см', price: 499 }
     ],
     badge: 'Новинка',
@@ -81,7 +81,7 @@ const MENU_DATA = [
     price: 399,
     variants: [
       { label: 'Кусочек', price: 99 },
-      { label: '20 см', price: 399 },
+      { label: '20 см', price: 275 },
       { label: '30 см', price: 599 }
     ],
     badge: 'Хит',
@@ -109,7 +109,7 @@ const MENU_DATA = [
     price: 269,
     variants: [
       { label: 'Кусочек', price: 70 },
-      { label: '20 см', price: 215 },
+      { label: '20 см', price: 275 },
       { label: '30 см', price: 535 }
     ],
     badge: null,
@@ -123,7 +123,7 @@ const MENU_DATA = [
     price: 329,
     variants: [
       { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 329 },
+      { label: '20 см', price: 365 },
       { label: '30 см', price: 595 }
     ],
     badge: 'Хит',
@@ -137,13 +137,13 @@ const MENU_DATA = [
     price: 369,
     variants: [
       { label: 'Кусочек', price: 84 },
-      { label: '20 см', price: 369 },
+      { label: '20 см', price: 275 },
       { label: '30 см', price: 655 }
     ],
     badge: null,
     image: 'bbq.png',
     category: 'pizza'
-  }, /*
+  }, 
   {
     id: 37,
     name: 'Вегетарианская',
@@ -157,7 +157,7 @@ const MENU_DATA = [
     badge: 'Легкая',
     image: 'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&q=80&w=600',
     category: 'pizza'
-  },*/ /*
+  }, /*
   {
     id: 38,
     name: 'Морская',
@@ -178,7 +178,7 @@ const MENU_DATA = [
     price: 339,
     variants: [
       { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 335 },
+      { label: '20 см', price: 365 },
       { label: '30 см', price: 595 }
     ],
     badge: null,
@@ -192,7 +192,21 @@ const MENU_DATA = [
     price: 319,
     variants: [
       { label: 'Кусочек', price: 85 },
-      { label: '20 см', price: 330 },
+      { label: '20 см', price: 355 },
+      { label: '30 см', price: 755 }
+    ],
+    badge: 'Острая',
+    image: 'ohotnichia.png',
+    category: 'pizza'
+  },
+   {
+    id: 400,
+    name: 'Мексиканская',
+    description: 'Томатный соус, куриный фарш, томат, лук, острый перчик, моцарелла',
+    price: 319,
+    variants: [
+      { label: 'Кусочек', price: 85 },
+      { label: '20 см', price: 315 },
       { label: '30 см', price: 755 }
     ],
     badge: 'Острая',
