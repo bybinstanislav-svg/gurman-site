@@ -147,12 +147,12 @@ const MENU_DATA = [
   {
     id: 37,
     name: 'Вегетарианская',
-    description: 'Томаты, сладкий перец, шампиньоны, маслины, красный лук, фирменный томатный соус, брынза и моцарелла',
+    description: 'Томаты, сладкий перец, шампиньоны, красный лук, фирменный томатный соус, моцарелла',
     price: 279,
     variants: [
-      { label: 'Кусочек', price: 75 },
-      { label: '20 см', price: 279 },
-      { label: '30 см', price: 479 }
+      { label: 'Кусочек', price: 65 },
+      { label: '20 см', price: 235 },
+      { label: '30 см', price: 525 }
     ],
     badge: 'Легкая',
     image: 'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&q=80&w=600',
