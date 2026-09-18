@@ -1300,67 +1300,85 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
 
 // Карточка товара (универсальная для всех разделов с поддержкой variants, image, badge)
 const ProductCard = ({ product, onAddToCart }) => {
-  const [selectedVariant, setSelectedVariant] = useState(0);
-  const currentPrice = product.variants ? product.variants[selectedVariant].price : product.price;
+  const [selectedVariant, setSelectedVariant] = useState(0);
+  const [selectedAddon, setSelectedAddon] = useState(PIZZA_ADDONS[0]);
 
-  return (
-    <div className="bg-white rounded-2xl p-4 flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 relative group">
-      <div className="relative aspect-square mb-4 overflow-hidden rounded-xl bg-gray-100">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-        />
-        {product.badge && (
-          <div className="absolute top-2 left-2 bg-[#FF6900] text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
-            {product.badge}
-          </div>
-        )}
-      </div>
+  const basePrice = product.variants ? product.variants[selectedVariant].price : product.price;
+  const currentPrice = basePrice + selectedAddon.price;
 
-      <div className="flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-gray-800 mb-1">{product.name}</h3>
-        <p className="text-sm text-gray-500 flex-grow leading-relaxed mb-3">
-          {product.description}
-        </p>
-        
-        {product.variants && (
-          <div className="bg-gray-100 rounded-lg p-1 flex justify-between items-center mb-4 mt-auto">
-            {product.variants.map((variant, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedVariant(index)}
-                className={`flex-1 text-xs py-1.5 rounded-md font-medium transition-all duration-200 ${
-                  selectedVariant === index
-                    ? 'bg-white shadow-sm text-gray-900'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {variant.label}
-              </button>
-            ))}
-          </div>
-        )}
+  const handleAdd = () => {
+    onAddToCart(
+      product, 
+      product.variants ? selectedVariant : null, 
+      selectedAddon.id ? [selectedAddon] : []
+    );
+    setSelectedAddon(PIZZA_ADDONS[0]);
+  };
 
-        <div className={`flex justify-between items-center pt-4 border-t border-gray-100 ${!product.variants ? 'mt-auto' : ''}`}>
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold text-gray-900">{currentPrice} ₽</span>
-            {(product.category === 'mangal' || product.category === 'salads' || product.category === 'hot' || product.category === 'garnish') && !product.variants && (
-              <span className="text-xs text-gray-500 font-medium">за 100 г</span>
-            )}
-          </div>
-          <button 
-            onClick={() => onAddToCart(product, product.variants ? selectedVariant : null)}
-            className="bg-[#FFF4ED] text-[#FF6900] hover:bg-[#FF6900] hover:text-white transition-colors duration-300 font-semibold px-5 py-2 rounded-xl"
-          >
-            Выбрать
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+  return (
+    <div className="bg-white rounded-2xl p-4 flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 relative group">
+      <div className="relative aspect-square mb-4 overflow-hidden rounded-xl bg-gray-100">
+        <img src={product.image} alt={product.name} className="object-cover w-full h-full" />
+        {product.badge && (
+          <div className="absolute top-2 left-2 bg-[#FF6900] text-white text-xs font-bold px-2 py-1 rounded-md">
+            {product.badge}
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-col flex-grow">
+        <h3 className="text-lg font-bold text-gray-800 mb-1">{product.name}</h3>
+        <p className="text-sm text-gray-500 flex-grow leading-relaxed mb-3">{product.description}</p>
+        
+        {product.variants && (
+          <div className="bg-gray-100 rounded-lg p-1 flex justify-between items-center mb-3">
+            {product.variants.map((variant, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedVariant(index)}
+                className={`flex-1 text-xs py-1.5 rounded-md font-medium transition-all ${
+                  selectedVariant === index ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500'
+                }`}
+              >
+                {variant.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Выпадающее меню доп. ингредиентов для пиццы */}
+        {product.category === 'pizza' && (
+          <div className="mb-3">
+            <select
+              value={selectedAddon.id}
+              onChange={(e) => {
+                const found = PIZZA_ADDONS.find(a => a.id === e.target.value);
+                setSelectedAddon(found);
+              }}
+              className="w-full text-xs p-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-[#FF6900] text-gray-800 font-medium cursor-pointer shadow-sm"
+            >
+              {PIZZA_ADDONS.map(addon => (
+                <option key={addon.id} value={addon.id}>
+                  {addon.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div className="flex justify-between items-center pt-3 border-t border-gray-100 mt-auto">
+          <span className="text-xl font-extrabold text-gray-900">{currentPrice} ₽</span>
+          <button 
+            onClick={handleAdd}
+            className="bg-[#FFF4ED] text-[#FF6900] hover:bg-[#FF6900] hover:text-white transition font-semibold px-5 py-2 rounded-xl text-sm"
+          >
+            Выбрать
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
-
 // Сетка товаров
 const ProductGrid = ({ title, products, onAddToCart }) => {
   if (products.length === 0) return null;
