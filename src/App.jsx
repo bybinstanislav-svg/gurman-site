@@ -3,6 +3,7 @@ import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus,
 
 // 1. Доступные дополнительные ингредиенты для пиццы
 const PIZZA_ADDONS = [
+  { id: '', name: 'Без дополнительных ингредиентов', price: 0 },
   { id: 'cheese', name: 'Сыр Моцарелла', price: 69 },
   { id: 'jalapeno', name: 'Перец Халапеньо', price: 49 },
   { id: 'tomato', name: 'Томаты', price: 49 },
