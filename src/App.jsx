@@ -1,15 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus, Trash2, Check } from 'lucide-react';
 
-// 1. Доступные дополнительные ингредиенты для пиццы
+// 1. Добавьте этот массив в самое начало файла (перед компонентами)
 const PIZZA_ADDONS = [
-  { id: '', name: 'Без дополнительных ингредиентов', price: 0 },
-  { id: 'cheese', name: 'Сыр Моцарелла', price: 69 },
-  { id: 'jalapeno', name: 'Перец Халапеньо', price: 49 },
-  { id: 'tomato', name: 'Томаты', price: 49 },
-  { id: 'cheesedrop', name: 'Соус Сырный', price: 39 },
-  { id: 'bbq', name: 'Соус Барбекю', price: 39 },
-  { id: 'bacon', name: 'Бекон', price: 89 },
+  { id: '', name: 'Без доп. ингредиентов', price: 0 },
+  { id: 'cheese', name: 'Сыр Моцарелла — 69 ₽', price: 69 },
+  { id: 'jalapeno', name: 'Перец Халапеньо — 49 ₽', price: 49 },
+  { id: 'tomato', name: 'Томаты — 49 ₽', price: 49 },
+  { id: 'cheesedrop', name: 'Соус Сырный — 39 ₽', price: 39 },
+  { id: 'bbq', name: 'Соус Барбекю — 39 ₽', price: 39 },
+  { id: 'bacon', name: 'Бекон — 89 ₽', price: 89 },
 ];
 
 // 1. Мок-данные меню (с поддержкой image, badge и variants для всех разделов)
@@ -1347,7 +1347,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           </div>
         )}
 
-        {/* Выпадающее меню доп. ингредиентов для пиццы */}
+        {/* Выпадающее меню доп. ингредиентов для пиццы с ценами */}
         {product.category === 'pizza' && (
           <div className="mb-3">
             <select
