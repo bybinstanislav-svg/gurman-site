@@ -1,4 +1,4 @@
-.replica-wrapper {
+.tv-replica-wrapper {
   background-color: #cbd5e1;
   color: #0f172a;
   font-family: 'Montserrat', sans-serif;
@@ -9,174 +9,142 @@
   gap: 60px;
 }
 
-/* Вертикальный плакат 9:16 (720px на 1280px) НА БЕЛОМ ФОНЕ */
-.replica-poster {
+/* Вертикальный плакат 9:16 */
+.tv-poster {
   width: 720px;
   height: 1280px;
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #94a3b8;
-  padding: 25px 20px;
+  padding: 30px 25px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 25px 50px rgba(0,0,0,0.15);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-.replica-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px solid #0f172a;
+.tv-header {
+  border-bottom: 4px solid #0f172a;
   padding-bottom: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   flex-shrink: 0;
 }
 
-.replica-main-title {
-  font-size: 28px;
+.tv-main-title {
+  font-size: 36px;
   font-weight: 900;
   color: #0f172a;
   margin: 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-.replica-legend {
-  display: flex;
-  gap: 8px;
-}
-
-.badge-spicy {
-  background: #FF6900;
-  color: white;
-  font-size: 11px;
-  font-weight: 800;
-  padding: 5px 12px;
-  border-radius: 15px;
-  text-transform: uppercase;
-}
-
-/* Сетка-таблица: ровно 3 колонки и 4 строки (12 позиций на экран) */
-.replica-grid {
+/* Сетка карточек: фиксируем в 2 ряда, чтобы они не растягивались на всю высоту */
+.tv-grid-large {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  border-top: 2px solid #0f172a;
-  border-left: 2px solid #0f172a;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
   flex-grow: 1;
 }
 
-.replica-card {
-  background: #ffffff;
-  border-right: 2px solid #0f172a;
-  border-bottom: 2px solid #0f172a;
-  padding: 8px 8px 10px 8px;
+/* Аккуратная карточка фиксированной высоты по содержимому */
+.tv-card-large {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px 14px 16px 14px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
-  box-sizing: border-box;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.03);
 }
 
-.replica-top {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex-shrink: 0;
-}
-
-.replica-title-row {
+.tv-card-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4px;
+  margin-bottom: 6px;
 }
 
-.replica-name {
-  font-size: 12.5px;
-  font-weight: 800;
+.tv-card-title {
+  font-size: 16px;
+  font-weight: 900;
   color: #0f172a;
   margin: 0;
-  line-height: 1.15;
-  font-style: italic;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.replica-letter {
+.tv-card-letter {
   background: #ffffff;
   color: #0f172a;
-  border: 1px solid #0f172a;
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
+  border: 1.5px solid #0f172a;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 8.5px;
+  font-size: 10px;
   font-weight: bold;
 }
 
-.replica-desc {
-  font-size: 9px;
+.tv-card-text-desc {
+  font-size: 10px;
   color: #475569;
-  margin: 0;
-  line-height: 1.2;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.replica-bottom {
+/* Нижняя строка: цены слева, круглая фото справа вплотную */
+.tv-card-bottom-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-  flex-grow: 1;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
 }
 
-.replica-img-container {
-  width: 100%;
-  flex-grow: 1;
-  max-height: 95px;
-  border-radius: 6px;
+.tv-card-prices-col {
+  display: flex;
+  flex-direction: column;
+  font-size: 11.5px;
+  color: #334155;
+  gap: 2px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tv-card-prices-col b {
+  color: #059669;
+  font-size: 12px;
+}
+
+.tv-card-circle-img {
+  width: 85px;
+  height: 85px;
+  min-width: 85px;
+  border-radius: 50%;
   overflow: hidden;
-  background: #f8fafc;
+  background: #ffffff;
+  border: 2.5px solid #0f172a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 3px;
 }
 
-.replica-img {
+.tv-card-circle-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-.replica-price {
-  font-size: 13px;
-  font-weight: 900;
-  color: #059669;
-  flex-shrink: 0;
-}
-
-.replica-pizza-prices {
-  display: flex;
-  flex-direction: column;
-  font-size: 7.5px;
-  color: #475569;
-  gap: 1px;
-  text-align: center;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.replica-pizza-prices b {
-  color: #059669;
-  font-size: 8.5px;
+  object-fit: cover;
 }
 
 .gurman-admin-btn {
