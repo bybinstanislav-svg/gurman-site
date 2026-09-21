@@ -21,7 +21,6 @@ const MENU_DATA = [
     description: 'Томатный соус, ветчина, бекон, охотничьи колбаски, помидоры, моцарелла, зелень',
     price: 359,
     variants: [
-      { label: 'Кусочек', price: 77 },
       { label: '20 см', price: 325 },
       { label: '30 см', price: 595 }
     ],
@@ -35,7 +34,6 @@ const MENU_DATA = [
     description: 'Пикантная пепперони, увеличенная порция моцареллы, томатный соус',
     price: 289,
     variants: [
-      { label: 'Кусочек', price: 82 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 635 }
     ],
@@ -49,7 +47,6 @@ const MENU_DATA = [
     description: 'Пармезан, чедер, много моцареллы, дор блю, чесночное масло',
     price: 249,
     variants: [
-      { label: 'Кусочек', price: 90 },
       { label: '20 см', price: 315 },
       { label: '30 см', price: 725 }
     ],
@@ -63,7 +60,6 @@ const MENU_DATA = [
     description: 'Колбаса варена копченая, помидоры, перец болгарский, майонез, моцарелла, фирменный томатный соус',
     price: 389,
     variants: [
-      { label: 'Кусочек', price: 75 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 595 }
     ],
@@ -77,7 +73,6 @@ const MENU_DATA = [
     description: 'Сочные ананасы, колбаса варена копченая, фирменный томатный соус, моцареллы',
     price: 299,
     variants: [
-      { label: 'Кусочек', price: 79 },
       { label: '20 см', price: 315 },
       { label: '30 см', price: 499 }
     ],
@@ -91,7 +86,6 @@ const MENU_DATA = [
     description: 'Ветчина, томаты, маринованные огурчики, моцарелла, красный лук, соус бургер, фирменный томатный соус',
     price: 399,
     variants: [
-      { label: 'Кусочек', price: 99 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 599 }
     ],
@@ -105,7 +99,6 @@ const MENU_DATA = [
     description: 'Томатный соус, ветчина, пепперони, охотничьи колбаски, острый перчик, лук, моцарелла',
     price: 349,
     variants: [
-      { label: 'Кусочек', price: 77 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 595 }
     ],
@@ -119,7 +112,6 @@ const MENU_DATA = [
     description: 'Чесночное масло, курочка, моцарелла, помидоры, соус ранч, салат листовой',
     price: 269,
     variants: [
-      { label: 'Кусочек', price: 70 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 535 }
     ],
@@ -133,7 +125,6 @@ const MENU_DATA = [
     description: 'Куриное филе, шампиньоны, насыщенный грибной соус, сыр моцарелла',
     price: 329,
     variants: [
-      { label: 'Кусочек', price: 75 },
       { label: '20 см', price: 365 },
       { label: '30 см', price: 595 }
     ],
@@ -147,7 +138,6 @@ const MENU_DATA = [
     description: 'Сочная ветчина, бекон, соус барбекю, болгарский перец, томаты, сыр моцарелла',
     price: 369,
     variants: [
-      { label: 'Кусочек', price: 84 },
       { label: '20 см', price: 275 },
       { label: '30 см', price: 655 }
     ],
@@ -161,12 +151,11 @@ const MENU_DATA = [
     description: 'Томаты, сладкий перец, шампиньоны, красный лук, фирменный томатный соус, моцарелла',
     price: 279,
     variants: [
-      { label: 'Кусочек', price: 65 },
       { label: '20 см', price: 235 },
       { label: '30 см', price: 525 }
     ],
     badge: 'Легкая',
-    image: 'https://images.unsplash.com/photo-1576458088443-04a19bb13da6?auto=format&fit=crop&q=80&w=600',
+    image: 'veget.jpg',
     category: 'pizza'
   }, /*
   {
@@ -175,7 +164,6 @@ const MENU_DATA = [
     description: 'Большая порция креветок, фирминый соус, моцарелла, чесночное масло, перец болгарский',
     price: 459,
     variants: [
-      { label: 'Кусочек', price: 120 },
       { label: '30 см', price: 699 }
     ],
     badge: 'Премиум',
@@ -188,7 +176,6 @@ const MENU_DATA = [
     description: 'Бекон, курица, томат, моцарелла, сырный соус, хрустящий лук',
     price: 339,
     variants: [
-      { label: 'Кусочек', price: 75 },
       { label: '20 см', price: 365 },
       { label: '30 см', price: 595 }
     ],
@@ -202,7 +189,6 @@ const MENU_DATA = [
     description: 'Томатный соус, салями, охотничьи колбаски, бекон, острый перчик, маринованные огурчики, грибы, моцарелла',
     price: 319,
     variants: [
-      { label: 'Кусочек', price: 85 },
       { label: '20 см', price: 355 },
       { label: '30 см', price: 755 }
     ],
@@ -216,7 +202,6 @@ const MENU_DATA = [
     description: 'Томатный соус, куриный фарш, томат, лук, острый перчик, моцарелла',
     price: 319,
     variants: [
-      { label: 'Кусочек', price: 85 },
       { label: '20 см', price: 315 },
       { label: '30 см', price: 755 }
     ],
@@ -315,7 +300,7 @@ const MENU_DATA = [
     description: 'Сыр, охотничьи колбаски, маринованные огурчики и перчик халапеньо с барбекю соусом в зажаристой пшеничной лепешке.',
     price: 139,
     badge: null,
-    image: 'dracon2.png',
+    image: 'dracon2.jpg',
     category: 'fastfood'
   },
   {
@@ -389,16 +374,16 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1569691899455-88464f6d3ab1?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, */
   {
     id: 66,
-    name: 'Кесадилья с курицей',
-    description: 'Мексиканская лепешка с начинкой из курицы, сыра, овощей и соуса сальса, обжаренная на гриле.',
+    name: 'Боксмастер',
+    description: 'Мексиканская лепешка с начинкой из куриных стрипсов, картофельной котлете, овощей, сырный соус и соус ранч, обжаренная в печи.',
     price: 239,
     badge: 'Новинка',
-    image: 'https://images.unsplash.com/photo-1618040996337-56858e98bc36?auto=format&fit=crop&q=80&w=600',
+    image: 'boks.jpg',
     category: 'fastfood'
-  },
+  }, /*
   {
     id: 67,
     name: 'Бургер Барбекю',
@@ -1050,11 +1035,11 @@ const MENU_DATA = [
   },
   {
     id: 9,
-    name: 'Шашлык из куриного филе',
+    name: 'Сувлаки из куриного филе',
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
     price: 155,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&q=80&w=600',
+    image: 'suvlaki-kuriza.jpg',
     category: 'mangal'
   },
   {
