@@ -155,7 +155,7 @@ const MENU_DATA = [
       { label: '30 см', price: 525 }
     ],
     badge: 'Легкая',
-    image: 'veget.jpg',
+    image: 'veget1.png',
     category: 'pizza'
   }, /*
   {
