@@ -345,7 +345,7 @@ const MENU_DATA = [
     description: 'Поджаренный тостовый хлеб, ветчина, сыр, листья салата, помидоры, майонез.',
     price: 165,
     badge: null,
-    image: 'sendvish-vetchina.jpg',
+    image: 'sendvish-vetchina-.png',
     category: 'fastfood'
   },
   {
@@ -354,7 +354,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе, сыр, свежие овощи и легкий соус в хрустящем хлебе.',
     price: 115,
     badge: null,
-    image: 'sendvish-kuriza.jpg',
+    image: 'sendvish-kuriza-.png',
     category: 'fastfood'
   },
   {
@@ -1057,7 +1057,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
     price: 135,
     badge: null,
-    image: 'suvlaki-kuriza.jpg',
+    image: 'suvlaki-kuriza-.png',
     category: 'mangal'
   },
   {
@@ -1129,7 +1129,7 @@ const MENU_DATA = [
     description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
-    image: 'lula-kuriza.jpg',
+    image: 'lula-kuriza-.png',
     category: 'mangal'
   },
   {
@@ -1147,7 +1147,7 @@ const MENU_DATA = [
     description: 'Нежный рубленый люля-кебаб из сочной свинины.',
     price: 110,
     badge: null,
-    image: 'govadina-svinina.jpg',
+    image: 'lula-kuriza-.png',
     category: 'mangal'
   }, /*
   {
@@ -1192,7 +1192,7 @@ const MENU_DATA = [
     description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
     price: 125,
     badge: 'К пиву',
-    image: 'krilo.jpg',
+    image: 'krilo-.png',
     category: 'mangal'
   },
   {
@@ -1210,7 +1210,7 @@ const MENU_DATA = [
     description: 'Сочные домашние купаты с пряными травами и специями.',
     price: 120,
     badge: null,
-    image: 'kupati.jpg',
+    image: 'kupati-.png',
     category: 'mangal'
   },
   {
