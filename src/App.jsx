@@ -1511,7 +1511,7 @@ const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div className="bg-white rounded-2xl p-4 flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 relative group">
       <div className="relative aspect-square mb-4 overflow-hidden rounded-xl bg-gray-100">
-        <img src={product.image} alt={product.name} className="object-contain w-full h-full" />
+        <img src={product.image} alt={product.name} className="object-conver w-full h-full" />
         {product.badge && (
           <div className="absolute top-2 left-2 bg-[#FF6900] text-white text-xs font-bold px-2 py-1 rounded-md">
             {product.badge}
