@@ -157,19 +157,19 @@ const MENU_DATA = [
     badge: 'Легкая',
     image: 'veget1.png',
     category: 'pizza'
-  }, /*
+  }, 
   {
     id: 12,
-    name: 'Морская',
-    description: 'Большая порция креветок, фирминый соус, моцарелла, чесночное масло, перец болгарский',
+    name: 'с Семгой',
+    description: 'Семга, фирминый соус, моцарелла, томат, маслины, рукола, перец болгарский',
     price: 459,
     variants: [
       { label: '30 см', price: 699 }
     ],
     badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?auto=format&fit=crop&q=80&w=600',
+    image: 's-semgoi.png',
     category: 'pizza'
-  }, */
+  }, 
   {
     id: 13,
     name: 'Чиз Карбонара',
@@ -206,7 +206,7 @@ const MENU_DATA = [
       { label: '30 см', price: 755 }
     ],
     badge: 'Острая',
-    image: 'ohotnichia.png',
+    image: 'mexika.png',
     category: 'pizza'
   },
 
@@ -300,7 +300,7 @@ const MENU_DATA = [
     description: 'Сыр, охотничьи колбаски, маринованные огурчики и перчик халапеньо с барбекю соусом в зажаристой пшеничной лепешке.',
     price: 139,
     badge: null,
-    image: 'dracon2.jpg',
+    image: 'dracon2.png',
     category: 'fastfood'
   },
   {
@@ -309,7 +309,7 @@ const MENU_DATA = [
     description: 'Обжаренное куриное филе, свежие овощи, фирменный чесночный соус, завернутые в тонкий лаваш.',
     price: 175,
     badge: 'Сытно',
-    image: 'shaurma.jpg',
+    image: 'shaurma3.jpg',
     category: 'fastfood'
   },
   {
@@ -318,7 +318,7 @@ const MENU_DATA = [
     description: 'Сочная курица, картофель фри, капуста, томаты, огурцы, пикантный соус.',
     price: 175,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&q=80&w=600',
+    image: 'giro.jpg',
     category: 'fastfood'
   },
   {
@@ -336,7 +336,7 @@ const MENU_DATA = [
     description: 'Обжаренная сосиска в закрытой французской булочке с соусом.',
     price: 125,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&q=80&w=600',
+    image: 'dog.jpg',
     category: 'fastfood'
   },
   {
@@ -345,7 +345,7 @@ const MENU_DATA = [
     description: 'Поджаренный тостовый хлеб, ветчина, сыр, листья салата, помидоры, майонез.',
     price: 165,
     badge: null,
-    image: 'sendvish-vetchina-.png',
+    image: 'send-vetshina.jpg',
     category: 'fastfood'
   },
   {
@@ -354,7 +354,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе, сыр, свежие овощи и легкий соус в хрустящем хлебе.',
     price: 115,
     badge: null,
-    image: 'sendvish-kuriza-.png',
+    image: 'send-kuriza.jpg',
     category: 'fastfood'
   },
   {
@@ -381,7 +381,7 @@ const MENU_DATA = [
     description: 'Мексиканская лепешка с начинкой из куриных стрипсов, картофельной котлете, овощей, сырный соус и соус ранч, обжаренная в печи.',
     price: 239,
     badge: 'Новинка',
-    image: 'boks.jpg',
+    image: 'boxmaster.png',
     category: 'fastfood'
   }, /*
   {
