@@ -1348,6 +1348,7 @@ const MENU_DATA = [
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
   }
+];  
 
 // Витрина видео (рилсы) для всех вкладок
 const REELS_DATA = [
