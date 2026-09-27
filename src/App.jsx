@@ -235,7 +235,7 @@ const MENU_DATA = [
     description: 'Пшеничная лепешка, куриное филе, салат айсберг, томаты, огурец свежий, соус ранч',
     price: 195,
     badge: null,
-    image: 'fresh-roll.png',
+    image: 'fresh-roll1.png',
     category: 'fastfood'
   }, /*
   {
