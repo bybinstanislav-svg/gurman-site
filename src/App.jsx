@@ -68,7 +68,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
   {
-    id: 31,
+    id: 5,
     name: 'Гавайская',
     description: 'Сочные ананасы, колбаса варена копченая, фирменный томатный соус, моцареллы',
     price: 299,
@@ -81,7 +81,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
   {
-    id: 32,
+    id: 6,
     name: 'Бургер-пицца',
     description: 'Ветчина, томаты, маринованные огурчики, моцарелла, красный лук, соус бургер, фирменный томатный соус',
     price: 399,
@@ -94,7 +94,7 @@ const MENU_DATA = [
     category: 'pizza'
   }, 
   {
-    id: 33,
+    id: 7,
     name: 'Диабло',
     description: 'Томатный соус, ветчина, пепперони, охотничьи колбаски, острый перчик, лук, моцарелла',
     price: 349,
@@ -107,7 +107,7 @@ const MENU_DATA = [
     category: 'pizza'
   }, 
   {
-    id: 34,
+    id: 8,
     name: 'Цезарь',
     description: 'Чесночное масло, курочка, моцарелла, помидоры, соус ранч, салат листовой',
     price: 269,
@@ -120,7 +120,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
   {
-    id: 35,
+    id: 9,
     name: 'Жульен',
     description: 'Куриное филе, шампиньоны, насыщенный грибной соус, сыр моцарелла',
     price: 329,
@@ -133,7 +133,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
   {
-    id: 36,
+    id: 10,
     name: 'Барбекю',
     description: 'Сочная ветчина, бекон, соус барбекю, болгарский перец, томаты, сыр моцарелла',
     price: 369,
@@ -146,7 +146,7 @@ const MENU_DATA = [
     category: 'pizza'
   }, 
   {
-    id: 37,
+    id: 11,
     name: 'Вегетарианская',
     description: 'Томаты, сладкий перец, шампиньоны, красный лук, фирменный томатный соус, моцарелла',
     price: 279,
@@ -159,7 +159,7 @@ const MENU_DATA = [
     category: 'pizza'
   }, /*
   {
-    id: 38,
+    id: 12,
     name: 'Морская',
     description: 'Большая порция креветок, фирминый соус, моцарелла, чесночное масло, перец болгарский',
     price: 459,
@@ -171,7 +171,7 @@ const MENU_DATA = [
     category: 'pizza'
   }, */
   {
-    id: 39,
+    id: 13,
     name: 'Чиз Карбонара',
     description: 'Бекон, курица, томат, моцарелла, сырный соус, хрустящий лук',
     price: 339,
@@ -184,7 +184,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
   {
-    id: 40,
+    id: 14,
     name: 'Охотничья',
     description: 'Томатный соус, салями, охотничьи колбаски, бекон, острый перчик, маринованные огурчики, грибы, моцарелла',
     price: 319,
@@ -197,7 +197,7 @@ const MENU_DATA = [
     category: 'pizza'
   },
    {
-    id: 400,
+    id: 15,
     name: 'Мексиканская',
     description: 'Томатный соус, куриный фарш, томат, лук, острый перчик, моцарелла',
     price: 319,
@@ -212,7 +212,7 @@ const MENU_DATA = [
 
   // --- ФАСТ ФУД ---
   {
-    id: 5,
+    id: 16,
     name: 'Гриль бургер с говядиной',
     description: 'Сочная говяжья котлета, 2 ломтика чеддера, салат айсберг, помидоры, соленые огурчики, лук, фирменный соус гриль',
     price: 199,
@@ -221,7 +221,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 6,
+    id: 17,
     name: 'Чикенбургер с куриной котлетой',
     description: 'Хрустящая куриная котлета, салат, помидоры,огурец соленый, соус ранч, сырный соус',
     price: 179,
@@ -230,7 +230,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 7,
+    id: 18,
     name: 'Фреш ролл',
     description: 'Пшеничная лепешка, куриное филе, салат айсберг, томаты, огурец свежий, соус ранч',
     price: 195,
@@ -239,7 +239,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, /*
   {
-    id: 51,
+    id: 19,
     name: 'Чизбургер',
     description: 'Говяжья котлета, сыр чеддер, маринованные огурчики, кетчуп, горчица на карамелизованной булочке.',
     price: 159,
@@ -248,7 +248,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, */
   {
-    id: 52,
+    id: 20,
     name: 'Ролл мясной',
     description: 'СуПеР МяСнОй ролл в пшеничной лепёшке с сырам чеддер и нежной моцареллой, томатами, пепперони и куриным фаршем под знакомым соусом гриль с дымком!',
     price: 249,
@@ -257,7 +257,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 53,
+    id: 21,
     name: 'Ролл Сырный с курицой',
     description: 'Лепешка пшеничная, моцарелла, филе куриное, жареный лучок, помидоры, сырный соус',
     price: 119,
@@ -266,7 +266,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, /*
   {
-    id: 54,
+    id: 22,
     name: 'Сырные палочки',
     description: 'Тянущийся сыр моцарелла в хрустящей панировке, обжаренный во фритюре.',
     price: 169,
@@ -275,7 +275,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, */
   {
-    id: 55,
+    id: 23,
     name: 'Картофель фри',
     description: 'ЦЕНА ЗА 100 грамм! Золотистая, хрустящая снаружи и мягкая внутри картошка фри с солью.',
     price: 65,
@@ -285,7 +285,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 56,
+    id: 24,
     name: 'Картофель Айдахо',
     description: 'ЦЕНА ЗА 100 грамм! Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
     price: 129,
@@ -295,7 +295,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 57,
+    id: 25,
     name: 'Ролл дракон',
     description: 'Сыр, охотничьи колбаски, маринованные огурчики и перчик халапеньо с барбекю соусом в зажаристой пшеничной лепешке.',
     price: 139,
@@ -304,7 +304,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 58,
+    id: 26,
     name: 'Шаурма с курицей',
     description: 'Обжаренное куриное филе, свежие овощи, фирменный чесночный соус, завернутые в тонкий лаваш.',
     price: 175,
@@ -313,7 +313,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 59,
+    id: 27,
     name: 'Гиро с курицой',
     description: 'Сочная курица, картофель фри, капуста, томаты, огурцы, пикантный соус.',
     price: 175,
@@ -322,7 +322,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 60,
+    id: 28,
     name: 'Хот-дог классический',
     description: 'Мясная сосиска в мягкой булочке с кетчупом, горчицей и хрустящим луком.',
     price: 84,
@@ -331,7 +331,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 61,
+    id: 29,
     name: 'Френч-дог с курино-говяжей сосиской',
     description: 'Обжаренная сосиска в закрытой французской булочке с соусом.',
     price: 125,
@@ -340,7 +340,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 62,
+    id: 30,
     name: 'Сэндвич с ветчиной',
     description: 'Поджаренный тостовый хлеб, ветчина, сыр, листья салата, помидоры, майонез.',
     price: 165,
@@ -349,7 +349,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 63,
+    id: 31,
     name: 'Сэндвич с курицей',
     description: 'Нежное куриное филе, сыр, свежие овощи и легкий соус в хрустящем хлебе.',
     price: 115,
@@ -358,7 +358,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 64,
+    id: 32,
     name: 'Острые крылышки Баффало (5 шт)',
     description: 'Куриные крылышки в пикантной острой панировке. Осторожно, очень остро!',
     price: 199,
@@ -367,7 +367,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, /*
   {
-    id: 65,
+    id: 33,
     name: 'Куриные стрипсы (4 шт)',
     description: 'Длинные кусочки куриного филе в хрустящей оригинальной панировке.',
     price: 169,
@@ -376,7 +376,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, */
   {
-    id: 66,
+    id: 34,
     name: 'Боксмастер',
     description: 'Мексиканская лепешка с начинкой из куриных стрипсов, картофельной котлете, овощей, сырный соус и соус ранч, обжаренная в печи.',
     price: 239,
@@ -385,7 +385,7 @@ const MENU_DATA = [
     category: 'fastfood'
   }, /*
   {
-    id: 67,
+    id: 35,
     name: 'Бургер Барбекю',
     description: 'Говяжья котлета, бекон, сыр чеддер, салат, томаты, хрустящий лук и соус BBQ.',
     price: 249,
@@ -394,7 +394,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 68,
+    id: 36,
     name: 'Фишбургер',
     description: 'Нежное филе белой рыбы в панировке, сыр чеддер, салат айсберг и соус тартар.',
     price: 189,
@@ -403,7 +403,7 @@ const MENU_DATA = [
     category: 'fastfood'
   },
   {
-    id: 69,
+    id: 37,
     name: 'Сырный бургер',
     description: 'Для фанатов сыра: котлета из говядины, сырная котлета, соус сырный, чеддер.',
     price: 279,
@@ -415,7 +415,7 @@ const MENU_DATA = [
 /*
   // --- САЛАТЫ ---
   { 
-    id: 101,
+    id: 38,
     name: 'Салат Крабовые палочки с ананасом',
     description: 'Нежный салат из крабовых палочек с сочными ананасами',
     price: 49,
@@ -424,7 +424,7 @@ const MENU_DATA = [
     category: 'salads'
   },
   { 
-    id: 102, 
+    id: 39 
     name: 'Салат "Жозефина"', 
     description: 'Фирменный салат от шефа', 
     price: 58, 
@@ -433,7 +433,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 103, 
+    id: 40, 
     name: 'Салат Печень куриная с солеными грибами', 
     description: 'Сытный салат с куриной печенью и ароматными грибочками', 
     price: 57, 
@@ -442,7 +442,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   {
-     id: 104, 
+     id: 41, 
      name: 'Салат "Из свежей моркови с сыром"', 
      description: 'Легкий и витаминный салат', 
      price: 33, 
@@ -451,7 +451,7 @@ const MENU_DATA = [
      category: 'salads' 
     },
   { 
-    id: 105, 
+    id: 42, 
     name: 'Фасоль с жареными грибами и сыром', 
     description: 'Пикантное сочетание фасоли, грибов и сыра', 
     price: 63, 
@@ -460,7 +460,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 106, 
+    id: 43, 
     name: 'Салат "Фестиваль"', 
     description: 'Яркий и вкусный салат', 
     price: 47, 
@@ -469,7 +469,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 107, 
+    id: 44, 
     name: 'Салат "Мозаика"', 
     description: 'Разнообразие вкусов в одном блюде', 
     price: 52, badge: null, 
@@ -477,7 +477,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 108, 
+    id: 45, 
     name: 'Салат "Парус"', 
     description: 'Классический популярный салат', 
     price: 42, 
@@ -486,7 +486,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 109, 
+    id: 46, 
     name: 'Салат "Россия"', 
     description: 'Традиционные ингредиенты и прекрасный вкус', 
     price: 39, 
@@ -495,7 +495,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 110, 
+    id: 47, 
     name: 'Салат "Из печени трески"', 
     description: 'Изысканный салат с богатым вкусом', 
     price: 73, 
@@ -504,7 +504,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 111, 
+    id: 48, 
     name: 'Салат "Невод"', 
     description: 'С дарами моря', 
     price: 95, 
@@ -513,7 +513,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 112, 
+    id: 49, 
     name: 'Салат "Фурор"', 
     description: 'Произведет фурор за вашим столом', 
     price: 49, 
@@ -522,7 +522,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 113, 
+    id: 50, 
     name: 'Салат "Хрустантик"', 
     description: 'Хрустящий и освежающий салат', 
     price: 62, 
@@ -531,7 +531,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 114, 
+    id: 51, 
     name: 'Салат "Из ветчины и картофеля"',
     description: 'Сытный домашний салат', 
     price: 39, 
@@ -540,7 +540,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 115, 
+    id: 52, 
     name: 'Салат "Легкий"', 
     description: 'Ничего лишнего, только свежесть', 
     price: 54, 
@@ -549,7 +549,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 116, 
+    id: 53, 
     name: 'Салат "Перекус"', 
     description: 'Отличный вариант для быстрого перекуса', 
     price: 57, 
@@ -558,7 +558,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 117, 
+    id: 54, 
     name: 'Салат "Дачница"', 
     description: 'Летний вкус круглый год', 
     price: 55, 
@@ -567,7 +567,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 118, 
+    id: 55, 
     name: 'Салат с куриной печенью, грибами и помидорами', 
     description: 'Изысканное сочетание компонентов', 
     price: 40, 
@@ -576,7 +576,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 119, 
+    id: 56, 
     name: 'Салат "С копченым мясом и овощами"', 
     description: 'С ярким копченым ароматом', 
     price: 59, 
@@ -585,7 +585,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 120, 
+    id: 57, 
     name: 'Салат "Гости на пороге"', 
     description: 'Быстро, сытно и очень вкусно', 
     price: 45, 
@@ -594,7 +594,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 121, 
+    id: 58, 
     name: 'Салат из кальмаров', 
     description: 'Нежные кусочки кальмаров с отборными ингредиентами', 
     price: 82, 
@@ -603,7 +603,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 122, 
+    id: 59, 
     name: 'Салат с куриным филе, кукурузой и яблоком', 
     description: 'Оригинальное кисло-сладкое сочетание', 
     price: 54, 
@@ -612,7 +612,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 123, 
+    id: 60, 
     name: 'Салат "Изысканный"', 
     description: 'Для ценителей утонченных вкусов', 
     price: 30, 
@@ -621,7 +621,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 124, 
+    id: 61, 
     name: 'Салат "Полосатик"', 
     description: 'Красивая подача и отменный вкус', 
     price: 66, 
@@ -630,7 +630,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 125, 
+    id: 62, 
     name: 'Салат с крабовыми палочками, зеленью и огурцом', 
     description: 'Свежий и легкий салат', 
     price: 54, 
@@ -639,7 +639,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 126, 
+    id: 63, 
     name: 'Салат "Дворянский"', 
     description: 'Богатый состав и великолепный вкус', 
     price: 75, 
@@ -648,7 +648,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 127, 
+    id: 64, 
     name: 'Салат с креветками и гребешками', 
     description: 'Премиальный морской салат', 
     price: 68, 
@@ -657,7 +657,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   {
-    id: 128, 
+    id: 65, 
     name: 'Салат из куриного филе с фасолью', 
     description: 'Сытный белковый салат', 
     price: 52, 
@@ -666,7 +666,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 129, 
+    id: 66, 
     name: 'Салат из пекинской капусты с копченой курицей', 
     description: 'Нежная пекинская капуста с копченой курочкой', 
     price: 55, 
@@ -675,7 +675,7 @@ const MENU_DATA = [
     category: 'salads' 
   },
   { 
-    id: 130, 
+    id: 67, 
     name: 'Салат "С свежим огурцом и редисом"', 
     description: 'Весенняя свежесть на вашем столе', 
     price: 39, 
@@ -686,7 +686,7 @@ const MENU_DATA = [
 
   // --- ГОРЯЧИЕ БЛЮДА ---
   { 
-    id: 201, 
+    id: 68, 
     name: 'Плов из курицы', 
     description: 'Рассыпчатый рис с сочной курицей и восточными специями', 
     price: 40, 
@@ -695,7 +695,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 202, 
+    id: 69, 
     name: 'Плов из утки', 
     description: 'Ароматный плов с нежным мясом утки', 
     price: 65, 
@@ -704,7 +704,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 203, 
+    id: 70, 
     name: 'Вареники по-домашнему в ассорт.', 
     description: 'Традиционные домашние вареники', 
     price: 18, 
@@ -713,7 +713,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 204, 
+    id: 71, 
     name: 'Омлет в ассорт.', 
     description: 'Пышный и нежный омлет', 
     price: 44, 
@@ -722,7 +722,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 205, 
+    id: 72, 
     name: 'Печеночный торт', 
     description: 'Слоистый нежный печеночный торт с прослойкой', 
     price: 65, 
@@ -731,7 +731,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 206, 
+    id: 73, 
     name: 'Плов из свинины', 
     description: 'Сытный плов с отборной свининой', 
     price: 65, 
@@ -740,7 +740,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 207, 
+    id: 74, 
     name: 'Запеканка из блинчиков', 
     description: 'Сладкая или сытная запеканка из румяных блинчиков', 
     price: 55, 
@@ -749,7 +749,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 208, 
+    id: 75, 
     name: 'Котлета по-княжески', 
     description: 'Фирменная сочная котлета', 
     price: 67, 
@@ -758,7 +758,7 @@ const MENU_DATA = [
     category: 'hot'
   },
   { 
-    id: 209, 
+    id: 76, 
     name: 'Язык говяжий отварной', 
     description: 'Нежнейший деликатесный отварной язык', 
     price: 125, 
@@ -767,7 +767,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 210, 
+    id: 77, 
     name: 'Бифштекс с грибами', 
     description: 'Сочный бифштекс под грибным соусом', 
     price: 65, 
@@ -776,7 +776,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 211, 
+    id: 78, 
     name: 'Говядина тушеная с луком', 
     description: 'Мягкие кусочки говядины в подливке', 
     price: 125, 
@@ -785,7 +785,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 212, 
+    id: 79, 
     name: 'Шницель по-деревенски', 
     description: 'Хрустящий шницель из отборного мяса', 
     price: 64, 
@@ -794,7 +794,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 213, 
+    id: 80, 
     name: 'Печень куриная в сметане', 
     description: 'Куриная печень в мягком сметанном соусе', 
     price: 45, 
@@ -803,7 +803,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 214, 
+    id: 81, 
     name: 'Печень по-строгановски', 
     description: 'Классическое блюдо с подливкой', 
     price: 65, 
@@ -812,7 +812,7 @@ const MENU_DATA = [
     category: 'hot' 
   },
   { 
-    id: 215, 
+    id: 82, 
     name: 'Азу по-татарски', 
     description: 'Традиционное остро-пряное блюдо', 
     price: 85, 
@@ -823,7 +823,7 @@ const MENU_DATA = [
 
   // --- ГАРНИРЫ ---
   { 
-    id: 301, 
+    id: 83, 
     name: 'Картофель жареный с грибами', 
     description: 'Ароматный картофель с жареными грибочками', 
     price: 39, 
@@ -832,7 +832,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 302, 
+    id: 84, 
     name: 'Кабачки жареные с чесноком', 
     description: 'Нежные кабачки с пикантным чесночным ароматом', 
     price: 29, 
@@ -841,7 +841,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 303, 
+    id: 85, 
     name: 'Отварной картофель с укропом', 
     description: 'Классический отварной картофель со сливочным маслом и зеленью', 
     price: 39, 
@@ -850,7 +850,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   {
-    id: 304, 
+    id: 86, 
     name: 'Картофель фри', 
     description: 'Золотистая картошка обжариная во фритюре', 
     price: 33, 
@@ -859,7 +859,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 305, 
+    id: 87, 
     name: 'Гарнир "Из Перловки"', 
     description: 'Полезная и питательная перловая крупа', 
     price: 19, 
@@ -868,7 +868,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 306, 
+    id: 88, 
     name: 'Гарнир "Булгур с овощами"', 
     description: 'Булгур с добавлением сочных овощей', 
     price: 44, 
@@ -877,7 +877,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 307, 
+    id: 89, 
     name: 'Гарнир "Рис с грибами"', 
     description: 'Рассыпчатый рис с обжаренными грибами', 
     price: 39, 
@@ -886,7 +886,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 308, 
+    id: 90, 
     name: 'Гарнир "Рис"', 
     description: 'Классический рисовый гарнир', 
     price: 20, 
@@ -895,7 +895,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 309, 
+    id: 91, 
     name: 'Фасоль по-грузински', 
     description: 'Пикантная фасоль со специями и зеленью', 
     price: 20, 
@@ -904,7 +904,7 @@ const MENU_DATA = [
     category: 'garnish' 
   },
   { 
-    id: 310, 
+    id: 92, 
     name: 'Картофель Айдахо', 
     description: 'Запеченный до золотистой корочки картофель', 
     price: 17, 
@@ -915,7 +915,7 @@ const MENU_DATA = [
 /*
 // --- ВЫПЕЧКА ---
   {
-    id: 401,
+    id: 93,
     name: 'Котлета в тесте',
     description: 'Сочное рубленое мясо с луком в хрустящем слоеном тесте, запеченное в печи',
     price: 90,
@@ -924,7 +924,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
   {
-    id: 402,
+    id: 94,
     name: 'Осетинский пирог с мясом',
     description: 'Нежное куриное филе, шампиньоны и сыр в ароматной сдобной выпечке',
     price: 150,
@@ -933,7 +933,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
   {
-    id: 403,
+    id: 95,
     name: 'Хачапури',
     description: 'Два вида сыра в слоеном тесте',
     price: 220,
@@ -942,7 +942,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
   {
-    id: 404,
+    id: 96,
     name: 'Осетинский пирог с сыром и зеленью',
     description: 'Сочное рубленое мясо с луком в хрустящем слоеном тесте, запеченное в печи',
     price: 90,
@@ -951,7 +951,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
   {
-    id: 405,
+    id: 97,
     name: 'Осетинский пирог с сыром и картофелем',
     description: 'Нежное куриное филе, шампиньоны и сыр в ароматной сдобной выпечке',
     price: 150,
@@ -960,7 +960,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
   {
-    id: 406,
+    id: 98,
     name: 'Кекс',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 25,
@@ -969,7 +969,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 407,
+    id: 99,
     name: 'Пирожки с картошкой',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 29,
@@ -978,7 +978,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 408,
+    id: 100,
     name: 'Пирожки с печенью',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 29,
@@ -987,7 +987,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 409,
+    id: 101,
     name: 'Пирожки с капустой',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 29,
@@ -996,7 +996,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 410,
+    id: 102,
     name: 'Пирожки с луком и яйцом',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 29,
@@ -1005,7 +1005,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 411,
+    id: 103,
     name: 'Сосиска в тесте',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 45,
@@ -1014,7 +1014,7 @@ const MENU_DATA = [
     category: 'bakery'
   },
    {
-    id: 412,
+    id: 104,
     name: 'Беляши',
     description: 'Лодочка из сдобного теста с тянущимся сыром сулугуни и свежим желтым яйцом',
     price: 55,
@@ -1023,125 +1023,331 @@ const MENU_DATA = [
     category: 'bakery'
   },*/
 
-  // --- МАНГАЛ ---
-  {
-    id: 8,
-    name: 'Шашлык из свинины антрекот',
-    description: 'Кусочки антрекота, маринованные по фирменному рецепту и обжаренные на углях. Подается с луком.',
-    price: 155,
-    badge: 'Хит продаж',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 9,
-    name: 'Сувлаки из куриного филе',
-    description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
-    price: 155,
-    badge: null,
-    image: 'suvlaki-kuriza.jpg',
-    category: 'mangal'
-  },
-  {
-    id: 10,
-    name: 'Люля-кебаб из говядины',
-    description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
-    price: 145,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 41,
-    name: 'Шашлык из баранины',
-    description: 'Классический кавказский шашлык из отборной мякоти молодого барашка со специями.',
-    price: 280,
-    badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 42,
-    name: 'Форель речная',
-    description: 'Сочные свиные ребрышки, запеченные на огне в густом и сладковатом соусе барбекю.',
-    price: 170,
-    badge: 'Хит',
-    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 43,
-    name: 'Овощи на мангале "Хоровац"',
-    description: 'Овощи на мангале. Приготовленые в виде салата',
-    price: 110,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 44,
-    name: 'Куриные крылышки на углях',
-    description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
-    price: 140,
-    badge: 'К пиву',
-    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 45,
-    name: 'Шашлык из индейки',
-    description: 'Диетический, невероятно нежный шашлык из филе грудки индейки в легком маринаде.',
-    price: 180,
-    badge: 'Легкое',
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 46,
-    name: 'Шампиньоны на мангале',
-    description: 'Крупные шляпки свежих шампиньонов, запеченные с дымком в сливочно-чесночном соусе.',
-    price: 90,
-    badge: 'Вег',
-    image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  }, /*
-  {
-    id: 47,
-    name: 'Овощи гриль',
-    description: 'Сладкий болгарский перец, цукини, баклажаны и томаты черри, приготовленные на решетке с добавлением оливкового масла.',
-    price: 110,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  }, */
-  {
-    id: 48,
-    name: 'Стейк из семги',
-    description: 'Сочный стейк из красной рыбы, обжаренный на углях. Подается с долькой лимона.',
-    price: 450,
-    badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1599084990807-35368a41031d?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 49,
-    name: 'Картофель с салом на шампуре',
-    description: 'Молодой картофель, запеченный до румяной корочки вперемешку с ломтиками копченого сала.',
-    price: 60,
-    badge: 'Сытно',
-    image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  },
-  {
-    id: 50,
-    name: 'Люля-кебаб из курицы',
-    description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
-    price: 160,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1603360946369-00a89d4bc8f0?auto=format&fit=crop&q=80&w=600',
-    category: 'mangal'
-  }
-];
+ // --- МАНГАЛ ---
+  {
+    id: 105,
+    name: 'Шашлык из свинины (антрекот)',
+    description: 'Кусочки антрекота, маринованные по фирменному рецепту и обжаренные на углях. Подается с луком.',
+    price: 155,
+    badge: 'Хит продаж',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 106,
+    name: 'Шашлык из свинины (медальоны)',
+    description: 'Нежные медальоны из свинины, приготовленные на мангале до золотистой корочки.',
+    price: 169,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 107,
+    name: 'Шашлык из свинины (шея)',
+    description: 'Сочный и мягкий шашлык из свиной шейки со специями.',
+    price: 169,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 108,
+    name: 'Шашлык из куриного филе',
+    description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
+    price: 135,
+    badge: null,
+    image: 'suvlaki-kuriza.jpg',
+    category: 'mangal'
+  },
+  {
+    id: 109,
+    name: 'Шашлык из куриного бедра',
+    description: 'Сочное куриное бедро на косточке, зажаренное на углях.',
+    price: 110,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 110,
+    name: 'Шашлык из индейки',
+    description: 'Диетический, невероятно нежный шашлык из филе грудки индейки в легком маринаде.',
+    price: 195,
+    badge: 'Легкое',
+    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 111,
+    name: 'Шашлык из баранины',
+    description: 'Классический кавказский шашлык из отборной мякоти молодого барашка со специями.',
+    price: 175,
+    badge: 'Премиум',
+    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 112,
+    name: 'Шашлык из баранины "семечки"',
+    description: 'Нежные бараньи ребрышки на мангале.',
+    price: 155,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 113,
+    name: 'Шашлык из баранины пистолетики',
+    description: 'Изысканные бараньи каре на углях.',
+    price: 215,
+    badge: 'Премиум',
+    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 114,
+    name: 'Шашлык из телятины по-бакински',
+    description: 'Сочная телятина, приготовленная по традиционному рецепту.',
+    price: 199,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 115,
+    name: 'Люля-кебаб из говядины',
+    description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
+    price: 145,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 116,
+    name: 'Люля-кебаб из курицы',
+    description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
+    price: 115,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1603360946369-00a89d4bc8f0?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 117,
+    name: 'Люля-кебаб из баранины',
+    description: 'Ароматный рубленый люля-кебаб из молодой баранины.',
+    price: 155,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 118,
+    name: 'Люля из свинины',
+    description: 'Нежный рубленый люля-кебаб из сочной свинины.',
+    price: 110,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 119,
+    name: 'Люля картофельные',
+    description: 'Картофельный люля-кебаб, запеченный на мангале.',
+    price: 85,
+    badge: 'Вег',
+    image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 120,
+    name: 'Люля картофельные с сыром',
+    description: 'Картофельный люля с добавлением тягучего сыра.',
+    price: 95,
+    badge: 'Вег',
+    image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 121,
+    name: 'Форель речная',
+    description: 'Сочная речная форель, запеченная на углях. Подается с долькой лимона.',
+    price: 125,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 122,
+    name: 'Стейк из семги (Лосось стейк)',
+    description: 'Сочный стейк из красной рыбы, обжаренный на углях. Подается с долькой лимона.',
+    price: 270,
+    badge: 'Премиум',
+    image: 'https://images.unsplash.com/photo-1599084990807-35368a41031d?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 123,
+    name: 'Куриные крылышки на углях',
+    description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
+    price: 125,
+    badge: 'К пиву',
+    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 124,
+    name: 'Голень куриная',
+    description: 'Куриная голень в пряном маринаде на мангале.',
+    price: 110,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 125,
+    name: 'Купаты',
+    description: 'Сочные домашние купаты с пряными травами и специями.',
+    price: 120,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 126,
+    name: 'Ребрышки свиные',
+    description: 'Сочные свиные ребрышки, запеченные на огне.',
+    price: 115,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 127,
+    name: 'Шампиньоны на мангале (Грибы)',
+    description: 'Крупные шляпки свежих шампиньонов, запеченные с дымком.',
+    price: 120,
+    badge: 'Вег',
+    image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 128,
+    name: 'Овощи на мангале "Хоровац"',
+    description: 'Овощи на мангале, приготовленные в виде салата.',
+    price: 110,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 129,
+    name: 'Овощи в ассортименте',
+    description: 'Свежие овощи-гриль в ассортименте.',
+    price: 95,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 130,
+    name: 'Картофель молодой с салом/курдюком',
+    description: 'Молодой картофель, запеченный до румяной корочки с сало/курдюком.',
+    price: 95,
+    badge: 'Сытно',
+    image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 131,
+    name: 'Картофель с салом',
+    description: 'Запеченный картофель с кусочками сала.',
+    price: 70,
+    badge: 'Сытно',
+    image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 132,
+    name: 'Перепелки',
+    description: 'Нежные перепелки на мангале.',
+    price: 195,
+    badge: 'Премиум',
+    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 133,
+    name: 'Печень баранья в бараньей сетке',
+    description: 'Сочная баранья печень в сетке на углях.',
+    price: 135,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 134,
+    name: 'Печень в сетке (свиная/говяжья)',
+    description: 'Нежная печень в жировой сетке, приготовленная на мангале.',
+    price: 125,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 135,
+    name: 'Печень говяжья с салом/курдюком',
+    description: 'Говяжья печень на шампуре с добавлением сала.',
+    price: 125,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 136,
+    name: 'Почки бараньи',
+    description: 'Пикантные бараньи почки на углях.',
+    price: 99,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 137,
+    name: 'Сердечки бараньи',
+    description: 'Нежные бараньи сердечки, приготовленные на мангале.',
+    price: 99,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 138,
+    name: 'Гербышки говяжьи',
+    description: 'Хрустящие говяжьи гербышки на углях.',
+    price: 110,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 139,
+    name: 'Язык бараний',
+    description: 'Изысканный деликатес на мангале.',
+    price: 165,
+    badge: 'Премиум',
+    image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {
+    id: 140,
+    name: 'Язык свиной',
+    description: 'Нежный свиной язык, запеченный на углях.',
+    price: 125,
+    badge: null,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  }
 
 // Витрина видео (рилсы) для всех вкладок
 const REELS_DATA = [
@@ -1532,7 +1738,7 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems }) => {
               <span className="text-3xl font-extrabold text-gray-900">{totalPrice} ₽</span>
             </div>
             <a 
-              href="tel:910210"
+              href="tel:89624010210"
               className="w-full bg-[#FF6900] hover:bg-[#E05B00] transition-colors text-white py-3.5 rounded-xl font-bold text-lg flex justify-center items-center gap-2 shadow-lg shadow-orange-500/30"
             >
               <Phone className="w-5 h-5" />
