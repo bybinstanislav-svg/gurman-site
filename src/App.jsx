@@ -1282,7 +1282,7 @@ const MENU_DATA = [
     description: 'Сочная баранья печень в сетке на углях.',
     price: 135,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'peshen-v-setke.png',
     category: 'mangal'
   },
   {
@@ -1291,7 +1291,7 @@ const MENU_DATA = [
     description: 'Нежная печень в жировой сетке, приготовленная на мангале.',
     price: 125,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'peshen-v-setke.png',
     category: 'mangal'
   },
   {
@@ -1300,7 +1300,7 @@ const MENU_DATA = [
     description: 'Говяжья печень на шампуре с добавлением сала.',
     price: 125,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'peshen-v-setke.png',
     category: 'mangal'
   }, /*
   {
