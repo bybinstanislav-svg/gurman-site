@@ -345,7 +345,7 @@ const MENU_DATA = [
     description: 'Поджаренный тостовый хлеб, ветчина, сыр, листья салата, помидоры, майонез.',
     price: 165,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=600',
+    image: 'sendvish-vetchina.jpg',
     category: 'fastfood'
   },
   {
@@ -354,7 +354,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе, сыр, свежие овощи и легкий соус в хрустящем хлебе.',
     price: 115,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1619096252214-ef06c45683e3?auto=format&fit=crop&q=80&w=600',
+    image: 'sendvish-kuriza.jpg',
     category: 'fastfood'
   },
   {
@@ -363,7 +363,7 @@ const MENU_DATA = [
     description: 'Куриные крылышки в пикантной острой панировке. Осторожно, очень остро!',
     price: 199,
     badge: 'Острое',
-    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&q=80&w=600',
+    image: 'baffalo.png',
     category: 'fastfood'
   }, /*
   {
@@ -1129,7 +1129,7 @@ const MENU_DATA = [
     description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1603360946369-00a89d4bc8f0?auto=format&fit=crop&q=80&w=600',
+    image: 'lula-kuriza.jpg',
     category: 'mangal'
   },
   {
@@ -1147,9 +1147,9 @@ const MENU_DATA = [
     description: 'Нежный рубленый люля-кебаб из сочной свинины.',
     price: 110,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'govadina-svinina.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 119,
     name: 'Люля картофельные',
@@ -1167,14 +1167,14 @@ const MENU_DATA = [
     badge: 'Вег',
     image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 121,
     name: 'Форель речная',
     description: 'Сочная речная форель, запеченная на углях. Подается с долькой лимона.',
     price: 125,
     badge: 'Хит',
-    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
+    image: 'forel.jpg',
     category: 'mangal'
   },
   {
@@ -1183,7 +1183,7 @@ const MENU_DATA = [
     description: 'Сочный стейк из красной рыбы, обжаренный на углях. Подается с долькой лимона.',
     price: 270,
     badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1599084990807-35368a41031d?auto=format&fit=crop&q=80&w=600',
+    image: 'semga.jpg',
     category: 'mangal'
   },
   {
@@ -1192,7 +1192,7 @@ const MENU_DATA = [
     description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
     price: 125,
     badge: 'К пиву',
-    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    image: 'krilo.jpg',
     category: 'mangal'
   },
   {
@@ -1210,7 +1210,7 @@ const MENU_DATA = [
     description: 'Сочные домашние купаты с пряными травами и специями.',
     price: 120,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'kupati.jpg',
     category: 'mangal'
   },
   {
@@ -1302,7 +1302,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 136,
     name: 'Почки бараньи',
@@ -1320,16 +1320,16 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 138,
-    name: 'Гербышки говяжьи',
-    description: 'Хрустящие говяжьи гербышки на углях.',
+    name: 'Рёбрышки говяжьи',
+    description: 'Хрустящие говяжьи рёбрышки на углях.',
     price: 110,
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 139,
     name: 'Язык бараний',
@@ -1347,7 +1347,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  }
+  } */
 ];  
 
 // Витрина видео (рилсы) для всех вкладок
@@ -1511,7 +1511,7 @@ const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div className="bg-white rounded-2xl p-4 flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 relative group">
       <div className="relative aspect-square mb-4 overflow-hidden rounded-xl bg-gray-100">
-        <img src={product.image} alt={product.name} className="object-cover w-full h-full" />
+        <img src={product.image} alt={product.name} className="object-contain w-full h-full" />
         {product.badge && (
           <div className="absolute top-2 left-2 bg-[#FF6900] text-white text-xs font-bold px-2 py-1 rounded-md">
             {product.badge}
