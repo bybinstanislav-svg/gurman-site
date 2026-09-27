@@ -1120,7 +1120,7 @@ const MENU_DATA = [
     description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
     price: 145,
     badge: null,
-    image: 'lula-vse-.png',
+    image: 'lula-vse.png',
     category: 'mangal'
   },
   {
@@ -1129,7 +1129,7 @@ const MENU_DATA = [
     description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
-    image: 'lula-vse-.png',
+    image: 'lula-vse.png',
     category: 'mangal'
   },
   {
@@ -1138,7 +1138,7 @@ const MENU_DATA = [
     description: 'Ароматный рубленый люля-кебаб из молодой баранины.',
     price: 155,
     badge: null,
-    image: 'lula-vse-.png',
+    image: 'lula-vse.png',
     category: 'mangal'
   },
   {
@@ -1147,7 +1147,7 @@ const MENU_DATA = [
     description: 'Нежный рубленый люля-кебаб из сочной свинины.',
     price: 110,
     badge: null,
-    image: 'lula-vse-.png',
+    image: 'lula-vse.png',
     category: 'mangal'
   }, /*
   {
