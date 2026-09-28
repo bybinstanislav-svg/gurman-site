@@ -1057,7 +1057,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
     price: 135,
     badge: null,
-    image: 'suvlaki-curiza.jpg',
+    image: 'suvlak-curiza.jpg',
     category: 'mangal'
   },
   {
@@ -1354,7 +1354,7 @@ const MENU_DATA = [
     description: 'Мякоть свинины жареная на мангале.',
     price: 125,
     badge: null,
-    image: 'cupati.jpg',
+    image: 'suwlak-svinina.jpg',
     category: 'mangal'
   }  
 ];  
