@@ -1030,7 +1030,7 @@ const MENU_DATA = [
     description: 'Кусочки антрекота, маринованные по фирменному рецепту и обжаренные на углях. Подается с луком.',
     price: 155,
     badge: 'Хит продаж',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'antrikot.jpg',
     category: 'mangal'
   },
   {
@@ -1057,7 +1057,7 @@ const MENU_DATA = [
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
     price: 135,
     badge: null,
-    image: 'suvlaki-kuriza-.png',
+    image: 'suvlaki-curiza.jpg',
     category: 'mangal'
   },
   {
@@ -1066,7 +1066,7 @@ const MENU_DATA = [
     description: 'Сочное куриное бедро на косточке, зажаренное на углях.',
     price: 110,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    image: 'bedro.jpg',
     category: 'mangal'
   },
   {
@@ -1120,7 +1120,7 @@ const MENU_DATA = [
     description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
     price: 145,
     badge: null,
-    image: 'lula-vse.png',
+    image: 'lula-swininagov.jpg',
     category: 'mangal'
   },
   {
@@ -1129,16 +1129,16 @@ const MENU_DATA = [
     description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
-    image: 'lula-vse.png',
+    image: 'lula-curiza.jpg',
     category: 'mangal'
   },
   {
     id: 117,
-    name: 'Люля-кебаб из баранины',
-    description: 'Ароматный рубленый люля-кебаб из молодой баранины.',
-    price: 155,
+    name: 'Люля-кебаб свино-говяжий',
+    description: 'Ароматный рубленый люля-кебаб из свинины и говядины.',
+    price: 125,
     badge: null,
-    image: 'lula-vse.png',
+    image: 'lula-swininagov.jpg',
     category: 'mangal'
   },
   {
@@ -1147,7 +1147,7 @@ const MENU_DATA = [
     description: 'Нежный рубленый люля-кебаб из сочной свинины.',
     price: 110,
     badge: null,
-    image: 'lula-vse.png',
+    image: 'lula-swininagov.jpg',
     category: 'mangal'
   }, /*
   {
@@ -1210,7 +1210,7 @@ const MENU_DATA = [
     description: 'Сочные домашние купаты с пряными травами и специями.',
     price: 120,
     badge: null,
-    image: 'kupati-.png',
+    image: 'cupati.jpg',
     category: 'mangal'
   },
   {
@@ -1347,7 +1347,16 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  } */
+  }, */
+ {
+    id: 141,
+    name: 'Сувлаки со свининой',
+    description: 'Мякоть свинины жареная на мангале.',
+    price: 125,
+    badge: null,
+    image: 'cupati.jpg',
+    category: 'mangal'
+  }  
 ];  
 
 // Витрина видео (рилсы) для всех вкладок
