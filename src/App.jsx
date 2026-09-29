@@ -1059,7 +1059,7 @@ const MENU_DATA = [
     badge: null,
     image: 'suwlak-svinina.jpg',
     category: 'mangal'
-  },
+  },/*
    {
     id: 106,
     name: 'Ребрышки свиные',
@@ -1068,7 +1068,7 @@ const MENU_DATA = [
     badge: 'Хит',
     image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  },*/
   {  
     id: 110,
     name: 'Шашлык из куриного филе',
@@ -1246,9 +1246,9 @@ const MENU_DATA = [
     description: 'Овощи на мангале, приготовленные в виде салата.',
     price: 110,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80&w=600',
+    image: 'adzap.jpg',
     category: 'mangal'
-  },
+  },/*
   {
     id: 129,
     name: 'Овощи гриль',
