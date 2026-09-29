@@ -1052,6 +1052,24 @@ const MENU_DATA = [
     category: 'mangal'
   },
   {
+     id: 108,
+    name: 'Сувлак свиной',
+    description: 'Мякоть свинины жареная на мангале.',
+    price: 125,
+    badge: null,
+    image: 'suwlak-svinina.jpg',
+    category: 'mangal'
+  },
+   {
+    id: 106,
+    name: 'Ребрышки свиные',
+    description: 'Сочные свиные ребрышки, запеченные на огне.',
+    price: 115,
+    badge: 'Хит',
+    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
+    category: 'mangal'
+  },
+  {  
     id: 110,
     name: 'Шашлык из куриного филе',
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
@@ -1067,6 +1085,24 @@ const MENU_DATA = [
     price: 110,
     badge: null,
     image: 'bedro.jpg',
+    category: 'mangal'
+  },
+   {
+    id: 111,
+    name: 'Куриные крылышки на углях',
+    description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
+    price: 125,
+    badge: 'К пиву',
+    image: 'crilo1.jpg',
+    category: 'mangal'
+  },
+  {
+    id: 112,
+    name: 'Голень куриная',
+    description: 'Куриная голень в пряном маринаде на мангале.',
+    price: 110,
+    badge: null,
+    image: 'golen.jpg',
     category: 'mangal'
   }, /*
   {
@@ -1126,7 +1162,7 @@ const MENU_DATA = [
   {
     id: 116,
     name: 'Люля куриный',
-    description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
+    description: 'Сочный и мягкий люля из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
     image: 'lula-curiza.jpg',
@@ -1187,39 +1223,12 @@ const MENU_DATA = [
     category: 'mangal'
   },
   {
-    id: 111,
-    name: 'Куриные крылышки на углях',
-    description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
-    price: 125,
-    badge: 'К пиву',
-    image: 'crilo1.jpg',
-    category: 'mangal'
-  },
-  {
-    id: 112,
-    name: 'Голень куриная',
-    description: 'Куриная голень в пряном маринаде на мангале.',
-    price: 110,
-    badge: null,
-    image: 'golen.jpg',
-    category: 'mangal'
-  },
-  {
     id: 125,
     name: 'Купаты',
     description: 'Сочные домашние купаты с пряными травами и специями.',
     price: 120,
     badge: null,
     image: 'cupati.jpg',
-    category: 'mangal'
-  },
-  {
-    id: 106,
-    name: 'Ребрышки свиные',
-    description: 'Сочные свиные ребрышки, запеченные на огне.',
-    price: 115,
-    badge: 'Хит',
-    image: 'https://images.unsplash.com/photo-1544025162-83141f2389d4?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
   },
   {
@@ -1347,16 +1356,8 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  }, */
- {
-    id: 108,
-    name: 'Сувлак свиной',
-    description: 'Мякоть свинины жареная на мангале.',
-    price: 125,
-    badge: null,
-    image: 'suwlak-svinina.jpg',
-    category: 'mangal'
-  }  
+  } */
+ 
 ];  
 
 // Витрина видео (рилсы) для всех вкладок
@@ -1364,14 +1365,14 @@ const REELS_DATA = [
   {
     id: 1,
     title: 'Сочный шашлык на углях',
-    videoUrl: 'mangal-ogon.mp4',
+    videoUrl: 'mangal12.mp4',
     tag: 'Мангал'
   },
   {
     id: 2,
-    title: 'Готовим свежую шаурму',
-    videoUrl: 'zakrutka-shaurma.mp4',
-    tag: 'Фаст Фуд'
+    title: 'Завораживает',
+    videoUrl: 'video-pizza.mp4',
+    tag: 'Пицца'
   },
   {
     id: 3,
