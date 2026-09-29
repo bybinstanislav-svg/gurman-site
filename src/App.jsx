@@ -196,19 +196,31 @@ const MENU_DATA = [
     image: 'ohotnichia.png',
     category: 'pizza'
   },
-   {
+  {
     id: 15,
     name: 'Мексиканская',
     description: 'Томатный соус, куриный фарш, томат, лук, острый перчик, моцарелла',
     price: 319,
     variants: [
       { label: '20 см', price: 315 },
-      { label: '30 см', price: 755 }
+      { label: '30 см', price: 675 }
     ],
     badge: 'Острая',
     image: 'mexika.png',
     category: 'pizza'
   },
+  {
+    id: 150,
+    name: 'с Морепродуктами',
+    description: 'Томатный соус, тигровые креветки, перец болгарский, моцарелла',
+    price: 319,
+    variants: [
+      { label: '30 см', price: 695 }
+    ],
+    badge: 'Премиум',
+    image: 'more.png',
+    category: 'pizza'
+   },
 
   // --- ФАСТ ФУД ---
   {
