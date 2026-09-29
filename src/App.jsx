@@ -309,7 +309,7 @@ const MENU_DATA = [
     description: 'Обжаренное куриное филе, свежие овощи, фирменный чесночный соус, завернутые в тонкий лаваш.',
     price: 175,
     badge: 'Сытно',
-    image: 'shaurma1.зтп',
+    image: 'shaurma1.png',
     category: 'fastfood'
   },
   {
@@ -318,7 +318,7 @@ const MENU_DATA = [
     description: 'Сочная курица, картофель фри, капуста, томаты, огурцы, пикантный соус.',
     price: 175,
     badge: null,
-    image: 'giro1.зтп',
+    image: 'giro1.png',
     category: 'fastfood'
   }, /*
   {
