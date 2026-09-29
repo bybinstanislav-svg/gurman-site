@@ -235,7 +235,7 @@ const MENU_DATA = [
     description: 'Пшеничная лепешка, куриное филе, салат айсберг, томаты, огурец свежий, соус ранч',
     price: 195,
     badge: null,
-    image: 'fresh-roll1.png',
+    image: 'roll12.png',
     category: 'fastfood'
   }, /*
   {
@@ -309,7 +309,7 @@ const MENU_DATA = [
     description: 'Обжаренное куриное филе, свежие овощи, фирменный чесночный соус, завернутые в тонкий лаваш.',
     price: 175,
     badge: 'Сытно',
-    image: 'shaurma3.jpg',
+    image: 'shaurma1.зтп',
     category: 'fastfood'
   },
   {
@@ -318,9 +318,9 @@ const MENU_DATA = [
     description: 'Сочная курица, картофель фри, капуста, томаты, огурцы, пикантный соус.',
     price: 175,
     badge: null,
-    image: 'giro.jpg',
+    image: 'giro1.зтп',
     category: 'fastfood'
-  },
+  }, /*
   {
     id: 28,
     name: 'Хот-дог классический',
@@ -329,7 +329,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&q=80&w=600',
     category: 'fastfood'
-  },
+  }, */
   {
     id: 29,
     name: 'Френч-дог с курино-говяжей сосиской',
@@ -1032,27 +1032,27 @@ const MENU_DATA = [
     badge: 'Хит продаж',
     image: 'antrikot.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
-    id: 106,
+    id: 126,
     name: 'Шашлык из свинины (медальоны)',
     description: 'Нежные медальоны из свинины, приготовленные на мангале до золотистой корочки.',
     price: 169,
     badge: null,
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 107,
     name: 'Шашлык из свинины (шея)',
     description: 'Сочный и мягкий шашлык из свиной шейки со специями.',
     price: 169,
     badge: 'Хит',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600',
+    image: 'shey1.jpg',
     category: 'mangal'
   },
   {
-    id: 108,
+    id: 110,
     name: 'Шашлык из куриного филе',
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
     price: 135,
@@ -1068,55 +1068,55 @@ const MENU_DATA = [
     badge: null,
     image: 'bedro.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
-    id: 110,
+    id: 141,
     name: 'Шашлык из индейки',
     description: 'Диетический, невероятно нежный шашлык из филе грудки индейки в легком маринаде.',
     price: 195,
     badge: 'Легкое',
     image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
-    id: 111,
+    id: 114,
     name: 'Шашлык из баранины',
     description: 'Классический кавказский шашлык из отборной мякоти молодого барашка со специями.',
     price: 175,
     badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
+    image: 'baranina-makot.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
-    id: 112,
+    id: 124,
     name: 'Шашлык из баранины "семечки"',
     description: 'Нежные бараньи ребрышки на мангале.',
     price: 155,
     badge: null,
     image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 113,
     name: 'Шашлык из баранины пистолетики',
     description: 'Изысканные бараньи каре на углях.',
     price: 215,
     badge: 'Премиум',
-    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80&w=600',
+    image: 'baranina-pistol.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
-    id: 114,
+    id: 123,
     name: 'Шашлык из телятины по-бакински',
     description: 'Сочная телятина, приготовленная по традиционному рецепту.',
     price: 199,
     badge: 'Хит',
     image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, */
   {
     id: 115,
-    name: 'Люля-кебаб из говядины',
+    name: 'Люля говядина',
     description: 'Традиционное восточное блюдо из рубленого мяса с пряными специями, зажаренное до золотистой корочки.',
     price: 145,
     badge: null,
@@ -1125,7 +1125,7 @@ const MENU_DATA = [
   },
   {
     id: 116,
-    name: 'Люля-кебаб из курицы',
+    name: 'Люля куриный',
     description: 'Сочный и мягкий кебаб из рубленого куриного филе с добавлением сливочного масла и зелени.',
     price: 115,
     badge: null,
@@ -1134,8 +1134,8 @@ const MENU_DATA = [
   },
   {
     id: 117,
-    name: 'Люля-кебаб свино-говяжий',
-    description: 'Ароматный рубленый люля-кебаб из свинины и говядины.',
+    name: 'Люля свино-говяжий',
+    description: 'Ароматный рубленый люля из свинины и говядины.',
     price: 125,
     badge: null,
     image: 'lula-swininagov.jpg',
@@ -1143,8 +1143,8 @@ const MENU_DATA = [
   },
   {
     id: 118,
-    name: 'Люля из свинины',
-    description: 'Нежный рубленый люля-кебаб из сочной свинины.',
+    name: 'Люля свиной',
+    description: 'Нежный рубленый люля из сочной свинины.',
     price: 110,
     badge: null,
     image: 'lula-swininagov.jpg',
@@ -1174,7 +1174,7 @@ const MENU_DATA = [
     description: 'Сочная речная форель, запеченная на углях. Подается с долькой лимона.',
     price: 125,
     badge: 'Хит',
-    image: 'forel.jpg',
+    image: 'forel1.jpg',
     category: 'mangal'
   },
   {
@@ -1183,25 +1183,25 @@ const MENU_DATA = [
     description: 'Сочный стейк из красной рыбы, обжаренный на углях. Подается с долькой лимона.',
     price: 270,
     badge: 'Премиум',
-    image: 'semga.jpg',
+    image: 'losos.jpg',
     category: 'mangal'
   },
   {
-    id: 123,
+    id: 111,
     name: 'Куриные крылышки на углях',
     description: 'Хрустящие и сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
     price: 125,
     badge: 'К пиву',
-    image: 'krilo-.png',
+    image: 'crilo1.jpg',
     category: 'mangal'
   },
   {
-    id: 124,
+    id: 112,
     name: 'Голень куриная',
     description: 'Куриная голень в пряном маринаде на мангале.',
     price: 110,
     badge: null,
-    image: 'https://images.unsplash.com/photo-1608039755401-742079603f90?auto=format&fit=crop&q=80&w=600',
+    image: 'golen.jpg',
     category: 'mangal'
   },
   {
@@ -1214,7 +1214,7 @@ const MENU_DATA = [
     category: 'mangal'
   },
   {
-    id: 126,
+    id: 106,
     name: 'Ребрышки свиные',
     description: 'Сочные свиные ребрышки, запеченные на огне.',
     price: 115,
@@ -1228,12 +1228,12 @@ const MENU_DATA = [
     description: 'Крупные шляпки свежих шампиньонов, запеченные с дымком.',
     price: 120,
     badge: 'Вег',
-    image: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=600',
+    image: 'gribi.jpg',
     category: 'mangal'
   },
   {
     id: 128,
-    name: 'Овощи на мангале "Хоровац"',
+    name: 'Аджапсандал (Хоровац)',
     description: 'Овощи на мангале, приготовленные в виде салата.',
     price: 110,
     badge: null,
@@ -1242,8 +1242,8 @@ const MENU_DATA = [
   },
   {
     id: 129,
-    name: 'Овощи в ассортименте',
-    description: 'Свежие овощи-гриль в ассортименте.',
+    name: 'Овощи гриль',
+    description: 'Овощи-гриль в ассортименте.',
     price: 95,
     badge: null,
     image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600',
@@ -1257,7 +1257,7 @@ const MENU_DATA = [
     badge: 'Сытно',
     image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 131,
     name: 'Картофель с салом',
@@ -1266,7 +1266,7 @@ const MENU_DATA = [
     badge: 'Сытно',
     image: 'https://images.unsplash.com/photo-1505253716362-af19349e5d43?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, 
   {
     id: 132,
     name: 'Перепелки',
@@ -1275,7 +1275,7 @@ const MENU_DATA = [
     badge: 'Премиум',
     image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  },
+  }, 
   {
     id: 133,
     name: 'Печень баранья в бараньей сетке',
@@ -1284,25 +1284,25 @@ const MENU_DATA = [
     badge: null,
     image: 'peshen-v-setke.png',
     category: 'mangal'
-  },
+  }, */
   {
     id: 134,
     name: 'Печень в сетке (свиная/говяжья)',
     description: 'Нежная печень в жировой сетке, приготовленная на мангале.',
     price: 125,
     badge: null,
-    image: 'peshen-v-setke.png',
+    image: 'pechen1.jpg',
     category: 'mangal'
-  },
+  }, /*
   {
     id: 135,
     name: 'Печень говяжья с салом/курдюком',
     description: 'Говяжья печень на шампуре с добавлением сала.',
     price: 125,
     badge: null,
-    image: 'peshen-v-setke.png',
+    image: 'pechen1.jpg',
     category: 'mangal'
-  }, /*
+  }, 
   {
     id: 136,
     name: 'Почки бараньи',
@@ -1320,7 +1320,7 @@ const MENU_DATA = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&q=80&w=600',
     category: 'mangal'
-  }, */
+  }, 
   {
     id: 138,
     name: 'Рёбрышки говяжьи',
@@ -1349,8 +1349,8 @@ const MENU_DATA = [
     category: 'mangal'
   }, */
  {
-    id: 141,
-    name: 'Сувлаки со свининой',
+    id: 108,
+    name: 'Сувлак свиной',
     description: 'Мякоть свинины жареная на мангале.',
     price: 125,
     badge: null,
