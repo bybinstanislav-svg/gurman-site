@@ -74,7 +74,7 @@ const MENU_DATA = [
     price: 299,
     variants: [
       { label: '20 см', price: 315 },
-      { label: '30 см', price: 499 }
+      { label: '30 см', price: 535 }
     ],
     badge: 'Новинка',
     image: 'gawai.png',
@@ -87,7 +87,7 @@ const MENU_DATA = [
     price: 399,
     variants: [
       { label: '20 см', price: 275 },
-      { label: '30 см', price: 599 }
+      { label: '30 см', price: 625 }
     ],
     badge: 'Хит',
     image: 'burger-pizza.png',
@@ -164,7 +164,7 @@ const MENU_DATA = [
     description: 'Семга, фирминый соус, моцарелла, томат, маслины, рукола, перец болгарский',
     price: 459,
     variants: [
-      { label: '30 см', price: 699 }
+      { label: '30 см', price: 795 }
     ],
     badge: 'Премиум',
     image: 's-semgoi.png',
@@ -227,7 +227,7 @@ const MENU_DATA = [
     id: 16,
     name: 'Гриль бургер с говядиной',
     description: 'Сочная говяжья котлета, 2 ломтика чеддера, салат айсберг, помидоры, соленые огурчики, лук, фирменный соус гриль',
-    price: 199,
+    price: 299,
     badge: 'Хит продаж',
     image: 'gril.png',
     category: 'fastfood'
@@ -236,7 +236,7 @@ const MENU_DATA = [
     id: 17,
     name: 'Чикенбургер с куриной котлетой',
     description: 'Хрустящая куриная котлета, салат, помидоры,огурец соленый, соус ранч, сырный соус',
-    price: 179,
+    price: 215,
     badge: null,
     image: 'chicen-burger.png',
     category: 'fastfood'
@@ -249,21 +249,21 @@ const MENU_DATA = [
     badge: null,
     image: 'roll12.png',
     category: 'fastfood'
-  }, /*
+  }, 
   {
     id: 19,
-    name: 'Чизбургер',
-    description: 'Говяжья котлета, сыр чеддер, маринованные огурчики, кетчуп, горчица на карамелизованной булочке.',
-    price: 159,
-    badge: null,
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=600',
+    name: 'Бурито',
+    description: 'Куриный фарш со специями, огурец, кетчуп, соус ранч, мексиканская лепешка, томат.',
+    price: 165,
+    badge: 'Хит',
+    image: 'burito.jpg',
     category: 'fastfood'
-  }, */
+  }, 
   {
     id: 20,
     name: 'Ролл мясной',
     description: 'СуПеР МяСнОй ролл в пшеничной лепёшке с сырам чеддер и нежной моцареллой, томатами, пепперони и куриным фаршем под знакомым соусом гриль с дымком!',
-    price: 249,
+    price: 165,
     badge: 'Хит',
     image: 'mysnoy3.png',
     category: 'fastfood'
@@ -272,20 +272,20 @@ const MENU_DATA = [
     id: 21,
     name: 'Ролл Сырный с курицой',
     description: 'Лепешка пшеничная, моцарелла, филе куриное, жареный лучок, помидоры, сырный соус',
-    price: 119,
+    price: 165,
     badge: null,
     image: 'syrniy-roll2.png',
     category: 'fastfood'
-  }, /*
+  }, 
   {
     id: 22,
-    name: 'Сырные палочки',
-    description: 'Тянущийся сыр моцарелла в хрустящей панировке, обжаренный во фритюре.',
-    price: 169,
-    badge: 'К пиву',
-    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&q=80&w=600',
+    name: 'Бургер Нью Йорк',
+    description: 'Черная булочка, говяжья котлета, сыр чедер, бекон, лук, огурец соленый, соус сырный, фирменый острый соус',
+    price: 275,
+    badge: 'Новинка',
+    image: 'negr.png',
     category: 'fastfood'
-  }, */
+  }, 
   {
     id: 23,
     name: 'Картофель фри',
@@ -300,7 +300,7 @@ const MENU_DATA = [
     id: 24,
     name: 'Картофель Айдахо',
     description: 'ЦЕНА ЗА 100 грамм! Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
-    price: 129,
+    price: 33,
     badge: null,
     unit: '100 г.',
     image: 'kartofel-derevna.png',
@@ -310,7 +310,7 @@ const MENU_DATA = [
     id: 25,
     name: 'Ролл дракон',
     description: 'Сыр, охотничьи колбаски, маринованные огурчики и перчик халапеньо с барбекю соусом в зажаристой пшеничной лепешке.',
-    price: 139,
+    price: 165,
     badge: null,
     image: 'dracon2.png',
     category: 'fastfood'
@@ -391,7 +391,7 @@ const MENU_DATA = [
     id: 34,
     name: 'Боксмастер',
     description: 'Мексиканская лепешка с начинкой из куриных стрипсов, картофельной котлете, овощей, сырный соус и соус ранч, обжаренная в печи.',
-    price: 239,
+    price: 255,
     badge: 'Новинка',
     image: 'boxmaster.png',
     category: 'fastfood'
@@ -1067,7 +1067,7 @@ const MENU_DATA = [
      id: 108,
     name: 'Сувлаки свиные',
     description: 'Мякоть свинины жареная на мангале.',
-    price: 125,
+    price: 169,
     badge: null,
     image: 'suwlak-svinina.jpg',
     category: 'mangal'
@@ -1085,7 +1085,7 @@ const MENU_DATA = [
     id: 110,
     name: 'Шашлык из куриного филе',
     description: 'Нежное куриное филе со специями, приготовленное на мангале. Диетический и очень вкусный выбор.',
-    price: 135,
+    price: 155,
     badge: null,
     image: 'suvlak-curiza.jpg',
     category: 'mangal'
@@ -1094,7 +1094,7 @@ const MENU_DATA = [
     id: 109,
     name: 'Шашлык из куриного бедра',
     description: 'Сочное куриное бедро на косточке, зажаренное на углях.',
-    price: 110,
+    price: 115,
     badge: null,
     image: 'bedro.jpg',
     category: 'mangal'
@@ -1103,7 +1103,7 @@ const MENU_DATA = [
     id: 111,
     name: 'Куриные крылья на углях',
     description: 'Сочные куриные крылышки, замаринованные в пикантном соусе и обжаренные до золотистой корочки.',
-    price: 125,
+    price: 135,
     badge: 'К пиву',
     image: 'crilo1.jpg',
     category: 'mangal'
@@ -1112,7 +1112,7 @@ const MENU_DATA = [
     id: 112,
     name: 'Голень куриная',
     description: 'Куриная голень в пряном маринаде на мангале.',
-    price: 110,
+    price: 115,
     badge: null,
     image: 'golen.jpg',
     category: 'mangal'
@@ -1175,7 +1175,7 @@ const MENU_DATA = [
     id: 116,
     name: 'Люля куриные',
     description: 'Сочный и мягкий люля из рубленого куриного филе с добавлением сливочного масла и зелени.',
-    price: 115,
+    price: 125,
     badge: null,
     image: 'lula-curiza.jpg',
     category: 'mangal'
@@ -1220,7 +1220,7 @@ const MENU_DATA = [
     id: 121,
     name: 'Форель речная',
     description: 'Сочная речная форель, запеченная на углях. Подается с долькой лимона.',
-    price: 125,
+    price: 170,
     badge: 'Хит',
     image: 'forel1.jpg',
     category: 'mangal'
@@ -1229,7 +1229,7 @@ const MENU_DATA = [
     id: 122,
     name: 'Стейк из семги (Лосось стейк)',
     description: 'Сочный стейк из красной рыбы, обжаренный на углях. Подается с долькой лимона.',
-    price: 270,
+    price: 299,
     badge: 'Премиум',
     image: 'losos.jpg',
     category: 'mangal'
@@ -1238,7 +1238,7 @@ const MENU_DATA = [
     id: 125,
     name: 'Купаты',
     description: 'Сочные домашние купаты с пряными травами и специями.',
-    price: 120,
+    price: 125,
     badge: null,
     image: 'cupati.jpg',
     category: 'mangal'
