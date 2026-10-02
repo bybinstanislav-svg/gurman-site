@@ -1614,60 +1614,72 @@ const ProductGrid = ({ title, products, onAddToCart }) => {
   );
 };
 
-// Футер
+   // Футер
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-gray-300 py-12 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-[#FF6900] text-white p-1.5 rounded font-bold text-lg">
-                ГУРМАН
-              </div>
-            </div>
-            <p className="text-sm text-gray-400 mb-4">
-              Готовим с душой каждый день!
-            </p>
-          </div>
+  return (
+    <footer className="bg-gray-900 text-gray-300 py-12 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* 1. Колонка: О нас */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="bg-[#FF6900] text-white p-1.5 rounded font-bold text-lg">
+                ГУРМАН
+              </div>
+            </div>
+            <p className="text-sm text-gray-400 mb-4">
+              Готовим с душой каждый день.
+            </p>
+          </div>
 
-          <div>
-            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Контакты</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-center">
-                <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
-                <div className="flex flex-col items-center ...">
-                 <span>8 962 401-02-10</span>
-                 <span>910-210</span>
-                </div>
-                </li>
-              <li className="flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
-                Ежедневно с 8:00 до 22:00
-              </li>
-              <li className="flex items-start">
-                <MapPin className="w-4 h-4 mr-2 text-[#FF6900] mt-1 shrink-0" />
-                с. Александровское ул. Войтика 16Б
-              </li>
-            </ul>
-          </div>
+          {/* 2. Колонка: Контакты и время работы */}
+          <div>
+            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Контакты</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center">
+                <Phone className="w-4 h-4 mr-2 text-[#FF6900]" />
+                <div className="flex flex-col">
+                   <span>8 962 401-02-10</span>
+                   <span>910-210</span>
+                </div>
+              </li>
+              <li className="flex items-center">
+                <Clock className="w-4 h-4 mr-2 text-[#FF6900]" />
+                Ежедневно с 8:00 до 22:00
+              </li>
+              <li className="flex items-start">
+                <MapPin className="w-4 h-4 mr-2 text-[#FF6900] mt-1 shrink-0" />
+                с. Александровское ул. Войтика 16Б
+              </li>
+            </ul>
+          </div>
 
-          <div>
-            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Правовая информация</h3>
-            <ul className="space-y-2 text-xs text-gray-400">
-              <li>ИП Конотопцев В. А.</li>
-              <li>ОГРНИП: 308264907800040</li>
-              <li>ИНН: 260105397727</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="border-t border-gray-800 mt-8 pt-8 text-xs text-center text-gray-500">
-          © {new Date().getFullYear()} Гурман. Все права защищены.
-        </div>
-      </div>
-    </footer>
-  );
+          {/* 3. Колонка: Условия доставки */}
+          <div>
+            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Условия доставки</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li>🚗 Доставка по с. Александровскому</li>
+              <li>📦 Заказы принимаются с 10:00 до 19:00</li>
+              <li className="text-xs text-gray-300">✨ Бесплатно от 3000 руб.</li>
+              <li className="text-xs text-gray-300">💰 При заказе меньше — доставка 200 руб.</li>
+            </ul>
+          </div>
+
+        </div>
+        
+        {/* Нижняя полоса с копирайтом и ИП */}
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+          <div>
+            © {new Date().getFullYear()} Гурман. Все права защищены.
+          </div>
+          <div className="text-right text-gray-400">
+            ИП Конотопцев В. А. | ОГРНИП: 308264907800040 | ИНН: 260105397727
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 // Компонент Корзины (Модальное окно)
@@ -1833,7 +1845,7 @@ export default function App() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
           <span className="bg-[#FF6900] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-            с. Александровском
+            с. Александровское
           </span>
           <p className="text-lg text-gray-200 mb-8 max-w-xl">
              Кулинария супермаркета "Гурман".
