@@ -1833,14 +1833,14 @@ export default function App() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
           <span className="bg-[#FF6900] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-            Супермаркет в Александровском
+            с. Александровском
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-2xl">
-            Готовим с душой каждый день
-          </h1>
           <p className="text-lg text-gray-200 mb-8 max-w-xl">
-            Пицца, блюда на мангале, фаст фуд, горячие блюда, салаты и гарниры — всё свежее и горячее.
-          </p>
+             Кулинария супермаркета "Гурман".
+          </p>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-2xl">
+             Готовим с душой каждый день
+          </h1>
           <div className="flex flex-wrap gap-4">
             <a 
               href="tel:89624010210" 
