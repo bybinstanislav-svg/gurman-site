@@ -227,7 +227,7 @@ const MENU_DATA = [
     id: 16,
     name: 'Гриль бургер с говядиной',
     description: 'Сочная говяжья котлета, 2 ломтика чеддера, салат айсберг, помидоры, соленые огурчики, лук, фирменный соус гриль',
-    price: 299,
+    price: 295,
     badge: 'Хит продаж',
     image: 'gril.png',
     category: 'fastfood'
@@ -236,7 +236,7 @@ const MENU_DATA = [
     id: 17,
     name: 'Чикенбургер с куриной котлетой',
     description: 'Хрустящая куриная котлета, салат, помидоры,огурец соленый, соус ранч, сырный соус',
-    price: 215,
+    price: 235,
     badge: null,
     image: 'chicen-burger.png',
     category: 'fastfood'
@@ -281,7 +281,7 @@ const MENU_DATA = [
     id: 22,
     name: 'Бургер Нью Йорк',
     description: 'Черная булочка, говяжья котлета, сыр чедер, бекон, лук, огурец соленый, соус сырный, фирменый острый соус',
-    price: 275,
+    price: 295,
     badge: 'Новинка',
     image: 'negr.png',
     category: 'fastfood'
