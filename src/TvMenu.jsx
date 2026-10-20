@@ -1,9 +1,16 @@
 import React from 'react';
 
 export default function TvMenu() {
-  const queryParams = new URLSearchParams(window.location.search);
-  const TV_SCREEN_NUMBER = parseInt(queryParams.get('screen')) || 1;
-
+  // Безопасное чтение параметра screen как для браузера, так и для Android/Capacitor
+  let screenParam = 1;
+  try {
+    const queryParams = new URLSearchParams(window.location.search);
+    const s = queryParams.get('screen');
+    if (s) screenParam = parseInt(s);
+  } catch (e) {
+    // Если параметры не распарсились, смотрим на хэш или оставляем 1
+  }
+  const TV_SCREEN_NUMBER = screenParam || 1;
   // 1. СПИСКИ КАТЕГОРИЙ
   const pizzaItems = [
     { name: 'ГУРМАН', description: 'Томатный соус, ветчина, бекон, охотничьи колбаски, помидоры, моцарелла, зелень', variants: [{ label: 'Кусок', price: '77 ₽' }, { label: '20 см', price: '325 ₽' }, { label: '30 см', price: '595 ₽' }], image: 'gurman.png', category: 'пицца' },

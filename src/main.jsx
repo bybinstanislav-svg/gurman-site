@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import TvMenu from './TvMenu.jsx'
+import KitchenPanel from './KitchenPanel.jsx';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,6 +15,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         
         {/* Страница для 5 телевизоров */}
         <Route path="/tv" element={<TvMenu />} />
+       
+       {/* Экран поваров */}
+        <Route path="/kitchen" element={<KitchenPanel />}  />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

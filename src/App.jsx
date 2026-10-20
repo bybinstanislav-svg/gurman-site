@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus, Trash2, Check } from 'lucide-react';
+import KitchenPanel from './KitchenPanel';
 
 // 1. Добавьте этот массив в самое начало файла (перед компонентами)
 const PIZZA_ADDONS = [
@@ -1789,113 +1790,128 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems }) => {
   );
 };
 
-// Главный компонент приложения
-export default function App() {
-  const [activeCategory, setActiveCategory] = useState('pizza');
-  const [cartItems, setCartItems] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+// Главный компонент магазина (со своими состояниями и корзиной)
+function ShopPage() {
+  const [activeCategory, setActiveCategory] = useState('pizza');
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const handleAddToCart = (product, selectedVariantIndex) => {
-    setCartItems(prev => {
-      const hasVariants = !!product.variants;
-      const price = hasVariants ? product.variants[selectedVariantIndex].price : product.price;
-      const variantLabel = hasVariants ? product.variants[selectedVariantIndex].label : null;
-      const cartItemId = hasVariants ? `${product.id}-${selectedVariantIndex}` : product.id;
+  const handleAddToCart = (product, selectedVariantIndex) => {
+    setCartItems(prev => {
+      const hasVariants = !!product.variants;
+      const price = hasVariants ? product.variants[selectedVariantIndex].price : product.price;
+      const variantLabel = hasVariants ? product.variants[selectedVariantIndex].label : null;
+      const cartItemId = hasVariants ? `${product.id}-${selectedVariantIndex}` : product.id;
 
-      const existingItem = prev.find(item => item.cartItemId === cartItemId);
-      if (existingItem) {
-        return prev.map(item =>
-          item.cartItemId === cartItemId
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
+      const existingItem = prev.find(item => item.cartItemId === cartItemId);
+      if (existingItem) {
+        return prev.map(item =>
+          item.cartItemId === cartItemId
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
 
-      return [...prev, {
-        ...product,
-        cartItemId,
-        price,
-        variantLabel,
-        quantity: 1
-      }];
-    });
-  };
+      return [...prev, {
+        ...product,
+        cartItemId,
+        price,
+        variantLabel,
+        quantity: 1
+      }];
+    });
+  };
 
-  const displayedProducts = useMemo(() => {
-    return MENU_DATA.filter(item => item.category === activeCategory);
-  }, [activeCategory]);
+  const displayedProducts = useMemo(() => {
+    return MENU_DATA.filter(item => item.category === activeCategory);
+  }, [activeCategory]);
 
-  const categoryTitle = CATEGORIES.find(c => c.id === activeCategory)?.label || 'Меню';
+  const categoryTitle = CATEGORIES.find(c => c.id === activeCategory)?.label || 'Меню';
 
-  return (
-    <div className="bg-[#F9FAFB] min-h-screen font-sans flex flex-col">
-      <Header 
-        cartItems={cartItems} 
-        onOpenCart={() => setIsCartOpen(true)}
-      />
-      {/* Главный баннер */}
-      <div className="relative bg-gray-900 text-white overflow-hidden py-16 lg:py-24">
-        <div className="absolute inset-0">
-          <img 
-            src="gurman-zastavka.jpg" 
-            alt="Фон" 
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
-          <span className="bg-[#FF6900] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-            с. Александровское
-          </span>
-          <p className="text-lg text-gray-200 mb-8 max-w-xl">
+  return (
+    <div className="bg-[#F9FAFB] min-h-screen font-sans flex flex-col">
+      <Header 
+        cartItems={cartItems} 
+        onOpenCart={() => setIsCartOpen(true)}
+      />
+      
+      {/* Главный баннер */}
+      <div className="relative bg-gray-900 text-white overflow-hidden py-16 lg:py-24">
+        <div className="absolute inset-0">
+          <img 
+            src="gurman-zastavka.jpg" 
+            alt="Фон" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
+          <span className="bg-[#FF6900] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+            с. Александровское
+          </span>
+          <p className="text-lg text-gray-200 mb-8 max-w-xl">
              Кулинария супермаркета "Гурман".
           </p>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-2xl">
              Готовим с душой каждый день
           </h1>
-          <div className="flex flex-wrap gap-4">
-            <a 
-              href="tel:89624010210" 
-              className="bg-[#FF6900] hover:bg-[#E05B00] text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-orange-600/30"
-            >
-              <Phone className="w-5 h-5" />
-              8 962 401-02-10
-            </a>
-          </div>
-        </div>
-      </div>
+          <div className="flex flex-wrap gap-4">
+            <a 
+              href="tel:89624010210" 
+              className="bg-[#FF6900] hover:bg-[#E05B00] text-white font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-orange-600/30"
+            >
+              <Phone className="w-5 h-5" />
+              8 962 401-02-10
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <CategoryMenu 
-        activeCategory={activeCategory} 
-        setActiveCategory={setActiveCategory} 
-      />
+      <CategoryMenu 
+        activeCategory={activeCategory} 
+        setActiveCategory={setActiveCategory} 
+      />
 
-      {/* Лента вертикальных видео на всех вкладках */}
-      <ReelsSection />
+      <ReelsSection />
 
-      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-        {displayedProducts.length > 0 ? (
-          <ProductGrid 
-            title={categoryTitle} 
-            products={displayedProducts} 
-            onAddToCart={handleAddToCart}
-          />
-        ) : (
-          <div className="text-center py-20">
-            <h2 className="text-2xl font-bold text-gray-400">В этой категории пока нет товаров</h2>
-            <p className="text-gray-500 mt-2">Мы уже работаем над пополнением меню!</p>
-          </div>
-        )}
-      </main>
+      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        {displayedProducts.length > 0 ? (
+          <ProductGrid 
+            title={categoryTitle} 
+            products={displayedProducts} 
+            onAddToCart={handleAddToCart}
+          />
+        ) : (
+          <div className="text-center py-20">
+            <h2 className="text-2xl font-bold text-gray-400">В этой категории пока нет товаров</h2>
+            <p className="text-gray-500 mt-2">Мы уже работаем над пополнением меню!</p>
+          </div>
+        )}
+      </main>
 
-      <Footer />
+      <Footer />
 
-      <CartModal 
-        isOpen={isCartOpen} 
-        onClose={() => setIsCartOpen(false)} 
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
-    </div>
-  );
+      <CartModal 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
+    </div>
+  );
+}
+
+// Главный компонент App с роутером
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Главная страница сайта */}
+        <Route path="/" element={<ShopPage />} />
+
+        {/* Экран повара на планшете */}
+        <Route path="/kitchen" element={<KitchenPanel />} />
+      </Routes>
+    </Router>
+  );
 }
