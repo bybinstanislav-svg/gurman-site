@@ -1,23 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function TvMenu() {
-  // Читаем экран из хэша (например: #1, #2, #3, #4, #5) или из ссылки ?screen=X
-  let screenParam = 1;
-  try {
-    // Проверяем хэш вида #2 в адресной строке
-    const hash = window.location.hash.replace('#', '');
-    if (hash && !isNaN(hash)) {
-      screenParam = parseInt(hash);
-    } else {
-      // Иначе пробуем стандартный ?screen=X
-      const queryParams = new URLSearchParams(window.location.search);
-      const s = queryParams.get('screen');
-      if (s) screenParam = parseInt(s);
-    }
-  } catch (e) {
-    screenParam = 1;
-  }
-  const TV_SCREEN_NUMBER = screenParam || 1;
+  const [activeScreen, setActiveScreen] = useState(1);
 
   // 1. СПИСКИ КАТЕГОРИЙ
   const pizzaItems = [
@@ -104,54 +88,76 @@ export default function TvMenu() {
     { title: 'МАНГАЛ (2)', items: mangalChunks[1], hasSplit: false }
   ];
 
-  const currentScreenIndex = Math.min(Math.max(TV_SCREEN_NUMBER - 1, 0), screens.length - 1);
-  const currentScreen = screens[currentScreenIndex];
+  const currentScreen = screens[activeScreen - 1];
 
   return (
     <div style={{ backgroundColor: '#ffffff', fontFamily: 'Montserrat, sans-serif', width: '100vw', height: '100vh', margin: 0, padding: '15px', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', overflow: 'hidden' }}>
       
-      {/* Экран телевизора на всю ширину и высоту */}
-      <div style={{ width: '100%', height: '100%', background: '#ffffff', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', overflow: 'hidden' }}>
+      {/* Шапка с кнопками переключения страниц прямо на экране */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '10px', flexShrink: 0 }}>
+        {[1, 2, 3, 4, 5].map((num) => (
+          <button
+            key={num}
+            onClick={() => setActiveScreen(num)}
+            style={{
+              padding: '8px 16px',
+              fontSize: '1.6vh',
+              fontWeight: 900,
+              cursor: 'pointer',
+              backgroundColor: activeScreen === num ? '#059669' : '#e2e8f0',
+              color: activeScreen === num ? '#ffffff' : '#0f172a',
+              border: 'none',
+              borderRadius: '6px',
+              transition: '0.2s'
+            }}
+          >
+            Экран {num}
+          </button>
+        ))}
+      </div>
+
+      {/* Основной контейнер экрана */}
+      <div style={{ width: '100%', height: 'calc(100% - 50px)', background: '#ffffff', display: 'flex', flexDirection: 'column', boxSizing: 'border-box', overflow: 'hidden' }}>
         
-        {/* Заголовок */}
-        <div style={{ borderBottom: '4px solid #0f172a', paddingBottom: '10px', marginBottom: '15px', flexShrink: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ fontSize: '3vh', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '2px', textTransform: 'uppercase' }}>
-            {currentScreen.title}
+        {/* Заголовок текущего экрана */}
+        <div style={{ borderBottom: '4px solid #0f172a', paddingBottom: '8px', marginBottom: '10px', flexShrink: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h1 style={{ fontSize: '2.6vh', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '2px', textTransform: 'uppercase' }}>
+            {currentScaleTitle(currentScreen.title)}
           </h1>
-          <span style={{ fontSize: '2vh', fontWeight: 700, color: '#64748b' }}>
-            Телевизор {TV_SCREEN_NUMBER} из 5
+          <span style={{ fontSize: '1.8vh', fontWeight: 700, color: '#64748b' }}>
+            ГУРМАН (Стр. {activeScreen} из 5)
           </span>
         </div>
 
-        {/* Сетка блюд на весь экран (3 колонки х 4 строки) */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(4, 1fr)', gap: '12px', flexGrow: 1, height: 'calc(100% - 60px)' }}>
+        {/* Сетка блюд */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(4, 1fr)', gap: '10px', flexGrow: 1, height: 'calc(100% - 50px)' }}>
           {currentScreen.items.map((item, i) => {
             const showSubHeader = currentScreen.hasSplit && i === currentScreen.splitIndex;
 
             return (
               <React.Fragment key={i}>
                 {showSubHeader && (
-                  <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', margin: '5px 0' }}>
+                  <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', margin: '4px 0' }}>
                     <div style={{ flexGrow: 1, height: '2px', backgroundColor: '#0f172a' }}></div>
-                    <span style={{ padding: '0 10px', fontSize: '2vh', fontWeight: 900, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '2px' }}>Фаст Фуд</span>
+                    <span style={{ padding: '0 10px', fontSize: '1.8vh', fontWeight: 900, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '2px' }}>Фаст Фуд</span>
                     <div style={{ flexGrow: 1, height: '2px', backgroundColor: '#0f172a' }}></div>
                   </div>
                 )}
 
-                <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', boxShadow: '0 4px 10px rgba(0,0,0,0.02)' }}>
+                <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '8px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', boxShadow: '0 4px 10px rgba(0,0,0,0.02)' }}>
                   
                   <div style={{ width: '100%', height: '35%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={item.image} alt={item.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
                   </div>
 
-                  <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '4px 0' }}>
-                    <h3 style={{ fontSize: '2vh', fontWeight: 900, color: '#0f172a', margin: '0 0 2vh 0', textTransform: 'uppercase', textAlign: 'center' }}>{item.name}</h3>
-                    <p style={{ fontSize: '1.4vh', color: '#475569', margin: 0, lineHeight: '1.2', textAlign: 'center', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
+                  <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '2px 0' }}>
+                    <h3 style={{ fontSize: '1.8vh', fontWeight: 900, color: '#0f172a', margin: '0 0 2px 0', textTransform: 'uppercase', textAlign: 'center' }}>{item.name}</h3>
+                    <p style={{ fontSize: '1.2vh', color: '#475569', margin: 0, lineHeight: '1.1', textAlign: 'center', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', fontSize: '1.6vh', color: '#334155', fontWeight: 600, borderTop: '1px dashed #cbd5e1', paddingTop: '4px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', fontSize: '1.4vh', color: '#334155', fontWeight: 600, borderTop: '1px dashed #cbd5e1', paddingTop: '3px' }}>
                     {item.variants && item.variants.map((v, vIdx) => (
-                      <div key={vIdx}>{v.label !== 'Цена' ? `${v.label}: ` : ''}<b style={{ color: '#059669', fontSize: '1.8vh' }}>{v.price}</b></div>
+                      <div key={vIdx}>{v.label !== 'Цена' ? `${v.label}: ` : ''}<b style={{ color: '#059669', fontSize: '1.5vh' }}>{v.price}</b></div>
                     ))}
                   </div>
 
@@ -164,4 +170,8 @@ export default function TvMenu() {
       </div>
     </div>
   );
+}
+
+function currentScaleTitle(title) {
+  return title;
 }
