@@ -1,4 +1,7 @@
 node_modules/
 dist/
 android/
-.gradle/
+.gradle/server/orders.json
+server/stops.json
+gurman.zip
+.tmp-price.*
