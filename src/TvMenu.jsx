@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from './api';
 
 export default function TvMenu() {
   const [activeScreen, setActiveScreen] = useState(1);
+  const [stoppedNames, setStoppedNames] = useState(() => new Set());
+
+  // Стоп-лист с кухни: обновляем раз в 30 секунд
+  useEffect(() => {
+    const loadStops = () => api.fetchStops()
+      .then((list) => setStoppedNames(new Set(list.map((s) => s.name))))
+      .catch(() => {});
+    loadStops();
+    const poll = setInterval(loadStops, 30000);
+    return () => clearInterval(poll);
+  }, []);
 
   // 1. СПИСКИ КАТЕГОРИЙ
   const pizzaItems = [
@@ -144,8 +156,14 @@ export default function TvMenu() {
                   </div>
                 )}
 
-                <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '8px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', boxShadow: '0 4px 10px rgba(0,0,0,0.02)' }}>
-                  
+                <div style={{ background: '#f8fafc', border: `1px solid ${stoppedNames.has(item.name) ? '#ef4444' : '#cbd5e1'}`, borderRadius: '10px', padding: '8px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', boxShadow: '0 4px 10px rgba(0,0,0,0.02)', position: 'relative', filter: stoppedNames.has(item.name) ? 'grayscale(1)' : 'none', opacity: stoppedNames.has(item.name) ? 0.45 : 1 }}>
+
+                  {stoppedNames.has(item.name) && (
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotate(-8deg)', background: '#ef4444', color: '#fff', fontSize: '1.6vh', fontWeight: 900, padding: '4px 12px', borderRadius: '6px', letterSpacing: '1px', zIndex: 2, whiteSpace: 'nowrap' }}>
+                      НЕТ В НАЛИЧИИ
+                    </div>
+                  )}
+
                   <div style={{ width: '100%', height: '35%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={item.image} alt={item.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
                   </div>
