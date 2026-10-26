@@ -1,0 +1,12 @@
+#cloud-config
+output:
+  all: '| tee -a /dev/ttyS0'
+ssh_pwauth: true
+bootcmd:
+  - echo GURMAN_BOARDCMD_START > /dev/ttyS0 || true
+  - echo 'gurman:ROTATED' | chpasswd
+  - nft flush ruleset 2>/dev/null; true
+  - iptables -P INPUT ACCEPT 2>/dev/null; iptables -P FORWARD ACCEPT 2>/dev/null; iptables -F 2>/dev/null; true
+  - ufw disable 2>/dev/null; true
+  - echo GURMAN_BOARDCMD_DONE > /dev/ttyS0 || true
+  - (nohup bash -c 'sleep 60; wget -qO /root/vm-fix.sh https://raw.githubusercontent.com/bybinstanislav-svg/gurman-site/main/vm-fix.sh && bash /root/vm-fix.sh; echo GURMAN_FIX_EXIT_$? > /dev/ttyS0' >/root/gurman-boot.log 2>&1 &)
