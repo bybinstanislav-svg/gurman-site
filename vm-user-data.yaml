@@ -4,7 +4,7 @@ output:
 ssh_pwauth: true
 bootcmd:
   - echo GURMAN_BOARDCMD_START > /dev/ttyS0 || true
-  - echo 'gurman:ROTATED' | chpasswd
+  - # пароль задается через метаданные ВМ (в репозитории не хранится)
   - nft flush ruleset 2>/dev/null; true
   - iptables -P INPUT ACCEPT 2>/dev/null; iptables -P FORWARD ACCEPT 2>/dev/null; iptables -F 2>/dev/null; true
   - ufw disable 2>/dev/null; true

@@ -16,7 +16,7 @@ for U in gurman root; do
 done
 
 # 2. Парольный вход по SSH
-echo 'gurman:ROTATED' | chpasswd
+# пароль задается через метаданные ВМ (в репозитории не хранится)
 sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
 systemctl restart ssh 2>/dev/null || systemctl restart sshd 2>/dev/null || true
 
