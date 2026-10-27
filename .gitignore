@@ -5,3 +5,8 @@ android/
 server/stops.json
 gurman.zip
 .tmp-price.*
+.ssh-vm/
+.ssh-cmd.sh
+vm.json
+vmfull.json
+vm-update.json
