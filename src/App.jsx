@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Phone, Clock, MapPin, ChevronRight, Menu, ShoppingCart, X, Minus, Plus, Trash2, Check } from 'lucide-react';
+import { Phone, Clock, MapPin, ShoppingCart, X, Minus, Plus, Trash2, Check } from 'lucide-react';
 import { api } from './api';
 
 import { MENU_DATA, PIZZA_ADDONS } from './menuData';
@@ -146,9 +146,9 @@ const CategoryMenu = ({ activeCategory, setActiveCategory }) => {
 };
 
 // Карточка товара (универсальная для всех разделов с поддержкой variants, image, badge)
-const ProductCard = ({ product, onAddToCart, stopped }) => {
+const ProductCard = ({ product, onAddToCart, stopped, addons }) => {
   const [selectedVariant, setSelectedVariant] = useState(0);
-  const [selectedAddon, setSelectedAddon] = useState(PIZZA_ADDONS[0]);
+  const [selectedAddon, setSelectedAddon] = useState(addons[0]);
 
   const basePrice = product.variants ? product.variants[selectedVariant].price : product.price;
   const currentPrice = basePrice + selectedAddon.price;
@@ -159,7 +159,7 @@ const ProductCard = ({ product, onAddToCart, stopped }) => {
       product.variants ? selectedVariant : null, 
       selectedAddon.id ? [selectedAddon] : []
     );
-    setSelectedAddon(PIZZA_ADDONS[0]);
+    setSelectedAddon(addons[0]);
   };
 
   return (
@@ -203,12 +203,12 @@ const ProductCard = ({ product, onAddToCart, stopped }) => {
             <select
               value={selectedAddon.id}
               onChange={(e) => {
-                const found = PIZZA_ADDONS.find(a => a.id === e.target.value);
+                const found = addons.find(a => a.id === e.target.value);
                 setSelectedAddon(found);
               }}
               className="w-full text-xs p-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-[#FF6900] text-gray-800 font-medium cursor-pointer shadow-sm"
             >
-              {PIZZA_ADDONS.map(addon => (
+              {addons.map(addon => (
                 <option key={addon.id} value={addon.id}>
                   {addon.name}
                 </option>
@@ -240,7 +240,7 @@ const ProductCard = ({ product, onAddToCart, stopped }) => {
   );
 };
 // Сетка товаров
-const ProductGrid = ({ title, products, onAddToCart, stoppedIds }) => {
+const ProductGrid = ({ title, products, onAddToCart, stoppedIds, addons }) => {
   if (products.length === 0) return null;
 
   return (
@@ -253,6 +253,7 @@ const ProductGrid = ({ title, products, onAddToCart, stoppedIds }) => {
             product={product}
             onAddToCart={onAddToCart}
             stopped={stoppedIds.has(product.id)}
+            addons={addons}
           />
         ))}
       </div>
@@ -652,6 +653,21 @@ function ShopPage() {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [stoppedIds, setStoppedIds] = useState(() => new Set());
+  // Меню с сервера; null = грузится или сервер недоступен,
+  // тогда показываем вшитую копию (приложение работает и без интернета)
+  const [serverMenu, setServerMenu] = useState(null);
+  const [serverAddons, setServerAddons] = useState(null);
+
+  // Меню с сервера: цены и состав обновляются без пересборки приложения
+  useEffect(() => {
+    const loadMenu = () => api.fetchMenu()
+      .then((data) => { setServerMenu(data.products); setServerAddons(data.addons); })
+      .catch(() => {});
+    loadMenu();
+    const onFocus = () => loadMenu();
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, []);
 
   // Стоп-лист: обновляем раз в минуту и при возврате на вкладку,
   // чтобы позиции снимались с продажи без перезагрузки страницы
@@ -698,9 +714,11 @@ function ShopPage() {
     });
   };
 
+  const allProducts = serverMenu || MENU_DATA;
+
   const displayedProducts = useMemo(() => {
-    return MENU_DATA.filter(item => item.category === activeCategory);
-  }, [activeCategory]);
+    return allProducts.filter(item => item.category === activeCategory);
+  }, [allProducts, activeCategory]);
 
   const categoryTitle = CATEGORIES.find(c => c.id === activeCategory)?.label || 'Меню';
 
@@ -757,6 +775,7 @@ function ShopPage() {
             products={displayedProducts}
             onAddToCart={handleAddToCart}
             stoppedIds={stoppedIds}
+            addons={serverAddons || PIZZA_ADDONS}
           />
         ) : (
           <div className="text-center py-20">

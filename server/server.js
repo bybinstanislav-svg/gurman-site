@@ -2,12 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ORDERS_FILE = path.join(__dirname, 'orders.json');
 const STOPS_FILE = path.join(__dirname, 'stops.json');
 const DIST_DIR = path.join(__dirname, '..', 'dist');
+const MENU_FILE = path.join(__dirname, '..', 'src', 'menuData.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -152,7 +153,20 @@ app.patch('/api/orders/:id', (req, res) => {
   res.json({ success: true, order });
 });
 
-// 4. Стоп-лист — позиции, которых нет в наличии
+// 4. Меню для сайта и приложения (подгружается с сервера, чтобы менять цены
+// без пересборки приложения). Файл перечитывается при каждом запросе —
+// после `git pull` на сервере изменения видны сразу, без перезапуска.
+app.get('/api/menu', async (req, res) => {
+  try {
+    const menuModule = await import(`${pathToFileURL(MENU_FILE).href}?t=${Date.now()}`);
+    res.json({ products: menuModule.MENU_DATA, addons: menuModule.PIZZA_ADDONS });
+  } catch (err) {
+    console.error('Ошибка чтения меню:', err.message);
+    res.status(500).json({ error: 'Не удалось загрузить меню' });
+  }
+});
+
+// 5. Стоп-лист — позиции, которых нет в наличии
 app.get('/api/stops', (req, res) => {
   res.json(stops);
 });

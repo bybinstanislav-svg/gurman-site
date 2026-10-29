@@ -144,13 +144,13 @@ function OrderCard({ order, now, isRecent, onChangeStatus }) {
 
 // --- Панель стоп-листа: позиции, которых нет в наличии ---
 
-function StopListModal({ stops, onClose, onToggle }) {
+function StopListModal({ stops, onClose, onToggle, menu }) {
   const [search, setSearch] = useState('');
   const stopIds = new Set(stops.map((s) => Number(s.id)));
   const query = search.trim().toLowerCase();
 
   const groups = Object.entries(
-    MENU_DATA
+    menu
       .filter((p) => !query || p.name.toLowerCase().includes(query))
       .reduce((acc, product) => {
         (acc[product.category] ||= []).push(product);
@@ -221,6 +221,7 @@ export default function KitchenPanel() {
   const [recentIds, setRecentIds] = useState(() => new Set());
   const [stops, setStops] = useState([]);
   const [stopListOpen, setStopListOpen] = useState(false);
+  const [menu, setMenu] = useState(MENU_DATA);
 
   const knownIds = useRef(null); // null = первая загрузка ещё не прошла (для неё звук не играем)
   const audioCtx = useRef(null);
@@ -305,12 +306,21 @@ export default function KitchenPanel() {
     } catch { /* стоп-лист не критичен, при ошибке оставляем как есть */ }
   }, []);
 
+  // Меню с сервера (для стоп-листа — чтобы новые позиции появлялись сами)
+  const loadMenu = useCallback(async () => {
+    try {
+      const data = await api.fetchMenu();
+      if (Array.isArray(data.products) && data.products.length > 0) setMenu(data.products);
+    } catch { /* меню не критично, остаётся вшитая копия */ }
+  }, []);
+
   // Опрос сервера: сразу, затем каждые 5 секунд, плюс при возврате на вкладку
   useEffect(() => {
     loadOrders();
     loadStops();
+    loadMenu();
     const poll = setInterval(() => { loadOrders(); loadStops(); }, 5000);
-    const onFocus = () => { loadOrders(); loadStops(); };
+    const onFocus = () => { loadOrders(); loadStops(); loadMenu(); };
     window.addEventListener('focus', onFocus);
     document.addEventListener('visibilitychange', onFocus);
     return () => {
@@ -318,7 +328,7 @@ export default function KitchenPanel() {
       window.removeEventListener('focus', onFocus);
       document.removeEventListener('visibilitychange', onFocus);
     };
-  }, [loadOrders, loadStops]);
+  }, [loadOrders, loadStops, loadMenu]);
 
   // Тикер для таймеров и часов
   useEffect(() => {
@@ -494,6 +504,7 @@ export default function KitchenPanel() {
           stops={stops}
           onClose={() => setStopListOpen(false)}
           onToggle={toggleStop}
+          menu={menu}
         />
       )}
     </div>
