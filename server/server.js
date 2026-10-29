@@ -159,7 +159,7 @@ app.patch('/api/orders/:id', (req, res) => {
 app.get('/api/menu', async (req, res) => {
   try {
     const menuModule = await import(`${pathToFileURL(MENU_FILE).href}?t=${Date.now()}`);
-    res.json({ products: menuModule.MENU_DATA, addons: menuModule.PIZZA_ADDONS });
+    res.json({ products: menuModule.MENU_DATA, addons: menuModule.PIZZA_ADDONS, tv: menuModule.TV_DATA });
   } catch (err) {
     console.error('Ошибка чтения меню:', err.message);
     res.status(500).json({ error: 'Не удалось загрузить меню' });

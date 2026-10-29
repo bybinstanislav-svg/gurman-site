@@ -10,3 +10,15 @@ gurman.zip
 vm.json
 vmfull.json
 vm-update.json
+tv/node_modules/
+tv/dist/
+tv/android/app/build/
+tv/android/app/debug/
+tv/android/app/release/
+tv/android/.gradle/
+tv/android/app/src/main/assets/public/
+.ssh-vm/
+.ssh-cmd.sh
+.vm-metadata-user-data.yaml
+.migrate-tv.cjs
+.tvn.txt
