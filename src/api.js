@@ -30,6 +30,9 @@ async function request(path, options = {}) {
 }
 
 export const api = {
+  // Меню (грузится с сервера — цены обновляются без пересборки приложения)
+  fetchMenu: () => request('/api/menu'),
+
   // Оформление заказа с сайта / из приложения
   createOrder: (order) =>
     request('/api/orders', { method: 'POST', body: JSON.stringify(order) }),
