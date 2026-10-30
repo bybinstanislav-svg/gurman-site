@@ -126,29 +126,27 @@ export default function TvMenu() {
     mangal: { rowsPerScreen: 5, nameBox: 30, nameSize: 17, nameMin: 10, descBox: 56, descSize: 12, descMin: 7, priceSize: 14, priceGap: 5, photo: 100, pad: 6, descGap: 4 }
   };
 
-  // Меню с сервера: цены обновляются без пересборки приложения.
-  // Пока не загрузилось (или сервер недоступен) — вшитые списки ниже.
-  const [serverMenu, setServerMenu] = useState(null);
+  // Цены приходят с сервера и обновляются сами (каждые 5 минут).
+  // СОСТАВ И ПОРЯДОК ПОЗИЦИЙ — из вшитых списков ниже (ровно 5 экранов),
+  // с сервера берутся только свежие цены по названию позиции.
+  const [serverPrices, setServerPrices] = useState(null);
   useEffect(() => {
     const API = 'https://api.гурман-супермаркет.рф';
     const load = () => {
       fetch(API + '/api/menu')
         .then((r) => r.json())
         .then((data) => {
-          if (!Array.isArray(data.products) || data.products.length === 0) return;
-          const tv = data.tv || {};
-          const toTvItem = (p) => ({
-            name: p.name,
-            description: p.description,
-            variants: (tv[p.name] || (p.variants ? p.variants.map((v) => ({ label: v.label, price: v.price })) : [{ label: 'Цена', price: p.price }]))
-              .map((v) => ({ label: v.label, price: (v.price || 0) + ' ₽' })),
-            image: '/' + p.image,
-          });
-          setServerMenu({
-            pizzaItems: data.products.filter((p) => p.category === 'pizza').map(toTvItem),
-            fastfoodItems: data.products.filter((p) => p.category === 'fastfood').map(toTvItem),
-            mangalItems: data.products.filter((p) => p.category === 'mangal').map(toTvItem),
-          });
+          if (!data.products || !data.tv) return;
+          const tv = data.tv;
+          const prices = {};
+          for (const p of data.products) {
+            if (tv[p.name]) {
+              prices[p.name] = tv[p.name].map((v) => ({ label: v.label, price: (v.price || 0) + ' ₽' }));
+            } else if (p.variants) {
+              prices[p.name] = p.variants.map((v) => ({ label: v.label, price: (v.price || 0) + ' ₽' }));
+            }
+          }
+          setServerPrices(prices);
         })
         .catch(() => {});
     };
@@ -157,10 +155,16 @@ export default function TvMenu() {
     return () => clearInterval(poll);
   }, []);
 
+  // применяем свежие цены к вшитым спискам (состав не меняется)
+  const applyPrices = (items) => items.map((item) => {
+    const fresh = serverPrices && serverPrices[item.name];
+    return fresh ? { ...item, variants: fresh } : item;
+  });
+
   const sections = [
-    { title: 'ПИЦЦА', items: prepareVariants(serverMenu ? serverMenu.pizzaItems : pizzaItems), profile: sectionProfiles.pizza },
-    { title: 'ФАСТФУД', items: prepareVariants(serverMenu ? serverMenu.fastfoodItems : fastfoodItems), profile: sectionProfiles.fastfood },
-    { title: 'МАНГАЛ', items: prepareVariants(serverMenu ? serverMenu.mangalItems : mangalItems), profile: sectionProfiles.mangal }
+    { title: 'ПИЦЦА', items: prepareVariants(applyPrices(pizzaItems)), profile: sectionProfiles.pizza },
+    { title: 'ФАСТФУД', items: prepareVariants(applyPrices(fastfoodItems)), profile: sectionProfiles.fastfood },
+    { title: 'МАНГАЛ', items: prepareVariants(applyPrices(mangalItems)), profile: sectionProfiles.mangal }
   ];
 
   // --- Адаптив под ориентацию экрана ---
