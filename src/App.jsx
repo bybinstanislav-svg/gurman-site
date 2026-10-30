@@ -741,7 +741,7 @@ function ShopPage() {
 
       {autoClosed && (
         <div className="bg-red-600 text-white text-center text-sm font-semibold py-2.5 px-4">
-          🌙 Приём заказов закрыт — возобновится в 10:00 МСК. Корзину можно собрать заранее
+          🌙 Приём заказов закрыт — возобновится в 10:00 МСК
         </div>
       )}
       
