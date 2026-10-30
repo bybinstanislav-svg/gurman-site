@@ -673,7 +673,7 @@ function ShopPage() {
   // чтобы позиции снимались с продажи без перезагрузки страницы
   useEffect(() => {
     const loadStops = () => api.fetchStops()
-      .then((list) => setStoppedIds(new Set(list.map((s) => Number(s.id)))))
+      .then((data) => setStoppedIds(new Set(data.stops.map((s) => Number(s.id)))))
       .catch(() => {});
     loadStops();
     const poll = setInterval(loadStops, 60000);

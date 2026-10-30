@@ -63,7 +63,7 @@ const STATUSES = {
 };
 
 // 1. Создание нового заказа (сюда отправляет данные сайт)
-app.post('/api/orders', (req, res) => {
+app.post('/api/orders', async (req, res) => {
   const { customerName, phone, items, comment, orderType, address } = req.body;
 
   if (!Array.isArray(items) || items.length === 0) {
@@ -71,7 +71,7 @@ app.post('/api/orders', (req, res) => {
   }
 
   // заказы с позициями из стоп-листа не принимаем
-  const stoppedIds = new Set(stops.map((s) => Number(s.id)));
+  const stoppedIds = new Set((await effectiveStops()).map((s) => Number(s.id)));
   const stoppedInOrder = items.filter((item) => stoppedIds.has(Number(item.productId)));
   if (stoppedInOrder.length > 0) {
     const names = [...new Set(stoppedInOrder.map((i) => i.name))].join(', ');
@@ -166,12 +166,76 @@ app.get('/api/menu', async (req, res) => {
   }
 });
 
-// 5. Стоп-лист — позиции, которых нет в наличии
-app.get('/api/stops', (req, res) => {
-  res.json(stops);
+// 5. Стоп-лист — позиции, которых нет в наличии.
+// Два слоя: ручные стопы (stops.json, ставит повар) + автостоп по времени МСК
+// (всё на стопе после 19:00, снимается в 10:00). Итоговый список — их объединение.
+let autoClosed = false;
+
+const mskHour = () => (new Date().getUTCHours() + 3) % 24;
+const computeAutoClosed = () => {
+  if (process.env.GURMAN_FORCE_AUTOSTOP === 'on') return true;
+  if (process.env.GURMAN_FORCE_AUTOSTOP === 'off') return false;
+  const h = mskHour();
+  return h >= 19 || h < 10;
+};
+
+// полный список позиций (для автостопа и массовых операций) — из menuData
+let menuCache = { data: null, at: 0 };
+async function getMenuData() {
+  if (!menuCache.data || Date.now() - menuCache.at > 60000) {
+    const mod = await import(`${pathToFileURL(MENU_FILE).href}?t=${Date.now()}`);
+    menuCache = { data: { products: mod.MENU_DATA, addons: mod.PIZZA_ADDONS, tv: mod.TV_DATA || {} }, at: Date.now() };
+  }
+  return menuCache.data;
+}
+
+const effectiveStops = async () => {
+  if (!autoClosed) return stops;
+  const { products } = await getMenuData();
+  return products.map((p) => ({ id: p.id, name: p.name }));
+};
+
+const refreshAutoClosed = async () => {
+  const want = computeAutoClosed();
+  if (want !== autoClosed) {
+    autoClosed = want;
+    console.log(`🌙 Автостоп ${autoClosed ? 'ВКЛЮЧЁН (закрыто до 10:00 МСК)' : 'выключен (принимаем заказы)'}`);
+  }
+};
+
+app.get('/api/stops', async (req, res) => {
+  await refreshAutoClosed();
+  res.json({ autoClosed, stops: await effectiveStops(), manual: stops });
 });
 
-app.put('/api/stops/:id', (req, res) => {
+// массовая установка: { stopped: true/false, category: 'pizza'|'fastfood'|'mangal'|'all' }
+app.post('/api/stops/bulk', async (req, res) => {
+  const { stopped, category } = req.body;
+  if (typeof stopped !== 'boolean') {
+    return res.status(400).json({ error: 'Нужен stopped (true/false)' });
+  }
+  const { products } = await getMenuData();
+  const targets = category && category !== 'all'
+    ? products.filter((p) => p.category === category)
+    : products;
+
+  if (stopped) {
+    for (const p of targets) {
+      if (!stops.find((s) => Number(s.id) === Number(p.id))) {
+        stops.push({ id: p.id, name: p.name });
+      }
+    }
+  } else {
+    const ids = new Set(targets.map((p) => Number(p.id)));
+    stops = stops.filter((s) => !ids.has(Number(s.id)));
+  }
+
+  saveStops();
+  console.log(`🚫 Массовый стоп (${category || 'all'}): ${stopped ? 'на стоп' : 'в продажу'} — ${targets.length} позиций`);
+  res.json({ success: true, autoClosed, stops: await effectiveStops(), manual: stops });
+});
+
+app.put('/api/stops/:id', async (req, res) => {
   const productId = parseInt(req.params.id);
   const { stopped, name } = req.body;
 
@@ -188,7 +252,7 @@ app.put('/api/stops/:id', (req, res) => {
 
   saveStops();
   console.log(`🚫 Стоп-лист: "${existing?.name || name || productId}" ${stopped ? 'остановлена' : 'в продаже'}`);
-  res.json({ success: true, stops });
+  res.json({ success: true, autoClosed, stops: await effectiveStops(), manual: stops });
 });
 
 // Раздача собранного сайта (dist), если он есть — тогда экран кухни и сайт
@@ -205,4 +269,6 @@ if (fs.existsSync(DIST_DIR)) {
 
 app.listen(PORT, () => {
   console.log(`🚀 Сервер «Гурман» запущен на порту ${PORT}`);
+  refreshAutoClosed();
+  setInterval(refreshAutoClosed, 30000);
 });

@@ -144,9 +144,10 @@ function OrderCard({ order, now, isRecent, onChangeStatus }) {
 
 // --- Панель стоп-листа: позиции, которых нет в наличии ---
 
-function StopListModal({ stops, onClose, onToggle, menu }) {
+function StopListModal({ stops, manual, autoClosed, onClose, onToggle, onBulk, menu }) {
   const [search, setSearch] = useState('');
-  const stopIds = new Set(stops.map((s) => Number(s.id)));
+  const [busy, setBusy] = useState(false);
+  const manualIds = new Set(manual.map((s) => Number(s.id)));
   const query = search.trim().toLowerCase();
 
   const groups = Object.entries(
@@ -158,6 +159,12 @@ function StopListModal({ stops, onClose, onToggle, menu }) {
       }, {})
   );
 
+  const bulk = async (category, stopped) => {
+    setBusy(true);
+    await onBulk(category, stopped);
+    setBusy(false);
+  };
+
   return (
     <div className="kds-stops-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="kds-stops-modal">
@@ -167,6 +174,12 @@ function StopListModal({ stops, onClose, onToggle, menu }) {
             <X size={20} />
           </button>
         </div>
+
+        {autoClosed && (
+          <div className="kds-autoclosed-banner">
+            🌙 Автостоп: всё на стопе до 10:00. Внесённые вручную стопы сохранятся на завтра
+          </div>
+        )}
 
         <div className="kds-stops-search-wrap">
           <Search size={16} />
@@ -179,13 +192,32 @@ function StopListModal({ stops, onClose, onToggle, menu }) {
           />
         </div>
 
+        <div className="kds-stops-bulk">
+          <button className="kds-bulk-btn stop" disabled={busy} onClick={() => bulk('all', true)}>
+            Стоп всё
+          </button>
+          <button className="kds-bulk-btn clear" disabled={busy} onClick={() => bulk('all', false)}>
+            Снять все стопы
+          </button>
+        </div>
+
         <div className="kds-stops-list">
           {groups.length === 0 && <div className="kds-empty">Ничего не найдено</div>}
           {groups.map(([category, products]) => (
             <div key={category}>
-              <div className="kds-stop-group-title">{CATEGORY_LABELS[category] || category}</div>
+              <div className="kds-stop-group-title">
+                <span>{CATEGORY_LABELS[category] || category}</span>
+                <span className="kds-stop-group-actions">
+                  <button className="kds-group-btn" disabled={busy} onClick={() => bulk(category, true)}>
+                    Стоп
+                  </button>
+                  <button className="kds-group-btn" disabled={busy} onClick={() => bulk(category, false)}>
+                    Снять
+                  </button>
+                </span>
+              </div>
               {products.map((product) => {
-                const stopped = stopIds.has(product.id);
+                const stopped = manualIds.has(product.id);
                 return (
                   <div key={product.id} className={`kds-stop-row${stopped ? ' is-stopped' : ''}`}>
                     <span className="kds-stop-name">{product.name}</span>
@@ -202,7 +234,7 @@ function StopListModal({ stops, onClose, onToggle, menu }) {
         </div>
 
         <div className="kds-stops-foot">
-          На стопе: <b>{stops.length}</b> — эти позиции недоступны для заказа на сайте
+          На стопе: <b>{stops.length}</b> из {menu.length} — эти позиции недоступны для заказа
         </div>
       </div>
     </div>
@@ -220,6 +252,8 @@ export default function KitchenPanel() {
   const [now, setNow] = useState(() => Date.now());
   const [recentIds, setRecentIds] = useState(() => new Set());
   const [stops, setStops] = useState([]);
+  const [manualStops, setManualStops] = useState([]);
+  const [autoClosed, setAutoClosed] = useState(false);
   const [stopListOpen, setStopListOpen] = useState(false);
   const [menu, setMenu] = useState(MENU_DATA);
 
@@ -302,7 +336,10 @@ export default function KitchenPanel() {
 
   const loadStops = useCallback(async () => {
     try {
-      setStops(await api.fetchStops());
+      const data = await api.fetchStops();
+      setStops(data.stops);
+      setManualStops(data.manual);
+      setAutoClosed(!!data.autoClosed);
     } catch { /* стоп-лист не критичен, при ошибке оставляем как есть */ }
   }, []);
 
@@ -386,9 +423,9 @@ export default function KitchenPanel() {
   };
 
   const toggleStop = async (product) => {
-    const isStopped = stops.some((s) => Number(s.id) === product.id);
+    const isStopped = manualStops.some((s) => Number(s.id) === product.id);
     // оптимистично переключаем, при ошибке откатываемся к состоянию сервера
-    setStops((prev) =>
+    setManualStops((prev) =>
       isStopped
         ? prev.filter((s) => Number(s.id) !== product.id)
         : [...prev, { id: product.id, name: product.name }]
@@ -396,7 +433,25 @@ export default function KitchenPanel() {
     try {
       const res = await api.setStopped(product.id, !isStopped, product.name);
       setStops(res.stops);
+      setManualStops(res.manual);
+      setAutoClosed(!!res.autoClosed);
     } catch {
+      loadStops();
+    }
+  };
+
+  // массовый стоп/снятие: по категории или всё сразу
+  const bulkStop = async (category, stopped) => {
+    const prevStops = stops;
+    const prevManual = manualStops;
+    try {
+      const res = await api.stopBulk(category, stopped);
+      setStops(res.stops);
+      setManualStops(res.manual);
+      setAutoClosed(!!res.autoClosed);
+    } catch {
+      setStops(prevStops);
+      setManualStops(prevManual);
       loadStops();
     }
   };
@@ -460,6 +515,12 @@ export default function KitchenPanel() {
         </div>
       )}
 
+      {autoClosed && !stopListOpen && (
+        <div className="kds-autoclosed-bar">
+          🌙 Автостоп: приём заказов закрыт до 10:00. Нажмите «Стоп-лист», чтобы управлять вручную
+        </div>
+      )}
+
       <main className="kds-board">
         {COLUMNS.map((column) => {
           const columnOrders = orders.filter((o) => o.status === column.id);
@@ -502,8 +563,11 @@ export default function KitchenPanel() {
       {stopListOpen && (
         <StopListModal
           stops={stops}
+          manual={manualStops}
+          autoClosed={autoClosed}
           onClose={() => setStopListOpen(false)}
           onToggle={toggleStop}
+          onBulk={bulkStop}
           menu={menu}
         />
       )}

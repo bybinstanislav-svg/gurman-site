@@ -44,8 +44,12 @@ export const api = {
   updateOrderStatus: (orderId, status) =>
     request(`/api/orders/${orderId}`, { method: 'PATCH', body: JSON.stringify({ status }) }),
 
-  // Стоп-лист: [{ id, name }] позиций, которых нет в наличии
+  // Стоп-лист: { autoClosed, stops (итоговый), manual (ручные) }
   fetchStops: () => request('/api/stops'),
+
+  // Массовый стоп: category — 'pizza'|'fastfood'|'mangal' или 'all'
+  stopBulk: (category, stopped) =>
+    request('/api/stops/bulk', { method: 'POST', body: JSON.stringify({ category, stopped }) }),
 
   // Поставить/снять позицию со стопа
   setStopped: (productId, stopped, name) =>
