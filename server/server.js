@@ -258,9 +258,15 @@ app.put('/api/stops/:id', async (req, res) => {
 // Раздача собранного сайта (dist), если он есть — тогда экран кухни и сайт
 // живут на одном сервере и обращаются к API без CORS
 if (fs.existsSync(DIST_DIR)) {
-  app.use(express.static(DIST_DIR));
+  app.use(express.static(DIST_DIR, {
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith('.html')) res.setHeader('Cache-Control', 'no-cache');
+      else if (/.(js|css)$/.test(filePath)) res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+  }));
   app.use((req, res, next) => {
     if (req.method === 'GET' && !req.path.startsWith('/api/')) {
+      res.setHeader('Cache-Control', 'no-cache');
       return res.sendFile(path.join(DIST_DIR, 'index.html'));
     }
     next();
