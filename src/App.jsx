@@ -330,7 +330,7 @@ const Footer = () => {
 };
 
 // Компонент Корзины (Модальное окно) с оформлением заказа на кухню
-const CartModal = ({ isOpen, onClose, cartItems, setCartItems, stoppedIds }) => {
+const CartModal = ({ isOpen, onClose, cartItems, setCartItems, stoppedIds, autoClosed }) => {
   const [step, setStep] = useState('cart'); // cart → form → success
   const [form, setForm] = useState({ customerName: '', phone: '', orderType: 'pickup', address: '', comment: '' });
   const [submitting, setSubmitting] = useState(false);
@@ -424,6 +424,12 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems, stoppedIds }) => 
             <X className="w-6 h-6" />
           </button>
         </div>
+
+        {autoClosed && step !== 'success' && (
+          <div className="bg-red-50 border-b border-red-100 text-red-700 text-sm font-semibold text-center py-2.5 px-4">
+            🌙 Приём заказов закрыт — возобновится в 10:00 МСК
+          </div>
+        )}
 
         {/* --- Шаг 3: заказ успешно отправлен --- */}
         {step === 'success' && (
@@ -628,10 +634,10 @@ const CartModal = ({ isOpen, onClose, cartItems, setCartItems, stoppedIds }) => 
                 </button>
                 <button
                   onClick={submitOrder}
-                  disabled={submitting}
+                  disabled={submitting || autoClosed}
                   className="flex-1 bg-[#FF6900] hover:bg-[#E05B00] transition-colors text-white py-3.5 rounded-xl font-bold text-lg shadow-lg shadow-orange-500/30 disabled:opacity-60"
                 >
-                  {submitting ? 'Отправляем...' : 'Отправить заказ'}
+                  {autoClosed ? 'Заказы принимаются с 10:00 МСК' : submitting ? 'Отправляем...' : 'Отправить заказ'}
                 </button>
               </div>
               {form.orderType === 'delivery' && totalPrice > 0 && totalPrice < 3000 && (
@@ -657,6 +663,7 @@ function ShopPage() {
   // тогда показываем вшитую копию (приложение работает и без интернета)
   const [serverMenu, setServerMenu] = useState(null);
   const [serverAddons, setServerAddons] = useState(null);
+  const [autoClosed, setAutoClosed] = useState(false);
 
   // Меню с сервера: цены и состав обновляются без пересборки приложения
   useEffect(() => {
@@ -673,7 +680,10 @@ function ShopPage() {
   // чтобы позиции снимались с продажи без перезагрузки страницы
   useEffect(() => {
     const loadStops = () => api.fetchStops()
-      .then((data) => setStoppedIds(new Set(data.stops.map((s) => Number(s.id)))))
+      .then((data) => {
+        setStoppedIds(new Set(data.stops.map((s) => Number(s.id))));
+        setAutoClosed(!!data.autoClosed);
+      })
       .catch(() => {});
     loadStops();
     const poll = setInterval(loadStops, 60000);
@@ -728,6 +738,12 @@ function ShopPage() {
         cartItems={cartItems} 
         onOpenCart={() => setIsCartOpen(true)}
       />
+
+      {autoClosed && (
+        <div className="bg-red-600 text-white text-center text-sm font-semibold py-2.5 px-4">
+          🌙 Приём заказов закрыт — возобновится в 10:00 МСК. Корзину можно собрать заранее
+        </div>
+      )}
       
       {/* Главный баннер */}
       <div className="relative bg-gray-900 text-white overflow-hidden py-16 lg:py-24">
@@ -793,6 +809,7 @@ function ShopPage() {
         cartItems={cartItems}
         setCartItems={setCartItems}
         stoppedIds={stoppedIds}
+        autoClosed={autoClosed}
       />
     </div>
   );

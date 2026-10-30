@@ -205,7 +205,7 @@ const refreshAutoClosed = async () => {
 
 app.get('/api/stops', async (req, res) => {
   await refreshAutoClosed();
-  res.json({ autoClosed, stops: await effectiveStops(), manual: stops });
+  res.json({ autoClosed, resumesAt: '10:00', stops: await effectiveStops(), manual: stops });
 });
 
 // массовая установка: { stopped: true/false, category: 'pizza'|'fastfood'|'mangal'|'all' }

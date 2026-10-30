@@ -177,7 +177,7 @@ function StopListModal({ stops, manual, autoClosed, onClose, onToggle, onBulk, m
 
         {autoClosed && (
           <div className="kds-autoclosed-banner">
-            🌙 Автостоп: всё на стопе до 10:00. Внесённые вручную стопы сохранятся на завтра
+            🌙 Автостоп: всё на стопе — приём заказов возобновится в 10:00 МСК. Внесённые вручную стопы сохранятся на завтра
           </div>
         )}
 
@@ -517,7 +517,7 @@ export default function KitchenPanel() {
 
       {autoClosed && !stopListOpen && (
         <div className="kds-autoclosed-bar">
-          🌙 Автостоп: приём заказов закрыт до 10:00. Нажмите «Стоп-лист», чтобы управлять вручную
+          🌙 Автостоп: приём заказов закрыт — возобновится в 10:00 МСК. «Стоп-лист» — управление вручную
         </div>
       )}
 

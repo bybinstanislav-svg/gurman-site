@@ -1,7 +1,7 @@
 node_modules/
 dist/
-android/
-.gradle/server/orders.json
+.gradle/
+server/orders.json
 server/stops.json
 gurman.zip
 .tmp-price.*
@@ -10,6 +10,12 @@ gurman.zip
 vm.json
 vmfull.json
 vm-update.json
+android/app/build/
+android/app/debug/
+android/app/release/
+android/app/src/main/assets/public/
+android/keystore.properties
+android/.gradle/
 tv/node_modules/
 tv/dist/
 tv/android/app/build/
@@ -17,8 +23,8 @@ tv/android/app/debug/
 tv/android/app/release/
 tv/android/.gradle/
 tv/android/app/src/main/assets/public/
-.ssh-vm/
 .ssh-cmd.sh
 .vm-metadata-user-data.yaml
 .migrate-tv.cjs
 .tvn.txt
+.idea/
