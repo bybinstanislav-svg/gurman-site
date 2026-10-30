@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Phone, Clock, MapPin, ShoppingCart, X, Minus, Plus, Trash2, Check } from 'lucide-react';
 import { api } from './api';
+import UpdateGate from './UpdateGate';
 
 import { MENU_DATA, PIZZA_ADDONS } from './menuData';
 
@@ -817,5 +818,10 @@ function ShopPage() {
 
 // Главная страница сайта (маршруты, включая /kitchen, настраиваются в main.jsx)
 export default function App() {
-  return <ShopPage />;
+  // В приложении: проверка версии — старые версии требуют обновления через RuStore
+  return (
+    <UpdateGate api={api}>
+      <ShopPage />
+    </UpdateGate>
+  );
 }

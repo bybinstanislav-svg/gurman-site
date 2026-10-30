@@ -33,6 +33,9 @@ export const api = {
   // Меню (грузится с сервера — цены обновляются без пересборки приложения)
   fetchMenu: () => request('/api/menu'),
 
+  // Минимально допустимая версия приложения (для принудительного обновления)
+  fetchAppVersion: () => request('/api/app-version'),
+
   // Оформление заказа с сайта / из приложения
   createOrder: (order) =>
     request('/api/orders', { method: 'POST', body: JSON.stringify(order) }),

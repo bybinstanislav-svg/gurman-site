@@ -166,6 +166,17 @@ app.get('/api/menu', async (req, res) => {
   }
 });
 
+// 4b. Версия приложения для принудительного обновления.
+// Файл server/app-version.json: minVersionCode — минимальная версия,
+// ниже которой приложение требует обновления; updateUrl — ссылка на RuStore.
+app.get('/api/app-version', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(__dirname, 'app-version.json'), 'utf8')));
+  } catch (err) {
+    res.json({ minVersionCode: 0, force: false, updateUrl: '', note: '' });
+  }
+});
+
 // 5. Стоп-лист — позиции, которых нет в наличии.
 // Два слоя: ручные стопы (stops.json, ставит повар) + автостоп по времени МСК
 // (всё на стопе после 19:00, снимается в 10:00). Итоговый список — их объединение.
