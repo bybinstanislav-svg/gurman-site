@@ -296,9 +296,9 @@ const MENU_DATA = [
   },
   {
     id: 24,
-    name: 'Картофель Айдахо',
+    name: 'Картофель по-деревенски',
     description: 'ЦЕНА ЗА 100 грамм! Крупные дольки картофеля со специями, обжаренные до румяной корочки.',
-    price: 33,
+    price: 65,
     badge: null,
     unit: '100 г.',
     image: 'kartofel-derevna.png',
