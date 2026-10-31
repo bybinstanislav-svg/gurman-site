@@ -28,3 +28,8 @@ tv/android/app/src/main/assets/public/
 .migrate-tv.cjs
 .tvn.txt
 .idea/
+node_modules/.package-lock.json
+.idea/
+.gtd
+.idea/
+node_modules/.package-lock.json
