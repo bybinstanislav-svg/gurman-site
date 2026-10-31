@@ -128,6 +128,28 @@ app.get('/api/orders/active', (req, res) => {
   res.json(activeOrders);
 });
 
+// 2b. История: выполненные заказы за последние 3 дня.
+// Более старые записи удаляются (история «сбрасывается»).
+const HISTORY_DAYS = 3;
+
+function pruneOrders() {
+  const cutoff = Date.now() - HISTORY_DAYS * 24 * 3600 * 1000;
+  const before = orders.length;
+  orders = orders.filter((o) => new Date(o.completedAt || o.createdAt).getTime() >= cutoff);
+  if (orders.length !== before) {
+    console.log("История: удалено " + (before - orders.length) + " заказов старше 3 дней");
+    saveOrders();
+  }
+}
+
+app.get('/api/orders/history', (req, res) => {
+  pruneOrders();
+  const history = orders
+    .filter((o) => o.status === 'completed')
+    .sort((a, b) => new Date(b.completedAt || b.createdAt) - new Date(a.completedAt || a.createdAt));
+  res.json(history);
+});
+
 // 3. Изменение статуса заказа (кнопки на экране кухни)
 app.patch('/api/orders/:id', (req, res) => {
   const orderId = parseInt(req.params.id);
@@ -288,4 +310,5 @@ app.listen(PORT, () => {
   console.log(`🚀 Сервер «Гурман» запущен на порту ${PORT}`);
   refreshAutoClosed();
   setInterval(refreshAutoClosed, 30000);
+  setInterval(pruneOrders, 3600000);
 });
