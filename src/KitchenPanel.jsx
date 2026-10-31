@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Volume2, VolumeX, Maximize, Minimize, Wifi, WifiOff,
-  Play, Check, Undo2, Bike, Store, Ban, Search, X,
+  Play, Check, Undo2, Bike, Store, Ban, Search, X, History,
 } from 'lucide-react';
 import { api } from './api';
 import { MENU_DATA } from './menuData';
@@ -142,6 +142,67 @@ function OrderCard({ order, now, isRecent, onChangeStatus }) {
   );
 }
 
+// --- История заказов: выполненные за последние 3 дня, можно вернуть в работу ---
+
+function HistoryModal({ history, onClose, onRestore }) {
+  const [restoring, setRestoring] = useState(null);
+
+  const fmtDate = (iso) => {
+    const d = new Date(iso);
+    const today = new Date().toDateString() === d.toDateString();
+    const t = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    return today ? 'сегодня в ' + t : d.toLocaleDateString('ru-RU') + ' в ' + t;
+  };
+
+  return (
+    <div className="kds-stops-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="kds-stops-modal">
+        <div className="kds-stops-head">
+          <h2><History size={20} /> История заказов</h2>
+          <button className="kds-icon-btn" onClick={onClose} title="Закрыть">
+            <X size={20} />
+          </button>
+        </div>
+
+        <div className="kds-history-note">
+          Выполненные заказы за последние 3 дня. Случайно закрыли заказ? Верните его в работу.
+        </div>
+
+        <div className="kds-stops-list">
+          {history.length === 0 && (
+            <div className="kds-empty">За последние 3 дня выполненных заказов нет</div>
+          )}
+          {history.map((order) => (
+            <div key={order.id} className="kds-history-row">
+              <div className="kds-history-info">
+                <div className="kds-history-num">
+                  № {order.id} <span className="kds-history-date">— {fmtDate(order.completedAt || order.createdAt)}</span>
+                </div>
+                <div className="kds-history-sub">
+                  {order.customerName}
+                  {order.items.map((i) => i.name + ' ×' + i.quantity).join(', ')} — {order.total} ₽
+                </div>
+              </div>
+              <button
+                className="kds-history-restore"
+                disabled={restoring === order.id}
+                onClick={() => { setRestoring(order.id); onRestore(order).finally(() => setRestoring(null)); }}
+                title="Вернуть заказ в работу"
+              >
+                <Undo2 size={16} /> Вернуть в работу
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="kds-stops-foot">
+          Хранится 3 дня, затем записи удаляются автоматически
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // --- Панель стоп-листа: позиции, которых нет в наличии ---
 
 function StopListModal({ stops, manual, autoClosed, onClose, onToggle, onBulk, menu }) {
@@ -256,6 +317,8 @@ export default function KitchenPanel() {
   const [autoClosed, setAutoClosed] = useState(false);
   const [stopListOpen, setStopListOpen] = useState(false);
   const [menu, setMenu] = useState(MENU_DATA);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [history, setHistory] = useState([]);
 
   const knownIds = useRef(null); // null = первая загрузка ещё не прошла (для неё звук не играем)
   const audioCtx = useRef(null);
@@ -344,6 +407,12 @@ export default function KitchenPanel() {
   }, []);
 
   // Меню с сервера (для стоп-листа — чтобы новые позиции появлялись сами)
+  const loadHistory = useCallback(async () => {
+    try {
+      setHistory(await api.fetchHistory());
+    } catch { /* история не критична */ }
+  }, []);
+
   const loadMenu = useCallback(async () => {
     try {
       const data = await api.fetchMenu();
@@ -356,8 +425,9 @@ export default function KitchenPanel() {
     loadOrders();
     loadStops();
     loadMenu();
+    loadHistory();
     const poll = setInterval(() => { loadOrders(); loadStops(); }, 5000);
-    const onFocus = () => { loadOrders(); loadStops(); loadMenu(); };
+    const onFocus = () => { loadOrders(); loadStops(); loadMenu(); loadHistory(); };
     window.addEventListener('focus', onFocus);
     document.addEventListener('visibilitychange', onFocus);
     return () => {
@@ -365,7 +435,7 @@ export default function KitchenPanel() {
       window.removeEventListener('focus', onFocus);
       document.removeEventListener('visibilitychange', onFocus);
     };
-  }, [loadOrders, loadStops, loadMenu]);
+  }, [loadOrders, loadStops, loadMenu, loadHistory]);
 
   // Тикер для таймеров и часов
   useEffect(() => {
@@ -487,6 +557,11 @@ export default function KitchenPanel() {
             <span>{connected ? 'Онлайн' : 'Нет связи'}</span>
           </div>
           <div className="kds-clock">{formatClock(clockDate)}</div>
+          <button className="kds-stops-btn" onClick={() => { setHistoryOpen(true); loadHistory(); }} title="История заказов">
+            <History size={18} />
+            <span>История</span>
+            {history.length > 0 && <span className="kds-stops-count">{history.length}</span>}
+          </button>
           <button className="kds-stops-btn" onClick={() => setStopListOpen(true)} title="Стоп-лист">
             <Ban size={18} />
             <span>Стоп-лист</span>
@@ -558,6 +633,20 @@ export default function KitchenPanel() {
         <button className="kds-sound-banner" onClick={unlockAudio}>
           🔊 Нажмите один раз, чтобы включить звуковые оповещения
         </button>
+      )}
+
+      {historyOpen && (
+        <HistoryModal
+          history={history}
+          onClose={() => setHistoryOpen(false)}
+          onRestore={async (order) => {
+            try {
+              await api.updateOrderStatus(order.id, 'new');
+              await loadOrders();
+              await loadHistory();
+            } catch { /* при ошибке данные обновятся на следующем опросе */ }
+          }}
+        />
       )}
 
       {stopListOpen && (

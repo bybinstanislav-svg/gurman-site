@@ -43,6 +43,9 @@ export const api = {
   // Активные заказы для экрана кухни
   fetchActiveOrders: () => request('/api/orders/active'),
 
+  // История выполненных заказов (за 3 дня)
+  fetchHistory: () => request('/api/orders/history'),
+
   // Смена статуса: new | cooking | ready | completed
   updateOrderStatus: (orderId, status) =>
     request(`/api/orders/${orderId}`, { method: 'PATCH', body: JSON.stringify({ status }) }),
