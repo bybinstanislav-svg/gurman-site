@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Volume2, VolumeX, Maximize, Minimize, Wifi, WifiOff,
-  Play, Check, Undo2, Bike, Store, Ban, Search, X, History,
+  Play, Check, Undo2, Bike, Store, Ban, Search, X, History, BellRing,
 } from 'lucide-react';
 import { api } from './api';
 import { MENU_DATA } from './menuData';
@@ -323,6 +323,7 @@ export default function KitchenPanel() {
   const knownIds = useRef(null); // null = первая загрузка ещё не прошла (для неё звук не играем)
   const audioCtx = useRef(null);
 
+  // Сигнал нового заказа: громкий двойной звонок, повторяется 3 раза (~4 секунды)
   const playAlert = () => {
     try {
       if (!audioCtx.current) {
@@ -332,18 +333,28 @@ export default function KitchenPanel() {
       }
       const ctx = audioCtx.current;
       if (ctx.state === 'suspended') ctx.resume();
-      for (let i = 0; i < 3; i++) {
+
+      const master = ctx.createGain();
+      master.gain.value = 1.0;
+      master.connect(ctx.destination);
+
+      const ding = (at, freq) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = i % 2 === 0 ? 880 : 660;
-        const t = ctx.currentTime + i * 0.35;
-        gain.gain.setValueAtTime(0.0001, t);
-        gain.gain.exponentialRampToValueAtTime(0.5, t + 0.06);
-        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
-        osc.connect(gain).connect(ctx.destination);
-        osc.start(t);
-        osc.stop(t + 0.35);
+        osc.type = 'square';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.0001, at);
+        gain.gain.exponentialRampToValueAtTime(0.85, at + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, at + 0.3);
+        osc.connect(gain).connect(master);
+        osc.start(at);
+        osc.stop(at + 0.32);
+      };
+
+      for (let rep = 0; rep < 3; rep++) {
+        const base = ctx.currentTime + rep * 1.3;
+        ding(base, 988);
+        ding(base + 0.4, 784);
       }
       return ctx.state === 'running';
     } catch {
@@ -566,6 +577,13 @@ export default function KitchenPanel() {
             <Ban size={18} />
             <span>Стоп-лист</span>
             {stops.length > 0 && <span className="kds-stops-count">{stops.length}</span>}
+          </button>
+          <button
+            className="kds-icon-btn"
+            onClick={() => { if (soundOn) playAlert(); else toggleSound(); }}
+            title="Проверить звук сигнала"
+          >
+            <BellRing size={20} />
           </button>
           <button
             className={`kds-icon-btn${soundOn ? ' is-active' : ''}`}
