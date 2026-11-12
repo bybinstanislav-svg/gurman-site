@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Гурман-Супермаркет</string>
+    <string name="title_activity_main">Гурман-Супермаркет</string>
+    <string name="package_name">com.gurman.supermarket</string>
+    <string name="custom_url_scheme">com.gurman.supermarket</string>
+</resources>

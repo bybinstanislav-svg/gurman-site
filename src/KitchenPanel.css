@@ -750,3 +750,69 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.45; }
 }
+
+/* --- История заказов --- */
+
+.kds-history-note {
+  background: rgba(96, 165, 250, 0.12);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+  color: #93c5fd;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kds-history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #1d2941;
+}
+
+.kds-history-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e2e8f0;
+}
+
+.kds-history-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8fa3c0;
+}
+
+.kds-history-sub {
+  font-size: 13px;
+  color: #8fa3c0;
+  margin-top: 3px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.kds-history-restore {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: filter 0.15s;
+}
+
+.kds-history-restore:hover {
+  filter: brightness(1.15);
+}
+
+.kds-history-restore:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
